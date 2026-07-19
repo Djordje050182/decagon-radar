@@ -4,3 +4,4 @@ digest_*.md
 .DS_Store
 .venv/
 *.log
+retry_backfill.sh
