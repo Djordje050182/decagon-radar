@@ -37,6 +37,8 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          WEBSHARE_USER: ${{ secrets.WEBSHARE_USER }}
+          WEBSHARE_PASS: ${{ secrets.WEBSHARE_PASS }}
         run: python scanner/scan.py ${{ inputs.backfill && '--backfill' || '' }}
 
       - name: Competitor watch

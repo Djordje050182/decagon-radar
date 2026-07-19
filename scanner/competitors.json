@@ -76,7 +76,7 @@
   },
   {
     "name": "Open-source models",
-    "news_query": "DeepSeek model release OR Meta Llama release OR Alibaba Qwen release OR Mistral AI model release",
+    "news_query": "DeepSeek OR Qwen OR \"Meta Llama\" OR \"Mistral AI\"",
     "feeds": []
   }
 ]

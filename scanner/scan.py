@@ -18,6 +18,7 @@ Usage:
 import argparse
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -32,6 +33,11 @@ from youtube_transcript_api._errors import (
     NoTranscriptFound,
     VideoUnavailable,
 )
+
+try:
+    from youtube_transcript_api.proxies import WebshareProxyConfig
+except ImportError:
+    WebshareProxyConfig = None
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -136,10 +142,27 @@ def search_videos(query, cutoff):
     } for item in resp.get("items", [])]
 
 
+_YTT_API = None
+
+
+def ytt_api():
+    """Caption client, with Webshare rotating-proxy support if configured."""
+    global _YTT_API
+    if _YTT_API is None:
+        user, pw = os.environ.get("WEBSHARE_USER"), os.environ.get("WEBSHARE_PASS")
+        if user and pw and WebshareProxyConfig:
+            _YTT_API = YouTubeTranscriptApi(
+                proxy_config=WebshareProxyConfig(proxy_username=user, proxy_password=pw)
+            )
+            print("caption fetches routed via Webshare proxy")
+        else:
+            _YTT_API = YouTubeTranscriptApi()
+    return _YTT_API
+
+
 def fetch_transcript(video_id):
     """Returns list of {text, start} snippets, or raises."""
-    api = YouTubeTranscriptApi()
-    fetched = api.fetch(video_id, languages=["en", "en-US", "en-GB"])
+    fetched = ytt_api().fetch(video_id, languages=["en", "en-US", "en-GB"])
     return [{"text": s.text, "start": s.start} for s in fetched]
 
 
@@ -232,19 +255,31 @@ def main():
     print(f"total candidates: {len(candidates)}")
 
     # 2. Scan captions
+    def persist():
+        save_json(DATA / "mentions.json", store)
+        save_json(DATA / "channel-cache.json", cache)
+        save_json(DATA / "scanned-videos.json", scanned)
+
     new_mentions, caption_failures = [], 0
+    consecutive_blocks, processed = 0, 0
     for vid, video in candidates.items():
         state = scanned.get(vid, {})
         if state.get("status") == "done" or state.get("status") == "no_captions":
             continue
         if state.get("retries", 0) >= MAX_CAPTION_RETRIES:
             continue
+        if consecutive_blocks >= 15:
+            print("  !! aborting caption scan: YouTube is blocking this IP — remaining videos left for a later run")
+            break
         try:
             snippets = fetch_transcript(vid)
+            consecutive_blocks = 0
         except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable):
             scanned[vid] = {"status": "no_captions"}
             continue
         except Exception as e:  # rate limit / IP block — retry next run
+            if type(e).__name__ in ("IpBlocked", "RequestBlocked"):
+                consecutive_blocks += 1
             scanned[vid] = {"status": "retry", "retries": state.get("retries", 0) + 1}
             caption_failures += 1
             print(f"  ! captions failed for {vid} ({video['title'][:60]}): {type(e).__name__}")
@@ -278,14 +313,16 @@ def main():
             new_mentions.append(mention)
             print(f"  + MENTION {video['channel']} @ {mention['timestamp_label']} ({verdict['sentiment']})")
         scanned[vid] = {"status": "done"}
-        time.sleep(0.5)
+        processed += 1
+        if processed % 25 == 0:
+            persist()
+            print(f"  … {processed} videos scanned this run")
+        time.sleep(1.5 + random.random() * 1.5)
 
     # 3. Persist
     store["mentions"].sort(key=lambda m: m["published"], reverse=True)
     store["last_scan"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    save_json(DATA / "mentions.json", store)
-    save_json(DATA / "channel-cache.json", cache)
-    save_json(DATA / "scanned-videos.json", scanned)
+    persist()
 
     # 4. Digest fragment for the daily issue
     if new_mentions:
