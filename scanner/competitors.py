@@ -46,10 +46,14 @@ SCHEMA = {
         "summary": {"type": "string", "description": "Two sentences max, factual"},
         "positioning": {
             "type": "string",
-            "description": "One or two sentences: how Decagon could position against this. Empty string if not applicable.",
+            "description": "One or two sentences: how Decagon could position against this. Empty string if not applicable (e.g. for Decagon's own coverage).",
+        },
+        "market": {
+            "type": "string",
+            "description": "Country or market the story concerns, if identifiable: e.g. 'US', 'UK', 'Australia', 'EMEA', 'APAC', 'Global'. Empty string if unclear.",
         },
     },
-    "required": ["relevant", "type", "summary", "positioning"],
+    "required": ["relevant", "type", "summary", "positioning", "market"],
     "additionalProperties": False,
 }
 
@@ -108,11 +112,16 @@ def analyse(client, item):
         "below about a competitor or frontier AI lab.\n\n"
         "Only mark it relevant if it genuinely matters to Decagon's market: AI customer-support "
         "or voice-agent products, enterprise agent platforms, competitor customer wins, funding, "
-        "or frontier-lab releases that overlap Decagon's space. General model news, consumer "
-        "features, music/media tools, and unrelated corporate news are NOT relevant.\n\n"
-        "If relevant, classify it, summarise it factually, and suggest a positioning angle — "
-        "how Decagon might credibly position against it (this is an AI-suggested angle, "
-        "not official messaging; keep it grounded, no spin).\n\n"
+        "or frontier-lab releases that overlap Decagon's space. Consumer features, music/media "
+        "tools, and unrelated corporate news are NOT relevant. Exceptions: (a) any genuine news "
+        "coverage of Decagon itself IS relevant; (b) for frontier labs and open-source model "
+        "providers, major new model releases or agent-capability launches ARE relevant "
+        "(type: frontier_overlap) even without an explicit customer-support angle, because they "
+        "shift the cost/capability stack Decagon builds on.\n\n"
+        "If relevant, classify it, summarise it factually, note the country/market it concerns "
+        "if identifiable, and suggest a positioning angle — how Decagon might credibly position "
+        "against it (AI-suggested angle, not official messaging; grounded, no spin). For "
+        "Decagon's own coverage, leave positioning empty.\n\n"
         f"Company: {item['company']}\nHeadline: {item['title']}\nSource: {item['source']}\n"
         f"Snippet: {item['snippet']}"
     )
@@ -186,6 +195,7 @@ def main():
             "type": verdict["type"],
             "summary": verdict["summary"],
             "positioning": verdict["positioning"],
+            "market": verdict.get("market", ""),
             "found_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         }
         store["items"].append(record)

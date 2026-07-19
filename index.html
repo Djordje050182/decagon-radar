@@ -87,6 +87,13 @@
     border: 1px solid var(--line); border-radius: 10px;
     padding: 16px 18px; margin-bottom: 12px; background: var(--paper);
   }
+  .card.own { border-left: 3px solid var(--accent); background: linear-gradient(to right, var(--accent-wash), var(--paper) 30%); }
+  .market {
+    font-size: 11.5px; font-weight: 600; color: var(--ink-soft);
+    background: var(--wash); border: 1px solid var(--line);
+    padding: 1px 7px; border-radius: 6px; white-space: nowrap;
+  }
+  .toolbar + .toolbar { margin-top: -8px; }
   .card .meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
   .card .company { font-weight: 700; }
   .card .type {
@@ -147,6 +154,7 @@
   </section>
   <section id="panel-competitors" hidden>
     <div class="toolbar" id="competitor-filters"></div>
+    <div class="toolbar" id="type-filters"></div>
     <div id="competitors-body"></div>
   </section>
 </main>
@@ -164,7 +172,7 @@ const TYPE_LABELS = {
   partnership: "Partnership", frontier_overlap: "Frontier overlap", other: "News"
 };
 let mentions = [], items = [];
-let sentimentFilter = "all", companyFilter = "all";
+let sentimentFilter = "all", companyFilter = "all", typeFilter = "all";
 
 function showTab(name) {
   for (const t of ["mentions", "competitors"]) {
@@ -203,6 +211,7 @@ function renderMentionFilters() {
 
 function setSentiment(s) { sentimentFilter = s; renderMentions(); }
 function setCompany(c) { companyFilter = c; renderCompetitors(); }
+function setType(t) { typeFilter = t; renderCompetitors(); }
 
 function renderMentions() {
   renderMentionFilters();
@@ -226,21 +235,32 @@ function renderMentions() {
 }
 
 function renderCompetitors() {
-  const companies = ["all", ...new Set(items.map(i => i.company))];
+  const companies = ["all", ...new Set(items.map(i => i.company))].sort((a, b) =>
+    a === "all" ? -1 : b === "all" ? 1 : a === "Decagon" ? -1 : b === "Decagon" ? 1 : a.localeCompare(b));
   document.getElementById("competitor-filters").innerHTML =
     companies.map(c =>
       `<button class="chip ${companyFilter === c ? "on" : ""}" onclick="setCompany('${esc(c)}')">${c === "all" ? "All companies" : esc(c)}</button>`).join("");
-  const rows = items.filter(i => companyFilter === "all" || i.company === companyFilter);
+
+  const typeCounts = {};
+  items.forEach(i => typeCounts[i.type] = (typeCounts[i.type] || 0) + 1);
+  document.getElementById("type-filters").innerHTML =
+    ["all", ...Object.keys(TYPE_LABELS).filter(t => typeCounts[t])].map(t =>
+      `<button class="chip ${typeFilter === t ? "on" : ""}" onclick="setType('${t}')">${t === "all" ? "All types" : TYPE_LABELS[t] + " (" + typeCounts[t] + ")"}</button>`).join("");
+
+  const rows = items.filter(i =>
+    (companyFilter === "all" || i.company === companyFilter) &&
+    (typeFilter === "all" || i.type === typeFilter));
   const body = document.getElementById("competitors-body");
   if (!rows.length) {
-    body.innerHTML = `<div class="empty"><b>Nothing tracked yet</b>The first competitor sweep runs soon.</div>`;
+    body.innerHTML = `<div class="empty"><b>Nothing here</b>No items match these filters yet.</div>`;
     return;
   }
   body.innerHTML = rows.map(i => `
-    <article class="card">
+    <article class="card${i.company === "Decagon" ? " own" : ""}">
       <div class="meta">
         <span class="company">${esc(i.company)}</span>
         <span class="type">${TYPE_LABELS[i.type] || "News"}</span>
+        ${i.market ? `<span class="market">${esc(i.market)}</span>` : ""}
         <span class="when">${fmtDate(i.published || i.found_at)} · ${esc(i.source)}</span>
       </div>
       <h3><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></h3>

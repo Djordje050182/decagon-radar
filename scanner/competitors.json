@@ -1,5 +1,10 @@
 [
   {
+    "name": "Decagon",
+    "news_query": "\"Decagon AI\" OR \"decagon.ai\"",
+    "feeds": []
+  },
+  {
     "name": "Sierra",
     "news_query": "\"Sierra AI\" OR \"sierra.ai\"",
     "feeds": ["https://sierra.ai/rss.xml"]
@@ -62,6 +67,16 @@
   {
     "name": "Google (frontier overlap)",
     "news_query": "Google Gemini customer service agent OR Google CCAI",
+    "feeds": []
+  },
+  {
+    "name": "ByteDance (frontier overlap)",
+    "news_query": "ByteDance Doubao enterprise OR ByteDance AI agent OR Volcano Engine agent",
+    "feeds": []
+  },
+  {
+    "name": "Open-source models",
+    "news_query": "DeepSeek model release OR Meta Llama release OR Alibaba Qwen release OR Mistral AI model release",
     "feeds": []
   }
 ]
