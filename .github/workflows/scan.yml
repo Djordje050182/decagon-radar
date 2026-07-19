@@ -1,0 +1,74 @@
+name: Daily Radar Scan
+
+on:
+  schedule:
+    - cron: "0 20 * * *" # 20:00 UTC = early morning AEST
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Backfill mode (12 months podcasts / 30 days news)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: radar-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scanner/requirements.txt
+
+      - run: pip install -r scanner/requirements.txt
+
+      - name: Podcast mention scan
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scanner/scan.py ${{ inputs.backfill && '--backfill' || '' }}
+
+      - name: Competitor watch
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scanner/competitors.py ${{ inputs.backfill && '--backfill' || '' }}
+
+      - name: Commit updated data
+        run: |
+          git config user.name "decagon-radar-bot"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Daily scan $(date -u +%F)"
+          git push
+
+      - name: Open digest issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f digest_mentions.md ] || [ -f digest_competitors.md ]; then
+            {
+              cat digest_mentions.md 2>/dev/null || true
+              echo ""
+              cat digest_competitors.md 2>/dev/null || true
+              echo ""
+              echo "---"
+              echo "Full dashboard: https://djordje050182.github.io/decagon-radar/"
+            } > digest_full.md
+            gh issue create \
+              --title "Decagon Radar digest — $(date -u +%F)" \
+              --body-file digest_full.md
+          else
+            echo "No new items today — no digest issue."
+          fi

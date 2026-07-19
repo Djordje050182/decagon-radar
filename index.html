@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decagon Radar — podcast mentions &amp; competitor watch</title>
+<meta name="description" content="Automated daily tracking of Decagon mentions across podcasts, plus competitor and industry updates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spectral:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14161a;
+    --ink-soft: #5a6072;
+    --line: #e6e8ee;
+    --paper: #ffffff;
+    --wash: #f6f7f9;
+    --accent: #1d4fd7;
+    --accent-wash: #eef2fe;
+    --pos: #0d7a4f; --pos-wash: #e7f5ee;
+    --neg: #b3362b; --neg-wash: #fbeceb;
+    --neu: #5a6072; --neu-wash: #eef0f4;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: "Instrument Sans", -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink); background: var(--paper);
+    font-size: 15px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+
+  header { border-bottom: 1px solid var(--line); padding: 28px 0 0; }
+  .masthead { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  h1 { font-family: "Spectral", Georgia, serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em; }
+  h1 .dot { color: var(--accent); }
+  .tagline { color: var(--ink-soft); font-size: 13.5px; }
+  .stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 22px 0 18px; }
+  .stat b { display: block; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .stat span { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  nav { display: flex; gap: 4px; }
+  nav button {
+    font: inherit; font-weight: 600; font-size: 14px;
+    background: none; border: none; cursor: pointer; color: var(--ink-soft);
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+  }
+  nav button.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  main { padding: 26px 0 60px; }
+  .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .chip {
+    font: inherit; font-size: 13px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--paper);
+    border-radius: 999px; padding: 4px 12px; color: var(--ink-soft);
+  }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .updated { margin-left: auto; font-size: 12.5px; color: var(--ink-soft); }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--ink-soft); font-weight: 600; padding: 8px 12px 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  tbody td { padding: 13px 12px 13px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.date { white-space: nowrap; color: var(--ink-soft); font-size: 13.5px; }
+  td.podcast { font-weight: 600; white-space: nowrap; }
+  td.episode { color: var(--ink-soft); max-width: 300px; }
+  .ts {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    background: var(--accent-wash); color: var(--accent);
+    padding: 2px 8px; border-radius: 6px; white-space: nowrap;
+  }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .badge.positive { background: var(--pos-wash); color: var(--pos); }
+  .badge.negative { background: var(--neg-wash); color: var(--neg); }
+  .badge.neutral  { background: var(--neu-wash); color: var(--neu); }
+
+  .card {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 12px; background: var(--paper);
+  }
+  .card .meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .card .company { font-weight: 700; }
+  .card .type {
+    font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--accent); background: var(--accent-wash); padding: 2px 8px; border-radius: 6px;
+  }
+  .card .when { font-size: 12.5px; color: var(--ink-soft); margin-left: auto; white-space: nowrap; }
+  .card h3 { font-size: 15.5px; font-weight: 600; margin-bottom: 4px; line-height: 1.35; }
+  .card p { color: var(--ink-soft); font-size: 14px; }
+  details { margin-top: 10px; }
+  summary {
+    cursor: pointer; font-size: 13px; font-weight: 600; color: var(--accent);
+    list-style: none;
+  }
+  summary::before { content: "→ "; }
+  details[open] summary::before { content: "↓ "; }
+  .positioning {
+    margin-top: 8px; padding: 10px 14px; background: var(--wash);
+    border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+  }
+  .positioning em { display: block; color: var(--ink-soft); font-size: 11.5px; font-style: normal; margin-top: 6px; }
+
+  .empty { text-align: center; color: var(--ink-soft); padding: 70px 20px; }
+  .empty b { display: block; font-family: "Spectral", Georgia, serif; font-size: 19px; color: var(--ink); margin-bottom: 6px; }
+
+  footer { border-top: 1px solid var(--line); padding: 18px 0 40px; font-size: 12.5px; color: var(--ink-soft); }
+
+  @media (max-width: 720px) {
+    thead { display: none; }
+    tbody tr { display: block; border-bottom: 1px solid var(--line); padding: 14px 0; }
+    tbody td { display: block; border: none; padding: 2px 0; }
+    td.episode { max-width: none; }
+    .stats { gap: 20px; }
+    .stat b { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="masthead">
+      <h1>Decagon Radar<span class="dot">.</span></h1>
+      <div class="tagline">Automated daily scan · podcast mentions &amp; competitor watch</div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <nav>
+      <button id="tab-mentions" class="active" onclick="showTab('mentions')">Podcast mentions</button>
+      <button id="tab-competitors" onclick="showTab('competitors')">Competitor watch</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="panel-mentions">
+    <div class="toolbar" id="mention-filters"></div>
+    <div id="mentions-body"></div>
+  </section>
+  <section id="panel-competitors" hidden>
+    <div class="toolbar" id="competitor-filters"></div>
+    <div id="competitors-body"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Updated daily by an automated scan of podcast captions and industry news.
+    Sentiment, summaries and positioning angles are AI-generated — verify before quoting.
+  </div>
+</footer>
+
+<script>
+const TYPE_LABELS = {
+  product_launch: "Launch", customer_win: "Customer win", funding: "Funding",
+  partnership: "Partnership", frontier_overlap: "Frontier overlap", other: "News"
+};
+let mentions = [], items = [];
+let sentimentFilter = "all", companyFilter = "all";
+
+function showTab(name) {
+  for (const t of ["mentions", "competitors"]) {
+    document.getElementById("panel-" + t).hidden = t !== name;
+    document.getElementById("tab-" + t).classList.toggle("active", t === name);
+  }
+}
+
+function fmtDate(iso) {
+  if (!iso) return "";
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+function renderStats(m, c) {
+  const pos = mentions.filter(x => x.sentiment === "positive").length;
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><b>${mentions.length}</b><span>Podcast mentions</span></div>
+    <div class="stat"><b>${mentions.length ? Math.round(pos / mentions.length * 100) + "%" : "–"}</b><span>Positive</span></div>
+    <div class="stat"><b>${items.length}</b><span>Competitor items</span></div>
+    <div class="stat"><b>${fmtDate(m.last_scan || c.last_scan) || "–"}</b><span>Last scan</span></div>`;
+}
+
+function renderMentionFilters() {
+  const counts = { all: mentions.length, positive: 0, neutral: 0, negative: 0 };
+  mentions.forEach(m => counts[m.sentiment] !== undefined && counts[m.sentiment]++);
+  document.getElementById("mention-filters").innerHTML =
+    ["all", "positive", "neutral", "negative"].map(s =>
+      `<button class="chip ${sentimentFilter === s ? "on" : ""}" onclick="setSentiment('${s}')">
+        ${s === "all" ? "All" : s[0].toUpperCase() + s.slice(1)} (${counts[s]})</button>`).join("") +
+    `<span class="updated">Timestamps link to the exact moment on YouTube</span>`;
+}
+
+function setSentiment(s) { sentimentFilter = s; renderMentions(); }
+function setCompany(c) { companyFilter = c; renderCompetitors(); }
+
+function renderMentions() {
+  renderMentionFilters();
+  const rows = mentions.filter(m => sentimentFilter === "all" || m.sentiment === sentimentFilter);
+  const body = document.getElementById("mentions-body");
+  if (!rows.length) {
+    body.innerHTML = `<div class="empty"><b>No mentions yet</b>The first scan runs soon — check back tomorrow.</div>`;
+    return;
+  }
+  body.innerHTML = `<table><thead><tr>
+      <th>Date</th><th>Podcast</th><th>Episode</th><th>Moment</th><th>Sentiment</th><th>What they discussed</th>
+    </tr></thead><tbody>` +
+    rows.map(m => `<tr>
+      <td class="date">${fmtDate(m.published)}</td>
+      <td class="podcast">${esc(m.podcast)}</td>
+      <td class="episode">${esc(m.episode)}</td>
+      <td><a class="ts" href="${esc(m.url)}" target="_blank" rel="noopener">▶ ${esc(m.timestamp_label)}</a></td>
+      <td><span class="badge ${esc(m.sentiment)}">${esc(m.sentiment)}</span></td>
+      <td>${esc(m.topic)}</td>
+    </tr>`).join("") + "</tbody></table>";
+}
+
+function renderCompetitors() {
+  const companies = ["all", ...new Set(items.map(i => i.company))];
+  document.getElementById("competitor-filters").innerHTML =
+    companies.map(c =>
+      `<button class="chip ${companyFilter === c ? "on" : ""}" onclick="setCompany('${esc(c)}')">${c === "all" ? "All companies" : esc(c)}</button>`).join("");
+  const rows = items.filter(i => companyFilter === "all" || i.company === companyFilter);
+  const body = document.getElementById("competitors-body");
+  if (!rows.length) {
+    body.innerHTML = `<div class="empty"><b>Nothing tracked yet</b>The first competitor sweep runs soon.</div>`;
+    return;
+  }
+  body.innerHTML = rows.map(i => `
+    <article class="card">
+      <div class="meta">
+        <span class="company">${esc(i.company)}</span>
+        <span class="type">${TYPE_LABELS[i.type] || "News"}</span>
+        <span class="when">${fmtDate(i.published || i.found_at)} · ${esc(i.source)}</span>
+      </div>
+      <h3><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></h3>
+      <p>${esc(i.summary)}</p>
+      ${i.positioning ? `<details><summary>How Decagon positions against this</summary>
+        <div class="positioning">${esc(i.positioning)}<em>AI-suggested angle — not official messaging.</em></div></details>` : ""}
+    </article>`).join("");
+}
+
+async function load() {
+  const bust = "?v=" + Date.now();
+  let m = { mentions: [], last_scan: null }, c = { items: [], last_scan: null };
+  try { m = await (await fetch("data/mentions.json" + bust)).json(); } catch (e) {}
+  try { c = await (await fetch("data/competitor-news.json" + bust)).json(); } catch (e) {}
+  mentions = m.mentions || [];
+  items = c.items || [];
+  renderStats(m, c);
+  renderMentions();
+  renderCompetitors();
+}
+load();
+</script>
+</body>
+</html>

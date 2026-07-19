@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Sierra",
+    "news_query": "\"Sierra AI\" OR \"sierra.ai\"",
+    "feeds": ["https://sierra.ai/rss.xml"]
+  },
+  {
+    "name": "Salesforce Agentforce",
+    "news_query": "Salesforce Agentforce",
+    "feeds": []
+  },
+  {
+    "name": "ElevenLabs",
+    "news_query": "ElevenLabs agents OR ElevenLabs \"customer support\" OR ElevenLabs voice agent",
+    "feeds": []
+  },
+  {
+    "name": "Relevance AI",
+    "news_query": "\"Relevance AI\"",
+    "feeds": []
+  },
+  {
+    "name": "Cresta",
+    "news_query": "Cresta AI contact center",
+    "feeds": []
+  },
+  {
+    "name": "Intercom (Fin)",
+    "news_query": "Intercom Fin AI agent",
+    "feeds": ["https://www.intercom.com/blog/feed/"]
+  },
+  {
+    "name": "Ada",
+    "news_query": "\"Ada\" AI customer service agent ada.cx",
+    "feeds": []
+  },
+  {
+    "name": "Forethought",
+    "news_query": "Forethought AI customer support",
+    "feeds": []
+  },
+  {
+    "name": "Parloa",
+    "news_query": "Parloa",
+    "feeds": []
+  },
+  {
+    "name": "PolyAI",
+    "news_query": "PolyAI voice assistant",
+    "feeds": []
+  },
+  {
+    "name": "OpenAI (frontier overlap)",
+    "news_query": "OpenAI customer support agent OR OpenAI voice agent enterprise",
+    "feeds": ["https://openai.com/news/rss.xml"]
+  },
+  {
+    "name": "Anthropic (frontier overlap)",
+    "news_query": "Anthropic Claude customer support agent OR Anthropic enterprise agent",
+    "feeds": []
+  },
+  {
+    "name": "Google (frontier overlap)",
+    "news_query": "Google Gemini customer service agent OR Google CCAI",
+    "feeds": []
+  }
+]
