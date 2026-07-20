@@ -1,1 +1,17 @@
-{"mentions": [], "last_scan": null}
+{
+  "mentions": [
+    {
+      "video_id": "LUkbZHSQIog",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "Enterprises Fear Frontier Models | Sam Altman Offers Trump 5% of OpenAI | DeepSeek Builds Own Chips",
+      "published": "2026-07-09T14:17:06Z",
+      "timestamp": 3727,
+      "timestamp_label": "1:02:07",
+      "url": "https://www.youtube.com/watch?v=LUkbZHSQIog&t=3727s",
+      "sentiment": "positive",
+      "topic": "Discussion of Decagon's CEO Jesse Zhang's insights on frontier versus open-source model usage in AI customer experience solutions and cost optimization strategies.",
+      "found_at": "2026-07-20T08:38:21+00:00"
+    }
+  ],
+  "last_scan": "2026-07-20T08:40:06+00:00"
+}
