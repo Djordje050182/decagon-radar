@@ -65,6 +65,8 @@ BRAND_PATTERNS = [(name, re.compile(pat, re.IGNORECASE), desc) for name, pat, de
 CONTEXT_SECONDS = 60          # transcript context around a hit sent to Claude
 MENTION_GAP_SECONDS = 120     # hits closer than this collapse into one mention
 MAX_CAPTION_RETRIES = 3       # daily runs a video gets before we give up
+MAX_RUNTIME_MIN = int(os.environ.get("MAX_RUNTIME_MIN", 300))  # stop before CI's 6h kill so data commits
+RUN_START = time.monotonic()
 
 HAIKU = "claude-haiku-4-5"
 ANALYSIS_SCHEMA = {
@@ -290,6 +292,9 @@ def main():
             continue
         if consecutive_blocks >= 15:
             print("  !! aborting caption scan: YouTube is blocking this IP — remaining videos left for a later run")
+            break
+        if time.monotonic() - RUN_START > MAX_RUNTIME_MIN * 60:
+            print(f"  !! runtime cap ({MAX_RUNTIME_MIN} min) reached — stopping gracefully, remaining videos next run")
             break
         try:
             snippets = fetch_transcript(vid)
