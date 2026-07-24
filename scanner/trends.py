@@ -119,22 +119,33 @@ def main():
         "SIGNALS:\n" + "\n".join(lines[:400])
     )
 
-    messages = [{"role": "user", "content": prompt}]
-    while True:
-        response = client.messages.create(
-            model=MODEL,
-            max_tokens=16000,  # adaptive thinking shares this budget; 4k truncated mid-JSON
-            tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}],
-            output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
-            messages=messages,
-        )
-        if response.stop_reason == "pause_turn":
-            messages = [{"role": "user", "content": prompt},
-                        {"role": "assistant", "content": response.content}]
-            continue
-        break
-    text = "".join(b.text for b in response.content if b.type == "text")
-    result = json.loads(text)
+    def synthesise(use_search):
+        messages = [{"role": "user", "content": prompt}]
+        kwargs = {}
+        if use_search:
+            kwargs["tools"] = [{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}]
+        while True:
+            response = client.messages.create(
+                model=MODEL,
+                max_tokens=16000,  # adaptive thinking shares this budget; 4k truncated mid-JSON
+                output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
+                messages=messages,
+                **kwargs,
+            )
+            if response.stop_reason == "pause_turn":
+                messages = messages[:1] + [{"role": "assistant", "content": response.content}]
+                continue
+            break
+        text = "".join(b.text for b in response.content if b.type == "text")
+        return json.loads(text)
+
+    # occasionally the search+schema combination yields an empty shell — retry, then drop search
+    result = None
+    for attempt, use_search in enumerate([True, True, False]):
+        result = synthesise(use_search)
+        if result["themes"] and result["overview"].strip():
+            break
+        print(f"  ! empty synthesis on attempt {attempt + 1} (search={use_search}), retrying")
     result["generated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     result["window_days"] = WINDOW_DAYS
     result["signal_count"] = len(lines)
