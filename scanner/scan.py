@@ -223,7 +223,7 @@ def main():
 
     if not YT_KEY:
         sys.exit("YOUTUBE_API_KEY is not set")
-    client = anthropic.Anthropic()  # needs ANTHROPIC_API_KEY
+    client = anthropic.Anthropic(timeout=90.0)  # fail fast on wedged connections; SDK retries
 
     days = 365 if args.backfill else 3
     max_pages = 8 if args.backfill else 1

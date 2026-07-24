@@ -1,42 +1,52 @@
 {
-  "overview": "The last 90 days show an enterprise AI agent market that is simultaneously consolidating and commoditizing. Salesforce is throwing enormous capital and product surface area at Agentforce ($1B ARR claimed, $1B Swiss investment, F1 partnership, WEM, Commerce GA) while its own analyst base (KeyBanc, multiple downgrades) openly questions whether any of it is landing with real customers — a credibility gap Decagon's sales team should be actively exploiting in competitive deals. Meanwhile pure-play competitors are moving fast: Sierra bought TakeOff to get long-horizon agent orchestration, signed an exclusive SoftBank distribution deal that took a Japanese client from 83% to 97% resolution, and is running at ~$200M ARR / $15.8B valuation — this is the most credible head-to-head competitor right now, not Salesforce. Intercom's $3B acquisition of Fin and the broader wave of 'buying data for AI' M&A signals that horizontal platforms see AI-native support as the acquisition target of choice, not a build-it-yourself problem.\n\nUnderneath all of this, the model layer is being commoditized at startling speed. DeepSeek, Kimi K3, GLM-5.2, Moonshot, and Mistral's Leanstral are collapsing frontier-adjacent capability to a fraction of the cost, while OpenAI and Anthropic respond not by competing on price but by pushing directly into agent orchestration and workflow territory (ChatGPT Work, GPT-Live, Claude Cowork, Claude Tag) — territory that used to be Decagon's differentiated ground. Voice is emerging as a distinct, well-capitalized sub-battle (ElevenLabs doubling to $22B, IBM and TELUS partnerships) separate from the chat/orchestration fight. The net effect: model access is ceasing to be a moat for anyone, and the competitive question is shifting to deployment reliability, outcome-based pricing, and vertical distribution — exactly the areas where the market narrative (Anthropic/VentureBeat: 'most deployments are glorified chatbots') suggests almost nobody has actually won yet.",
+  "overview": "The market is bifurcating fast. On one side, frontier labs are moving directly into Decagon's territory: OpenAI shipped Presence (an enterprise voice/chat agent platform with data connectors and a consulting-style deployment arm) and GPT-Live, while Anthropic pushed Claude Cowork, Claude Tag, and Slack/Teams integrations — all framed as 'agentic orchestration' rather than just model access. This is no longer speculative; it is now showing up as competitive product with case studies (Cars24, Deutsche Telekom, HP) and pricing muscle. At the same time, the open-source/Chinese model wave (DeepSeek, Qwen 3.8, Kimi K3, Mistral) is compressing inference costs industry-wide, which lowers the barrier for anyone — marketplace players, in-house teams, or frontier labs — to stand up a 'good enough' agent cheaply.\n\nMeanwhile the incumbent CX/CRM vendors are bolting AI onto existing installed bases with mixed credibility: Salesforce is touting $1B Agentforce ARR and a Switzerland mega-investment, yet KeyBanc, Morgan Stanley commentary, and multiple downgrades all say adoption isn't matching the narrative. Intercom's $3B acquisition of Fin (alongside Cognite and MaintainX buys elsewhere) signals that the fastest path to credible AI-native support for a legacy platform is acquisition, not build. Cresta continues to dominate the adjacent 'agent-assist/coaching' category with an enormous, evidence-dense case-study library (Porsche, United, Alaska Airlines, Aqua Finance, Achieve) — it's a different wedge (augmenting human agents vs. autonomous resolution) but it's eating budget in the same buying centers.\n\nFor Decagon specifically, direct-resolution competitors Sierra and Cresta are both scaling aggressively — Sierra via acquisition (TakeOff), international distribution (SoftBank/Japan exclusive), and outcomes-based pricing (Horizon), and Cresta via sheer case-study volume across enterprise verticals. Decagon's own signal set (Voice launch, OpenAI/Anthropic co-marketing, AWS Marketplace listing, Five9 integration, Duet Autopilot, EMEA/Toronto/Sydney expansion, dense 2026 customer-logo cadence) shows it's keeping pace on product and distribution, but the sales team should expect every competitive deal cycle now to include a 'why not just use OpenAI/Anthropic directly' objection and a pricing-model challenge (seat vs. resolution-based).",
   "themes": [
     {
-      "name": "Salesforce's Agentforce credibility gap",
-      "description": "Salesforce is spending aggressively on Agentforce (regional investment, F1 sponsorship, new pricing models, WEM, Commerce GA) yet its own sell-side analysts report weak customer traction and product immaturity. This is a wedge for Decagon reps: incumbent CRM distribution is not translating into agent adoption.",
+      "name": "Frontier labs descending into the application layer",
+      "description": "OpenAI (Presence, GPT-Live, ChatGPT Work) and Anthropic (Claude Cowork, Claude Tag, Teams/Slack integrations) are no longer content to be model suppliers — they're shipping enterprise-branded agent platforms with guardrails, data connectors, and even consulting-style deployment services. This directly targets the exact buyer Decagon sells to: enterprises wanting a 'trusted' voice/chat agent layer.",
+      "momentum": "rising",
+      "evidence": [
+        "OpenAI unveils Presence, a new platform that lets enterprises launch and manage realtime voice agents and chatbots - VentureBeat",
+        "OpenAI tries the consulting path with 'Presence', charging enterprises boots-on-the-ground prices to deploy agents - The Register",
+        "Anthropic launches Claude Tag, replacing its Slack app with a persistent AI teammate - VentureBeat",
+        "ChatGPT is now a partner for your most ambitious work"
+      ]
+    },
+    {
+      "name": "Open-source/Chinese model price-performance war",
+      "description": "DeepSeek, Alibaba's Qwen 3.8, Moonshot's Kimi K3, and Mistral are compressing the cost of frontier-grade reasoning and TTS, with near-weekly 'DeepSeek moment' headlines throughout the tracking window. This erodes any moat based purely on model access and pushes competitive differentiation toward orchestration, evaluation, and vertical workflow depth — exactly where Decagon has been investing (Simulations, DuetBench, QA Hub).",
+      "momentum": "rising",
+      "evidence": [
+        "DeepSeek Raises $7.4 Billion, Targets 2027 IPO as AI Price War Intensifies",
+        "Alibaba launches Qwen 3.8 with 24 trillion parameters, targets frontier AI models",
+        "Kimi K3 Repeats the DeepSeek Scare, But the Real Threat Is AI Pricing",
+        "Samsung Reportedly Weighs €1B Mistral AI Investment"
+      ]
+    },
+    {
+      "name": "Outcome-based pricing becomes a competitive weapon",
+      "description": "Salesforce's Agentforce Help Agent (pay-per-resolution) and Sierra's Horizon agents (pay-for-results) are both explicitly abandoning seat/token pricing in favor of outcome-based models to counter buyer skepticism about ROI. This is becoming a proof-point enterprises will expect from every vendor, including Decagon, in RFPs.",
+      "momentum": "rising",
+      "evidence": [
+        "Salesforce Agentforce Help Agent Introduces Pay-for-Resolution AI Model - Cloud Wars",
+        "The next Horizon in agents (Sierra, outcomes-based pricing)",
+        "Salesforce's Agentforce Help Agent Bets on Pay-Per-Resolution, Will Enterprises Trust the Model?"
+      ]
+    },
+    {
+      "name": "Incumbent bolt-on AI faces a credibility gap",
+      "description": "Salesforce is publicizing Agentforce's $1B ARR milestone and major deployments (F1 Racing Bulls, TTEC, Switzerland investment), yet a steady drumbeat of analyst skepticism (KeyBanc, multiple downgrades) says real customer traction lags the marketing. This creates an opening for Decagon to win 'Agentforce didn't work' displacement deals, but also signals that headline ARR numbers from incumbents shouldn't be taken at face value by the sales team when competing.",
       "momentum": "steady",
       "evidence": [
         "Salesforce Stock Hit a 44% Drawdown. Agentforce ARR Just Crossed $1 Billion.",
         "Salesforce's Agentforce product maturity questioned as KeyBanc cites weak customer traction",
-        "Salesforce Downgraded On Views 'Agentforce, As A Product, Just Isn't There'",
-        "Salesforce Can't Catch A Break: Analyst Downgrades CRM Stock And Finds Little Proof Agentforce Is Gaining Speed"
+        "Salesforce Can't Catch A Break: Analyst Downgrades CRM Stock And Finds Little Proof Agentforce Is Gaining Speed",
+        "Salesforce Downgraded On Views 'Agentforce, As A Product, Just Isn't There'"
       ]
     },
     {
-      "name": "Model-layer commoditization via Chinese open-source labs",
-      "description": "DeepSeek, Kimi K3, GLM-5.2 and Moonshot are repeatedly triggering 'DeepSeek moment' price/performance shocks, with DeepSeek alone reportedly nearing a $74B valuation and IPO. This erodes any moat based on proprietary model access and pushes differentiation toward orchestration, reliability, and vertical workflow design.",
-      "momentum": "rising",
-      "evidence": [
-        "DeepSeek V4 Full-Power Version Exposed",
-        "China's Moonshot Delivers a New 'DeepSeek' Moment",
-        "China's DeepSeek to raise fresh capital at $74 billion valuation ahead of onshore IPO",
-        "Kimi K3 vs DeepSeek V4 Pro vs GLM-5.2: Open Trillion-Scale MoE Models Compared"
-      ]
-    },
-    {
-      "name": "Frontier labs moving down into agent orchestration",
-      "description": "OpenAI (ChatGPT Work, GPT-Live) and Anthropic (Claude Cowork, Claude Tag, Teams integration) are no longer content shipping raw models — they're building persistent, autonomous, workflow-embedded agents that directly overlap customer-support and enterprise-ops use cases Decagon targets. This is the most structurally important competitive shift in the period.",
-      "momentum": "rising",
-      "evidence": [
-        "ChatGPT is now a partner for your most ambitious work",
-        "Anthropic expands Claude Cowork to web and mobile as enterprise use broadens",
-        "Anthropic launches Claude Tag, replacing its Slack app with a persistent AI teammate",
-        "Introducing GPT-Live"
-      ]
-    },
-    {
-      "name": "M&A consolidation for vertical agent capability",
-      "description": "Well-funded platforms are buying rather than building agent-specific capability and data: Intercom's $3B Fin acquisition and Sierra's TakeOff acquisition both signal that scaled long-horizon agent technology and support-specific data are treated as acquirable, scarce assets.",
+      "name": "Consolidation accelerating category maturity",
+      "description": "Intercom's $3B acquisition of Fin, alongside Sierra's acquisition of TakeOff (~$10M ARR long-horizon agent platform), shows that both legacy support platforms and AI-native leaders are buying rather than building for missing capabilities (data assets, long-horizon orchestration). Expect more consolidation as venture-funded point solutions get folded into platform players.",
       "momentum": "rising",
       "evidence": [
         "Three $3B B2B Acquisitions in 30 Days: Intercom/Fin, Cognite, and MaintainX. They All Bought the Same Thing: Data for AI",
@@ -45,62 +55,51 @@
       ]
     },
     {
-      "name": "Voice AI as a distinct, fast-scaling battleground",
-      "description": "Voice is decoupling from general chat/agent platforms into its own arms race — ElevenLabs doubled to a $22B valuation and struck enterprise partnerships with IBM and TELUS Digital, while latency and self-hosted alternatives (Asterisk/FreePBX AVA) proliferate. Sierra's SoftBank Japan deal also underscores voice/contact-center as the highest-value deployment surface.",
+      "name": "Voice becomes the next competitive frontier",
+      "description": "ElevenLabs doubled its valuation to $22B, OpenAI shipped GPT-Live for realtime voice, Decagon launched Decagon Voice, and Cresta continues pushing real-time coaching — all pointing to voice as the newest and least-commoditized battleground in customer support AI, distinct from the now-saturated text/chat layer.",
       "momentum": "rising",
       "evidence": [
-        "ElevenLabs Valuation Doubles to $22 Billion",
-        "IBM and ElevenLabs: Enterprise AI Finds its Voice",
-        "TELUS Digital and ElevenLabs Partner to Scale Voice AI Alongside Frontline Customer Care Teams",
-        "SoftBank Corp 9434: Sierra AI Partnership Pushes Inquiry Resolution From 83% to 97% in Japan"
-      ]
-    },
-    {
-      "name": "Outcome-based pricing displacing seat/token pricing",
-      "description": "Both Salesforce (Agentforce Help Agent pay-for-resolution) and Sierra (Horizon agents, outcomes-based pricing) are independently moving to charge for resolved outcomes rather than seats or tokens, signaling this is becoming the expected commercial model for enterprise buyers evaluating support agents.",
-      "momentum": "rising",
-      "evidence": [
-        "Salesforce Agentforce Help Agent Introduces Pay-for-Resolution AI Model",
-        "Salesforce's Agentforce Help Agent Bets on Pay-Per-Resolution, Will Enterprises Trust the Model?",
-        "The next Horizon in agents",
-        "Salesforce Launches Agentforce Help Agent That Deploys in Minutes and Only Charges for Resolutions"
+        "ElevenLabs Valuation Doubles to $22 Billion: Voice Cloning Reaches Its Biggest Test",
+        "Announcing Decagon Voice | Decagon",
+        "Introducing GPT-Live",
+        "Voice Agent Latency: Why Milliseconds Matter for Enterprise AI Adoption"
       ]
     }
   ],
-  "convergence": "The market is converging on a single fight from multiple directions at once: frontier labs (OpenAI, Anthropic) are moving down-stack from raw models into persistent agent orchestration and workflow automation; CRM incumbents (Salesforce) are bolting agent products onto existing suites but struggling to prove real-world resolution quality; horizontal engagement platforms (Intercom) are buying vertical AI-native support capability outright; specialist pure-plays (Sierra) are racing to out-execute both by acquiring long-horizon agent tech and locking up exclusive regional distribution (SoftBank/Japan); and voice specialists (ElevenLabs, Parloa) are partnering into enterprise contact centers rather than building full agent platforms themselves. Underneath all of it, the open-source model collapse (DeepSeek, Kimi, GLM, Mistral) is stripping away model access as a differentiator for everyone, which means the actual points of collision — where Decagon will meet Salesforce, Sierra, Intercom/Fin, and OpenAI/Anthropic head-on in the same RFPs — are deployment reliability, outcome-based pricing, and voice latency, not model IP.",
+  "convergence": "The market is converging on a single battleground from three directions at once: frontier labs (OpenAI, Anthropic) are moving down into packaged enterprise agent products, incumbent SaaS/CRM vendors (Salesforce, Intercom via Fin) are bolting on or acquiring AI-native agent capability to defend their installed base, and AI-native specialists (Decagon, Sierra, Cresta) are pushing upmarket with vertical depth, evaluation tooling, and outcome-based pricing to defend against commoditization from both ends. Simultaneously, no-code marketplaces like Relevance AI are attacking from below, targeting SMB/mid-market buyers who don't need bespoke deployment — a segment incumbents and frontier labs mostly ignore. The open-source/Chinese model price war is the great equalizer underneath all of this: it means the fight is shifting away from 'who has the best model' toward who can prove reliable, governed, outcome-verified deployment at enterprise scale — which is exactly the terrain Decagon, Sierra, and now OpenAI Presence are all racing to occupy simultaneously.",
   "predictions": [
     {
-      "claim": "Outcome-based / pay-per-resolution pricing becomes a standard RFP requirement in enterprise customer-support agent deals, forcing most vendors including Decagon to offer it as an option.",
+      "claim": "OpenAI Presence and/or Anthropic's Claude Cowork will appear as named competitors in a material share of Decagon's enterprise deal cycles.",
+      "horizon": "next 2 quarters",
+      "confidence": "high",
+      "rationale": "Presence and Cowork are explicitly positioned as enterprise voice/chat agent platforms with data connectors and guardrails, directly overlapping Decagon's pitch, and both already have public enterprise case studies (Cars24, UST)."
+    },
+    {
+      "claim": "Outcome-based/pay-per-resolution pricing will become a standard RFP requirement rather than a differentiator.",
       "horizon": "by end of 2026",
       "confidence": "high",
-      "rationale": "Salesforce and Sierra, the two most visible competitors, both moved to outcomes-based pricing within the same month, indicating convergent buyer pressure."
+      "rationale": "Both Salesforce (Agentforce Help Agent) and Sierra (Horizon) have already moved to resolution-based pricing, and enterprise buyers cited in KeyBanc/Morgan Stanley commentary are explicitly demanding proof of ROI."
     },
     {
-      "claim": "Salesforce will publish a wave of customer case studies and adoption metrics specifically to counter the KeyBanc/analyst narrative that Agentforce lacks traction.",
-      "horizon": "next two quarters",
+      "claim": "At least one more mid-size AI customer-support or agent-infrastructure startup will be acquired by an incumbent support/CRM platform.",
+      "horizon": "next 2 quarters",
       "confidence": "medium",
-      "rationale": "Repeated downgrades and public skepticism (KeyBanc, Investor's Business Daily, Yahoo Finance) create direct pressure on Salesforce to manufacture proof points."
+      "rationale": "The Intercom/Fin ($3B) and Sierra/TakeOff deals in the same 30-day window suggest incumbents view acquisition as faster than in-house agent R&D."
     },
     {
-      "claim": "At least one more $1B+ acquisition will occur in the AI customer-support/agent space, likely a frontier lab or CRM platform acquiring a specialist voice or long-horizon agent startup.",
-      "horizon": "next two quarters",
-      "confidence": "medium",
-      "rationale": "The Intercom/Fin ($3B) and Sierra/TakeOff acquisitions in the same month suggest an active consolidation cycle rather than isolated events."
-    },
-    {
-      "claim": "Multi-model routing (dynamically switching between frontier and open-source/Chinese models based on task and cost) becomes a standard architectural feature enterprise buyers expect from agent platforms, reducing the importance of any single model partnership.",
+      "claim": "Salesforce Agentforce will continue to post strong headline ARR/revenue figures while analyst skepticism about real usage depth persists through the year.",
       "horizon": "by end of 2026",
-      "confidence": "high",
-      "rationale": "The rapid cadence of DeepSeek/Kimi/GLM releases matching frontier capability at a fraction of cost makes single-model dependency a competitive liability."
+      "confidence": "medium",
+      "rationale": "Multiple analyst downgrades (KeyBanc, unnamed downgrades) contradict Salesforce's own ARR and stock-surge announcements within the same tracking window, indicating a structural gap between bookings and production usage."
     },
     {
-      "claim": "Voice will overtake text/chat as the primary growth and differentiation battleground in enterprise support agents, with more telco/BPO-style exclusive distribution deals following the Sierra-SoftBank model.",
-      "horizon": "by mid-2027",
+      "claim": "Voice agent quality (latency, naturalness) will become a primary purchase criterion, prompting Decagon and competitors to invest more heavily in voice than in chat-only differentiation.",
+      "horizon": "next 2-3 quarters",
       "confidence": "medium",
-      "rationale": "ElevenLabs' valuation doubling, IBM and TELUS partnerships, and Sierra's Japan resolution-rate jump all point to voice as where budget and measurable ROI are concentrating fastest."
+      "rationale": "ElevenLabs' valuation doubling, OpenAI's GPT-Live, Decagon's own Voice launch, and explicit latency-focused analyst coverage all point to voice as the newest area of active capability competition."
     }
   ],
-  "generated_at": "2026-07-24T05:26:28+00:00",
+  "generated_at": "2026-07-24T10:02:17+00:00",
   "window_days": 90,
-  "signal_count": 93
+  "signal_count": 283
 }

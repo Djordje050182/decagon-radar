@@ -70,7 +70,7 @@ SCHEMA = {
 
 
 def main():
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(timeout=180.0)  # synthesis is one long call; still bound it
     cutoff = datetime.now(timezone.utc) - timedelta(days=WINDOW_DAYS)
 
     news = json.loads((DATA / "competitor-news.json").read_text())

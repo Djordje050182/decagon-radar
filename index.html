@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Decagon Radar — mentions, competitors &amp; market trends</title>
 <meta name="description" content="Automated daily tracking of Decagon across podcasts, competitor news, community discussion and market trends.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,8 +41,9 @@
 
   header { background: var(--navy); color: #fff; padding: 26px 0 0; }
   .masthead { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .mark { flex: 0 0 auto; }
-  h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+  .mark { flex: 0 0 auto; height: 30px; width: auto; }
+  h1 { font-size: 21px; font-weight: 800; letter-spacing: 0.18em; }
+  h1 .radar { font-weight: 400; color: #aebadf; }
   .tagline { width: 100%; color: #aebadf; font-size: 13.5px; margin-top: 2px; font-weight: 500; }
   .stats { display: grid; grid-template-columns: repeat(4, auto); gap: 12px 40px; justify-content: start; margin: 24px 0 20px; }
   .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
@@ -69,6 +71,13 @@
     min-height: 32px;
   }
   .chip.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .search {
+    font: inherit; font-size: 14px; width: 100%; max-width: 420px;
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 9px 14px; margin-bottom: 12px; color: var(--ink);
+    background: var(--wash);
+  }
+  .search:focus { outline: 2px solid var(--accent); outline-offset: -1px; background: var(--paper); }
   .updated { margin-left: auto; font-size: 12.5px; color: var(--ink-soft); flex: 0 0 auto; }
 
   table { width: 100%; border-collapse: collapse; }
@@ -176,11 +185,8 @@
 <header>
   <div class="wrap">
     <div class="masthead">
-      <svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
-        <polygon points="50,3 79,12 97,37 97,63 79,88 50,97 21,88 3,63 3,37 21,12"
-                 fill="none" stroke="#ffffff" stroke-width="7"/>
-      </svg>
-      <h1>Decagon Radar</h1>
+      <img class="mark" src="assets/decagon-mark-white.png" alt="Decagon" width="40" height="30">
+      <h1>DECAGON <span class="radar">RADAR</span></h1>
       <div class="tagline">Automated daily intelligence · podcast mentions, competitor moves &amp; market trends</div>
     </div>
     <div class="stats" id="stats"></div>
@@ -194,11 +200,13 @@
 
 <main class="wrap">
   <section id="panel-mentions">
+    <input class="search" id="mention-search" type="search" placeholder="Search podcasts, episodes, topics…" oninput="mentionQuery=this.value;renderMentions()">
     <div class="toolbar" id="mention-filters"></div>
     <div id="mentions-body"></div>
   </section>
 
   <section id="panel-competitors" hidden>
+    <input class="search" id="competitor-search" type="search" placeholder="Search stories, companies, summaries…" oninput="searchQuery=this.value;renderCompetitors()">
     <div class="toolbar" id="time-filters"></div>
     <div class="toolbar" id="competitor-filters"></div>
     <div class="toolbar" id="type-filters"></div>
@@ -235,12 +243,21 @@ const MOM_ICON = { rising: "▲ Rising", steady: "→ Steady", cooling: "▼ Coo
 
 let mentions = [], items = [], trends = null;
 let sentimentFilter = "all", companyFilter = "all", typeFilter = "all", timeFilter = "all";
+let searchQuery = "", mentionQuery = "";
+function matches(q, ...fields) {
+  if (!q.trim()) return true;
+  const hay = fields.join(" ").toLowerCase();
+  return q.toLowerCase().trim().split(/\s+/).every(w => hay.includes(w));
+}
 
+let activeTab = "mentions", scannedCount = 0, channelCount = 0;
 function showTab(name) {
+  activeTab = name;
   for (const t of ["mentions", "competitors", "trends"]) {
     document.getElementById("panel-" + t).hidden = t !== name;
     document.getElementById("tab-" + t).classList.toggle("active", t === name);
   }
+  renderStats();
 }
 function fmtDate(iso) {
   if (!iso) return "";
@@ -252,17 +269,37 @@ function esc(s) {
 function itemDate(i) { return new Date(i.published || i.found_at); }
 function withinDays(i, days) {
   if (days === "all") return true;
-  return (Date.now() - itemDate(i).getTime()) <= Number(days) * 86400000;
+  if (!i.published) return false; // undated company-site pages only appear under All time
+  return (Date.now() - new Date(i.published).getTime()) <= Number(days) * 86400000;
 }
 
-function renderStats(m, c) {
-  const pos = mentions.filter(x => x.sentiment === "positive").length;
-  const week = items.filter(i => withinDays(i, "7")).length;
-  document.getElementById("stats").innerHTML = `
-    <div class="stat"><b>${mentions.length}</b><span>Podcast mentions</span></div>
-    <div class="stat"><b>${mentions.length ? Math.round(pos / mentions.length * 100) + "%" : "–"}</b><span>Positive</span></div>
-    <div class="stat"><b>${items.length}</b><span>Market items</span></div>
-    <div class="stat"><b>${week}</b><span>This week</span></div>`;
+function renderStats() {
+  let cells;
+  if (activeTab === "mentions") {
+    const pos = mentions.filter(x => x.sentiment === "positive").length;
+    cells = [
+      [mentions.length, "Podcast mentions"],
+      [mentions.length ? Math.round(pos / mentions.length * 100) + "%" : "–", "Positive"],
+      [channelCount || "–", "Shows watched"],
+      [scannedCount || "–", "Episodes scanned"],
+    ];
+  } else if (activeTab === "competitors") {
+    cells = [
+      [items.length, "Market items"],
+      [items.filter(i => withinDays(i, "7")).length, "This week"],
+      [new Set(items.map(i => i.company)).size, "Companies tracked"],
+      [items.filter(i => i.type === "customer_win").length, "Customer wins"],
+    ];
+  } else {
+    cells = [
+      [trends ? trends.signal_count : "–", "Signals analysed"],
+      [trends ? trends.themes.length : "–", "Themes"],
+      [trends ? trends.predictions.length : "–", "Predictions"],
+      [trends ? fmtDate(trends.generated_at) : "–", "Refreshed"],
+    ];
+  }
+  document.getElementById("stats").innerHTML = cells.map(([v, l]) =>
+    `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
 }
 
 /* ---------- Podcast mentions ---------- */
@@ -275,7 +312,9 @@ function renderMentions() {
       `<button class="chip ${sentimentFilter === s ? "on" : ""}" onclick="setSentiment('${s}')">
         ${s === "all" ? "All" : s[0].toUpperCase() + s.slice(1)} (${counts[s]})</button>`).join("") +
     `<span class="updated">Timestamps link to the exact moment on YouTube</span>`;
-  const rows = mentions.filter(m => sentimentFilter === "all" || m.sentiment === sentimentFilter);
+  const rows = mentions.filter(m =>
+    (sentimentFilter === "all" || m.sentiment === sentimentFilter) &&
+    matches(mentionQuery, m.podcast, m.episode, m.topic));
   const body = document.getElementById("mentions-body");
   if (!rows.length) {
     body.innerHTML = `<div class="empty"><b>No mentions yet</b>The archive scan is in progress — check back soon.</div>`;
@@ -322,7 +361,8 @@ function renderCompetitors() {
 
   const rows = inTime.filter(i =>
     (companyFilter === "all" || i.company === companyFilter) &&
-    (typeFilter === "all" || i.type === typeFilter));
+    (typeFilter === "all" || i.type === typeFilter) &&
+    matches(searchQuery, i.company, i.title, i.summary, i.source, i.market || ""));
   const body = document.getElementById("competitors-body");
   if (!rows.length) {
     body.innerHTML = `<div class="empty"><b>Nothing here</b>No items match these filters.</div>`;
@@ -336,7 +376,7 @@ function renderCompetitors() {
         <span class="company">${esc(i.company)}</span>
         <span class="type" style="background:${t.color}">${t.label}</span>
         ${i.market ? `<span class="market">${esc(i.market)}</span>` : ""}
-        <span class="when">${fmtDate(i.published || i.found_at)} · ${esc(i.source)}</span>
+        <span class="when">${i.published ? (i.date_estimated ? "≈ " : "") + fmtDate(i.published) : "undated"} · ${esc(i.source)}</span>
       </div>
       <h3><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title)}</a></h3>
       <p>${esc(i.summary)}</p>
@@ -356,8 +396,8 @@ function weeklyVolumeChart() {
     const start = new Date(end.getTime() - 7 * 86400000);
     buckets.push({ start, end, counts: Object.fromEntries(TYPE_ORDER.map(t => [t, 0])) });
   }
-  items.forEach(i => {
-    const d = itemDate(i);
+  items.filter(i => i.published).forEach(i => {
+    const d = new Date(i.published);
     for (const b of buckets) if (d > b.start && d <= b.end) { b.counts[i.type] = (b.counts[i.type] || 0) + 1; break; }
   });
   const max = Math.max(1, ...buckets.map(b => Object.values(b.counts).reduce((a, v) => a + v, 0)));
@@ -446,9 +486,16 @@ async function load() {
   try { m = await (await fetch("data/mentions.json" + bust)).json(); } catch (e) {}
   try { c = await (await fetch("data/competitor-news.json" + bust)).json(); } catch (e) {}
   try { trends = await (await fetch("data/trends.json" + bust)).json(); } catch (e) { trends = null; }
+  try {
+    const sv = await (await fetch("data/scanned-videos.json" + bust)).json();
+    scannedCount = Object.values(sv).filter(v => v.status === "done").length;
+  } catch (e) {}
+  try {
+    channelCount = (await (await fetch("scanner/channels.json" + bust)).json()).length;
+  } catch (e) {}
   mentions = m.mentions || [];
   items = c.items || [];
-  renderStats(m, c);
+  renderStats();
   renderMentions();
   renderCompetitors();
   renderTrends();

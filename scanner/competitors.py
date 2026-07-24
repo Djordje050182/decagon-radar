@@ -17,6 +17,7 @@ Usage:
 import argparse
 import calendar
 import json
+import os
 import re
 import sys
 import time
@@ -31,7 +32,7 @@ import anthropic
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 HAIKU = "claude-haiku-4-5"
-MAX_ITEMS_PER_RUN = 60
+MAX_ITEMS_PER_RUN = int(os.environ.get("MAX_ITEMS_PER_RUN", 60))
 
 SCHEMA = {
     "type": "object",
@@ -80,10 +81,11 @@ def clean(text):
 
 
 def collect(competitor, cutoff):
-    """Yield candidate items from first-party feeds + Google News."""
+    """Yield candidate items from first-party feeds + Google News (all queries)."""
     urls = list(competitor["feeds"])
-    q = urllib.parse.quote(competitor["news_query"])
-    urls.append(f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en")
+    for query in competitor.get("news_queries") or [competitor["news_query"]]:
+        q = urllib.parse.quote(query)
+        urls.append(f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en")
 
     for url in urls:
         first_party = "news.google.com" not in url
@@ -104,6 +106,110 @@ def collect(competitor, cutoff):
                 "published": date.isoformat(timespec="seconds") if date else None,
                 "snippet": clean(entry.get("summary", ""))[:1500],
             }
+
+
+UA = {"User-Agent": "Mozilla/5.0 (decagon-radar research bot)"}
+MAX_SITEMAP_FETCHES = int(os.environ.get("MAX_SITEMAP_FETCHES", 40))  # page fetches per competitor per run
+
+
+def _sitemap_locs(url, depth=0):
+    """All <loc> page URLs from a sitemap, recursing one level into indexes."""
+    try:
+        xml = requests.get(url, headers=UA, timeout=25).text
+    except Exception as e:
+        print(f"  ! sitemap failed {url}: {e}")
+        return []
+    child_maps = re.findall(r"<sitemap>\s*<loc>(.*?)</loc>", xml, re.S)
+    if child_maps and depth == 0:
+        locs = []
+        for child in child_maps:
+            if re.search(r"blog|news|press|page", child, re.I):
+                locs += _sitemap_locs(child.strip(), depth=1)
+        return locs
+    return [m.strip() for m in re.findall(r"<loc>(.*?)</loc>", xml)]
+
+
+def _page_meta(url):
+    """Fetch a page and extract og:title / description / published date."""
+    html = requests.get(url, headers=UA, timeout=25).text[:200000]
+
+    def meta(*names):
+        for n in names:
+            m = re.search(
+                r'<meta[^>]+(?:property|name)=["\']' + re.escape(n) + r'["\'][^>]+content=["\']([^"\']+)',
+                html, re.I,
+            ) or re.search(
+                r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']' + re.escape(n) + r'["\']',
+                html, re.I,
+            )
+            if m:
+                return m.group(1)
+        return ""
+
+    title = meta("og:title") or (re.search(r"<title>([^<]+)</title>", html, re.I) or [None, ""])[1]
+    desc = meta("og:description", "description")
+    published = meta("article:published_time", "og:article:published_time", "datePublished")
+    if not published:
+        m = re.search(r'"datePublished"\s*:\s*"([^"]+)"', html)
+        published = m.group(1) if m else ""
+    if not published:
+        published = visible_text_date(html) or ""
+    return clean(title), clean(desc), published[:19] or None
+
+
+MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
+
+
+def visible_text_date(html):
+    """Best-effort: find a publication date printed in the page body."""
+    body = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.S)[:60000]
+    m = re.search(rf"({MONTHS})\s+(\d{{1,2}}),?\s+(20\d\d)", body) or \
+        re.search(rf"(\d{{1,2}})\s+({MONTHS})\s+(20\d\d)", body)
+    if not m:
+        return None
+    try:
+        from datetime import datetime as _dt
+        text = " ".join(m.groups())
+        for fmt in ("%B %d %Y", "%d %B %Y"):
+            try:
+                return _dt.strptime(text, fmt).strftime("%Y-%m-%dT00:00:00")
+            except ValueError:
+                continue
+    except Exception:
+        pass
+    return None
+
+
+def collect_sitemap(competitor, seen):
+    """Yield items for pages newly appeared in the company's own sitemap."""
+    cfg = competitor.get("sitemap")
+    if not cfg:
+        return
+    include = re.compile(cfg["include"], re.I)
+    fetched = 0
+    for loc in _sitemap_locs(cfg["url"]):
+        path = re.sub(r"^https?://[^/]+", "", loc)
+        if not include.search(path) or loc in seen:
+            continue
+        if fetched >= MAX_SITEMAP_FETCHES:
+            break
+        fetched += 1
+        try:
+            title, desc, published = _page_meta(loc)
+        except Exception as e:
+            print(f"  ! page fetch failed {loc}: {e}")
+            continue
+        if not title:
+            continue
+        time.sleep(0.3)
+        yield {
+            "company": competitor["name"],
+            "title": title,
+            "url": loc,
+            "source": "Company site",
+            "published": published,
+            "snippet": desc[:1500],
+        }
 
 
 def social_query(competitor):
@@ -186,7 +292,11 @@ def analyse(client, item):
         "shift the cost/capability stack Decagon builds on; (c) substantive community "
         "discussion (Reddit / Hacker News) IS relevant when it contains real user or buyer "
         "feedback, comparisons, or complaints about these products (type: community) — but "
-        "memes, job posts, and low-effort threads are NOT.\n\n"
+        "memes, job posts, and low-effort threads are NOT. For items whose source is "
+        "'Company site': keep product launches, case studies / customer stories, and major "
+        "announcements; SEO explainer articles, glossary-style content and generic how-to "
+        "posts are NOT relevant. A customer case study on a company's own site is a "
+        "customer_win.\n\n"
         "If relevant, classify it, summarise it factually, note the country/market it concerns "
         "if identifiable, and suggest a positioning angle — how Decagon might credibly position "
         "against it (AI-suggested angle, not official messaging; grounded, no spin). For "
@@ -220,7 +330,7 @@ def main():
     parser.add_argument("--backfill", action="store_true", help="scan the last 30 days")
     args = parser.parse_args()
 
-    client = anthropic.Anthropic()  # needs ANTHROPIC_API_KEY
+    client = anthropic.Anthropic(timeout=90.0)  # fail fast on wedged connections; SDK retries
     days = 30 if args.backfill else 3
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
 
@@ -230,7 +340,8 @@ def main():
 
     candidates = []
     for comp in competitors:
-        sources = [collect(comp, cutoff), collect_reddit(comp, cutoff), collect_hackernews(comp, cutoff)]
+        sources = [collect(comp, cutoff), collect_reddit(comp, cutoff),
+                   collect_hackernews(comp, cutoff), collect_sitemap(comp, seen)]
         for source in sources:
             for item in source:
                 key = item["url"] or f"{item['company']}|{item['title']}"

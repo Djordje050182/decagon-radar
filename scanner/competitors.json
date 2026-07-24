@@ -2,12 +2,28 @@
   {
     "name": "Decagon",
     "news_query": "\"Decagon AI\" OR \"decagon.ai\"",
-    "feeds": []
+    "feeds": [],
+    "news_queries": [
+      "\"Decagon AI\"",
+      "decagon.ai",
+      "Decagon \"customer support\" AI",
+      "\"Jesse Zhang\" Decagon"
+    ],
+    "sitemap": {
+      "url": "https://decagon.ai/sitemap.xml",
+      "include": "^/(blog|case-studies)/"
+    }
   },
   {
     "name": "Sierra",
     "news_query": "\"Sierra AI\" OR \"sierra.ai\"",
-    "feeds": ["https://sierra.ai/rss.xml"]
+    "feeds": [
+      "https://sierra.ai/rss.xml"
+    ],
+    "sitemap": {
+      "url": "https://sierra.ai/sitemap.xml",
+      "include": "/(customers|stories|case-stud)"
+    }
   },
   {
     "name": "Salesforce Agentforce",
@@ -17,22 +33,36 @@
   {
     "name": "ElevenLabs",
     "news_query": "ElevenLabs agents OR ElevenLabs \"customer support\" OR ElevenLabs voice agent",
-    "feeds": []
+    "feeds": [],
+    "sitemap": {
+      "url": "https://elevenlabs.io/sitemap.xml",
+      "include": "/blog/"
+    }
   },
   {
     "name": "Relevance AI",
     "news_query": "\"Relevance AI\"",
-    "feeds": []
+    "feeds": [],
+    "sitemap": {
+      "url": "https://relevanceai.com/sitemap.xml",
+      "include": "/(blog|news|customer)"
+    }
   },
   {
     "name": "Cresta",
     "news_query": "Cresta AI contact center",
-    "feeds": []
+    "feeds": [],
+    "sitemap": {
+      "url": "https://cresta.com/sitemap.xml",
+      "include": "/(blog|press|news|customer)"
+    }
   },
   {
     "name": "Intercom (Fin)",
     "news_query": "Intercom Fin AI agent",
-    "feeds": ["https://www.intercom.com/blog/feed/"]
+    "feeds": [
+      "https://www.intercom.com/blog/feed/"
+    ]
   },
   {
     "name": "Ada",
@@ -42,22 +72,36 @@
   {
     "name": "Forethought",
     "news_query": "Forethought AI customer support",
-    "feeds": []
+    "feeds": [],
+    "sitemap": {
+      "url": "https://forethought.ai/sitemap.xml",
+      "include": "/(blog|press|news|customer|case-stud)"
+    }
   },
   {
     "name": "Parloa",
     "news_query": "Parloa",
-    "feeds": []
+    "feeds": [],
+    "sitemap": {
+      "url": "https://www.parloa.com/sitemap.xml",
+      "include": "/(blog|press|news|customer)"
+    }
   },
   {
     "name": "PolyAI",
     "news_query": "PolyAI voice assistant",
-    "feeds": []
+    "feeds": [],
+    "sitemap": {
+      "url": "https://poly.ai/sitemap.xml",
+      "include": "/(blog|press|news|customer|case-stud)"
+    }
   },
   {
     "name": "OpenAI (frontier overlap)",
     "news_query": "OpenAI customer support agent OR OpenAI voice agent enterprise",
-    "feeds": ["https://openai.com/news/rss.xml"]
+    "feeds": [
+      "https://openai.com/news/rss.xml"
+    ]
   },
   {
     "name": "Anthropic (frontier overlap)",
