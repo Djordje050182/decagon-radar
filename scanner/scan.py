@@ -317,7 +317,8 @@ def main():
         if processed % 25 == 0:
             persist()
             print(f"  … {processed} videos scanned this run")
-        time.sleep(1.5 + random.random() * 1.5)
+        # rotating proxy needs no pacing; direct fetches stay gentle
+        time.sleep(0.2 if os.environ.get("WEBSHARE_USER") else 1.5 + random.random() * 1.5)
 
     # 3. Persist
     store["mentions"].sort(key=lambda m: m["published"], reverse=True)
