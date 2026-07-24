@@ -25,6 +25,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import feedparser
+import requests
 import anthropic
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,7 +42,7 @@ SCHEMA = {
         },
         "type": {
             "type": "string",
-            "enum": ["product_launch", "customer_win", "funding", "partnership", "frontier_overlap", "other"],
+            "enum": ["product_launch", "customer_win", "funding", "partnership", "frontier_overlap", "community", "other"],
         },
         "summary": {"type": "string", "description": "Two sentences max, factual"},
         "positioning": {
@@ -105,6 +106,71 @@ def collect(competitor, cutoff):
             }
 
 
+def social_query(competitor):
+    """Query for Reddit/HN: explicit social_query, else the quoted primary name."""
+    if competitor.get("social_query"):
+        return competitor["social_query"]
+    primary = re.sub(r"\s*\(.*\)$", "", competitor["name"]).strip()
+    return f'"{primary}"'
+
+
+def collect_reddit(competitor, cutoff):
+    q = social_query(competitor)
+    try:
+        r = requests.get(
+            "https://www.reddit.com/search.json",
+            params={"q": q, "sort": "new", "limit": 25, "t": "month"},
+            headers={"User-Agent": "decagon-radar/1.0 (research bot)"},
+            timeout=20,
+        )
+        r.raise_for_status()
+        posts = r.json().get("data", {}).get("children", [])
+    except Exception as e:
+        print(f"  ! reddit failed for {q}: {e}")
+        return
+    for p in posts:
+        d = p.get("data", {})
+        created = datetime.fromtimestamp(d.get("created_utc", 0), tz=timezone.utc)
+        if created < cutoff:
+            continue
+        yield {
+            "company": competitor["name"],
+            "title": clean(d.get("title", "")),
+            "url": "https://www.reddit.com" + d.get("permalink", ""),
+            "source": f"Reddit r/{d.get('subreddit', '')}",
+            "published": created.isoformat(timespec="seconds"),
+            "snippet": clean(d.get("selftext", ""))[:1500],
+        }
+
+
+def collect_hackernews(competitor, cutoff):
+    q = social_query(competitor).strip('"')
+    try:
+        r = requests.get(
+            "https://hn.algolia.com/api/v1/search_by_date",
+            params={
+                "query": q, "tags": "story",
+                "numericFilters": f"created_at_i>{int(cutoff.timestamp())}",
+                "hitsPerPage": 20,
+            },
+            timeout=20,
+        )
+        r.raise_for_status()
+        hits = r.json().get("hits", [])
+    except Exception as e:
+        print(f"  ! hackernews failed for {q}: {e}")
+        return
+    for h in hits:
+        yield {
+            "company": competitor["name"],
+            "title": clean(h.get("title", "")),
+            "url": h.get("url") or f"https://news.ycombinator.com/item?id={h.get('objectID')}",
+            "source": f"Hacker News ({h.get('points', 0)} pts)",
+            "published": h.get("created_at", "")[:19],
+            "snippet": clean(h.get("story_text", "") or "")[:1500],
+        }
+
+
 def analyse(client, item):
     prompt = (
         "You are a competitive-intelligence analyst for Decagon (decagon.ai), which builds "
@@ -117,7 +183,10 @@ def analyse(client, item):
         "coverage of Decagon itself IS relevant; (b) for frontier labs and open-source model "
         "providers, major new model releases or agent-capability launches ARE relevant "
         "(type: frontier_overlap) even without an explicit customer-support angle, because they "
-        "shift the cost/capability stack Decagon builds on.\n\n"
+        "shift the cost/capability stack Decagon builds on; (c) substantive community "
+        "discussion (Reddit / Hacker News) IS relevant when it contains real user or buyer "
+        "feedback, comparisons, or complaints about these products (type: community) — but "
+        "memes, job posts, and low-effort threads are NOT.\n\n"
         "If relevant, classify it, summarise it factually, note the country/market it concerns "
         "if identifiable, and suggest a positioning angle — how Decagon might credibly position "
         "against it (AI-suggested angle, not official messaging; grounded, no spin). For "
@@ -141,6 +210,7 @@ TYPE_LABELS = {
     "funding": "Funding",
     "partnership": "Partnership",
     "frontier_overlap": "Frontier overlap",
+    "community": "Community",
     "other": "News",
 }
 
@@ -160,13 +230,15 @@ def main():
 
     candidates = []
     for comp in competitors:
-        for item in collect(comp, cutoff):
-            key = item["url"] or f"{item['company']}|{item['title']}"
-            if key in seen or not item["title"]:
-                continue
-            seen.add(key)
-            candidates.append(item)
-        time.sleep(0.2)
+        sources = [collect(comp, cutoff), collect_reddit(comp, cutoff), collect_hackernews(comp, cutoff)]
+        for source in sources:
+            for item in source:
+                key = item["url"] or f"{item['company']}|{item['title']}"
+                if key in seen or not item["title"]:
+                    continue
+                seen.add(key)
+                candidates.append(item)
+        time.sleep(0.5)
 
     dropped = max(0, len(candidates) - MAX_ITEMS_PER_RUN)
     if dropped:

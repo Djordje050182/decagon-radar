@@ -3,132 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Decagon Radar — podcast mentions &amp; competitor watch</title>
-<meta name="description" content="Automated daily tracking of Decagon mentions across podcasts, plus competitor and industry updates.">
+<title>Decagon Radar — mentions, competitors &amp; market trends</title>
+<meta name="description" content="Automated daily tracking of Decagon across podcasts, competitor news, community discussion and market trends.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spectral:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #14161a;
-    --ink-soft: #5a6072;
-    --line: #e6e8ee;
+    --ink: #16181d;
+    --ink-soft: #5b6170;
+    --line: #e7e9ee;
     --paper: #ffffff;
-    --wash: #f6f7f9;
+    --wash: #f7f8fa;
+    --navy: #14245c;
     --accent: #1d4fd7;
     --accent-wash: #eef2fe;
     --pos: #0d7a4f; --pos-wash: #e7f5ee;
     --neg: #b3362b; --neg-wash: #fbeceb;
-    --neu: #5a6072; --neu-wash: #eef0f4;
+    --neu: #5b6170; --neu-wash: #eef0f4;
     --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    /* validated categorical palette (fixed order) */
+    --c-launch: #1d4fd7; --c-funding: #a16207; --c-win: #0d9488;
+    --c-partner: #be185d; --c-frontier: #4d7c0f; --c-community: #c2410c; --c-other: #8a91a3;
   }
   * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    font-family: "Instrument Sans", -apple-system, "Segoe UI", sans-serif;
+    font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
     color: var(--ink); background: var(--paper);
-    font-size: 15px; line-height: 1.5;
+    font-size: 15px; line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-  header { border-bottom: 1px solid var(--line); padding: 28px 0 0; }
-  .masthead { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  h1 { font-family: "Spectral", Georgia, serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em; }
-  h1 .dot { color: var(--accent); }
-  .tagline { color: var(--ink-soft); font-size: 13.5px; }
-  .stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 22px 0 18px; }
-  .stat b { display: block; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
-  .stat span { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  header { background: var(--navy); color: #fff; padding: 26px 0 0; }
+  .masthead { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .mark { flex: 0 0 auto; }
+  h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+  .tagline { width: 100%; color: #aebadf; font-size: 13.5px; margin-top: 2px; font-weight: 500; }
+  .stats { display: grid; grid-template-columns: repeat(4, auto); gap: 12px 40px; justify-content: start; margin: 24px 0 20px; }
+  .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+  .stat span { font-size: 11.5px; color: #aebadf; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
 
-  nav { display: flex; gap: 4px; }
+  nav { display: flex; gap: 2px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   nav button {
-    font: inherit; font-weight: 600; font-size: 14px;
-    background: none; border: none; cursor: pointer; color: var(--ink-soft);
-    padding: 10px 14px; border-bottom: 2px solid transparent;
+    font: inherit; font-weight: 700; font-size: 14px; white-space: nowrap;
+    background: none; border: none; cursor: pointer; color: #aebadf;
+    padding: 12px 16px; border-radius: 10px 10px 0 0;
   }
-  nav button.active { color: var(--ink); border-bottom-color: var(--accent); }
+  nav button.active { color: var(--navy); background: var(--paper); }
 
-  main { padding: 26px 0 60px; }
-  .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
-  .chip {
-    font: inherit; font-size: 13px; cursor: pointer;
-    border: 1px solid var(--line); background: var(--paper);
-    border-radius: 999px; padding: 4px 12px; color: var(--ink-soft);
+  main { padding: 24px 0 60px; background: var(--paper); }
+  .toolbar {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px;
   }
-  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
-  .updated { margin-left: auto; font-size: 12.5px; color: var(--ink-soft); }
+  .toolbar::-webkit-scrollbar { display: none; }
+  .toolbar-label { font-size: 11.5px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; flex: 0 0 auto; }
+  .chip {
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; flex: 0 0 auto;
+    border: 1px solid var(--line); background: var(--paper);
+    border-radius: 999px; padding: 6px 14px; color: var(--ink-soft);
+    min-height: 32px;
+  }
+  .chip.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .updated { margin-left: auto; font-size: 12.5px; color: var(--ink-soft); flex: 0 0 auto; }
 
   table { width: 100%; border-collapse: collapse; }
   thead th {
-    text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
-    color: var(--ink-soft); font-weight: 600; padding: 8px 12px 8px 0;
-    border-bottom: 1px solid var(--line);
+    text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--ink-soft); font-weight: 700; padding: 8px 12px 8px 0;
+    border-bottom: 2px solid var(--ink);
   }
-  tbody td { padding: 13px 12px 13px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
   td.date { white-space: nowrap; color: var(--ink-soft); font-size: 13.5px; }
-  td.podcast { font-weight: 600; white-space: nowrap; }
+  td.podcast { font-weight: 700; white-space: nowrap; }
   td.episode { color: var(--ink-soft); max-width: 300px; }
   .ts {
-    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    font-family: var(--mono); font-size: 13px; font-weight: 600;
     background: var(--accent-wash); color: var(--accent);
-    padding: 2px 8px; border-radius: 6px; white-space: nowrap;
+    padding: 3px 9px; border-radius: 7px; white-space: nowrap; display: inline-block;
   }
   .badge {
-    display: inline-block; font-size: 12px; font-weight: 600;
-    padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+    display: inline-block; font-size: 12px; font-weight: 700;
+    padding: 2px 10px; border-radius: 999px; white-space: nowrap;
   }
   .badge.positive { background: var(--pos-wash); color: var(--pos); }
   .badge.negative { background: var(--neg-wash); color: var(--neg); }
   .badge.neutral  { background: var(--neu-wash); color: var(--neu); }
 
   .card {
-    border: 1px solid var(--line); border-radius: 10px;
+    border: 1px solid var(--line); border-radius: 14px;
     padding: 16px 18px; margin-bottom: 12px; background: var(--paper);
   }
-  .card.own { border-left: 3px solid var(--accent); background: linear-gradient(to right, var(--accent-wash), var(--paper) 30%); }
+  .card.own { border-left: 3px solid var(--accent); background: linear-gradient(to right, var(--accent-wash), var(--paper) 32%); }
+  .card .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .card .company { font-weight: 800; font-size: 14px; }
+  .card .type {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: #fff; padding: 2px 9px; border-radius: 6px;
+  }
   .market {
     font-size: 11.5px; font-weight: 600; color: var(--ink-soft);
     background: var(--wash); border: 1px solid var(--line);
-    padding: 1px 7px; border-radius: 6px; white-space: nowrap;
-  }
-  .toolbar + .toolbar { margin-top: -8px; }
-  .card .meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
-  .card .company { font-weight: 700; }
-  .card .type {
-    font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
-    color: var(--accent); background: var(--accent-wash); padding: 2px 8px; border-radius: 6px;
+    padding: 1px 8px; border-radius: 6px; white-space: nowrap;
   }
   .card .when { font-size: 12.5px; color: var(--ink-soft); margin-left: auto; white-space: nowrap; }
-  .card h3 { font-size: 15.5px; font-weight: 600; margin-bottom: 4px; line-height: 1.35; }
+  .card h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 4px; line-height: 1.35; }
   .card p { color: var(--ink-soft); font-size: 14px; }
   details { margin-top: 10px; }
-  summary {
-    cursor: pointer; font-size: 13px; font-weight: 600; color: var(--accent);
-    list-style: none;
-  }
+  summary { cursor: pointer; font-size: 13px; font-weight: 700; color: var(--accent); list-style: none; min-height: 28px; }
   summary::before { content: "→ "; }
   details[open] summary::before { content: "↓ "; }
   .positioning {
-    margin-top: 8px; padding: 10px 14px; background: var(--wash);
-    border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
-    font-size: 13.5px;
+    margin-top: 8px; padding: 12px 14px; background: var(--wash);
+    border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; font-size: 13.5px;
   }
   .positioning em { display: block; color: var(--ink-soft); font-size: 11.5px; font-style: normal; margin-top: 6px; }
 
-  .empty { text-align: center; color: var(--ink-soft); padding: 70px 20px; }
-  .empty b { display: block; font-family: "Spectral", Georgia, serif; font-size: 19px; color: var(--ink); margin-bottom: 6px; }
+  /* Trends tab */
+  .section-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; color: var(--ink-soft); margin: 30px 0 12px; }
+  .section-title:first-child { margin-top: 4px; }
+  .prose { max-width: 760px; }
+  .prose p { margin-bottom: 12px; font-size: 15px; }
+  .chart-box { border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 14px; overflow-x: auto; }
+  .chart-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-soft); font-weight: 600; }
+  .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .theme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .theme { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .theme h3 { font-size: 15px; font-weight: 800; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mom { font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 999px; }
+  .mom.rising  { background: var(--pos-wash); color: var(--pos); }
+  .mom.steady  { background: var(--neu-wash); color: var(--neu); }
+  .mom.cooling { background: var(--neg-wash); color: var(--neg); }
+  .theme p { font-size: 13.5px; color: var(--ink-soft); }
+  .theme .ev { margin-top: 8px; font-size: 12.5px; color: var(--ink-soft); }
+  .theme .ev li { margin-left: 16px; margin-top: 3px; }
+  .pred { border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
+  .pred .conf { flex: 0 0 auto; font-size: 11.5px; font-weight: 800; padding: 3px 10px; border-radius: 999px; margin-top: 2px; }
+  .conf.high   { background: var(--pos-wash); color: var(--pos); }
+  .conf.medium { background: #fdf3e3; color: #946300; }
+  .conf.low    { background: var(--neu-wash); color: var(--neu); }
+  .pred b { font-weight: 700; }
+  .pred .why { font-size: 13px; color: var(--ink-soft); margin-top: 3px; }
+  .gen-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 18px; }
 
-  footer { border-top: 1px solid var(--line); padding: 18px 0 40px; font-size: 12.5px; color: var(--ink-soft); }
+  .empty { text-align: center; color: var(--ink-soft); padding: 70px 20px; }
+  .empty b { display: block; font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+
+  footer { border-top: 1px solid var(--line); padding: 18px 0 44px; font-size: 12.5px; color: var(--ink-soft); }
 
   @media (max-width: 720px) {
+    body { font-size: 14.5px; }
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 14px 20px; }
+    .stat b { font-size: 20px; }
     thead { display: none; }
     tbody tr { display: block; border-bottom: 1px solid var(--line); padding: 14px 0; }
-    tbody td { display: block; border: none; padding: 2px 0; }
+    tbody td { display: block; border: none; padding: 3px 0; }
     td.episode { max-width: none; }
-    .stats { gap: 20px; }
-    .stat b { font-size: 18px; }
+    .card .when { margin-left: 0; width: 100%; order: 5; }
+    .updated { display: none; }
+    .theme-grid { grid-template-columns: 1fr; }
+    .pred { flex-direction: column; gap: 8px; }
   }
 </style>
 </head>
@@ -136,13 +176,18 @@
 <header>
   <div class="wrap">
     <div class="masthead">
-      <h1>Decagon Radar<span class="dot">.</span></h1>
-      <div class="tagline">Automated daily scan · podcast mentions &amp; competitor watch</div>
+      <svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="50,3 79,12 97,37 97,63 79,88 50,97 21,88 3,63 3,37 21,12"
+                 fill="none" stroke="#ffffff" stroke-width="7"/>
+      </svg>
+      <h1>Decagon Radar</h1>
+      <div class="tagline">Automated daily intelligence · podcast mentions, competitor moves &amp; market trends</div>
     </div>
     <div class="stats" id="stats"></div>
     <nav>
       <button id="tab-mentions" class="active" onclick="showTab('mentions')">Podcast mentions</button>
       <button id="tab-competitors" onclick="showTab('competitors')">Competitor watch</button>
+      <button id="tab-trends" onclick="showTab('trends')">Market trends</button>
     </nav>
   </div>
 </header>
@@ -152,54 +197,77 @@
     <div class="toolbar" id="mention-filters"></div>
     <div id="mentions-body"></div>
   </section>
+
   <section id="panel-competitors" hidden>
+    <div class="toolbar" id="time-filters"></div>
     <div class="toolbar" id="competitor-filters"></div>
     <div class="toolbar" id="type-filters"></div>
     <div id="competitors-body"></div>
+  </section>
+
+  <section id="panel-trends" hidden>
+    <div id="trends-body"></div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    Updated daily by an automated scan of podcast captions and industry news.
-    Sentiment, summaries and positioning angles are AI-generated — verify before quoting.
+    Updated daily at 6pm San Francisco time from podcast captions, company blogs, Google News, Reddit and Hacker News.
+    Sentiment, summaries, positioning angles and market analysis are AI-generated — verify before quoting.
   </div>
 </footer>
 
 <script>
-const TYPE_LABELS = {
-  product_launch: "Launch", customer_win: "Customer win", funding: "Funding",
-  partnership: "Partnership", frontier_overlap: "Frontier overlap", other: "News"
+const TYPE_META = {
+  product_launch:   { label: "Launch",           color: "var(--c-launch)" },
+  funding:          { label: "Funding",          color: "var(--c-funding)" },
+  customer_win:     { label: "Customer win",     color: "var(--c-win)" },
+  partnership:      { label: "Partnership",      color: "var(--c-partner)" },
+  frontier_overlap: { label: "Frontier overlap", color: "var(--c-frontier)" },
+  community:        { label: "Community",        color: "var(--c-community)" },
+  other:            { label: "News",             color: "var(--c-other)" },
 };
-let mentions = [], items = [];
-let sentimentFilter = "all", companyFilter = "all", typeFilter = "all";
+const TYPE_ORDER = Object.keys(TYPE_META);
+const CHART_HEX = { product_launch: "#1d4fd7", funding: "#a16207", customer_win: "#0d9488",
+  partnership: "#be185d", frontier_overlap: "#4d7c0f", community: "#c2410c", other: "#8a91a3" };
+const TIME_OPTS = [["1","24 hours"],["7","7 days"],["30","30 days"],["90","Quarter"],["365","Year"],["all","All time"]];
+const MOM_ICON = { rising: "▲ Rising", steady: "→ Steady", cooling: "▼ Cooling" };
+
+let mentions = [], items = [], trends = null;
+let sentimentFilter = "all", companyFilter = "all", typeFilter = "all", timeFilter = "all";
 
 function showTab(name) {
-  for (const t of ["mentions", "competitors"]) {
+  for (const t of ["mentions", "competitors", "trends"]) {
     document.getElementById("panel-" + t).hidden = t !== name;
     document.getElementById("tab-" + t).classList.toggle("active", t === name);
   }
 }
-
 function fmtDate(iso) {
   if (!iso) return "";
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
-
 function esc(s) {
   return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+function itemDate(i) { return new Date(i.published || i.found_at); }
+function withinDays(i, days) {
+  if (days === "all") return true;
+  return (Date.now() - itemDate(i).getTime()) <= Number(days) * 86400000;
 }
 
 function renderStats(m, c) {
   const pos = mentions.filter(x => x.sentiment === "positive").length;
+  const week = items.filter(i => withinDays(i, "7")).length;
   document.getElementById("stats").innerHTML = `
     <div class="stat"><b>${mentions.length}</b><span>Podcast mentions</span></div>
     <div class="stat"><b>${mentions.length ? Math.round(pos / mentions.length * 100) + "%" : "–"}</b><span>Positive</span></div>
-    <div class="stat"><b>${items.length}</b><span>Competitor items</span></div>
-    <div class="stat"><b>${fmtDate(m.last_scan || c.last_scan) || "–"}</b><span>Last scan</span></div>`;
+    <div class="stat"><b>${items.length}</b><span>Market items</span></div>
+    <div class="stat"><b>${week}</b><span>This week</span></div>`;
 }
 
-function renderMentionFilters() {
+/* ---------- Podcast mentions ---------- */
+function setSentiment(s) { sentimentFilter = s; renderMentions(); }
+function renderMentions() {
   const counts = { all: mentions.length, positive: 0, neutral: 0, negative: 0 };
   mentions.forEach(m => counts[m.sentiment] !== undefined && counts[m.sentiment]++);
   document.getElementById("mention-filters").innerHTML =
@@ -207,18 +275,10 @@ function renderMentionFilters() {
       `<button class="chip ${sentimentFilter === s ? "on" : ""}" onclick="setSentiment('${s}')">
         ${s === "all" ? "All" : s[0].toUpperCase() + s.slice(1)} (${counts[s]})</button>`).join("") +
     `<span class="updated">Timestamps link to the exact moment on YouTube</span>`;
-}
-
-function setSentiment(s) { sentimentFilter = s; renderMentions(); }
-function setCompany(c) { companyFilter = c; renderCompetitors(); }
-function setType(t) { typeFilter = t; renderCompetitors(); }
-
-function renderMentions() {
-  renderMentionFilters();
   const rows = mentions.filter(m => sentimentFilter === "all" || m.sentiment === sentimentFilter);
   const body = document.getElementById("mentions-body");
   if (!rows.length) {
-    body.innerHTML = `<div class="empty"><b>No mentions yet</b>The first scan runs soon — check back tomorrow.</div>`;
+    body.innerHTML = `<div class="empty"><b>No mentions yet</b>The archive scan is in progress — check back soon.</div>`;
     return;
   }
   body.innerHTML = `<table><thead><tr>
@@ -234,32 +294,47 @@ function renderMentions() {
     </tr>`).join("") + "</tbody></table>";
 }
 
+/* ---------- Competitor watch ---------- */
+function setCompany(c) { companyFilter = c; renderCompetitors(); }
+function setType(t) { typeFilter = t; renderCompetitors(); }
+function setTime(t) { timeFilter = t; renderCompetitors(); }
+
 function renderCompetitors() {
-  const companies = ["all", ...new Set(items.map(i => i.company))].sort((a, b) =>
+  document.getElementById("time-filters").innerHTML =
+    `<span class="toolbar-label">Time</span>` +
+    TIME_OPTS.map(([v, label]) =>
+      `<button class="chip ${timeFilter === v ? "on" : ""}" onclick="setTime('${v}')">${label}</button>`).join("");
+
+  const inTime = items.filter(i => withinDays(i, timeFilter));
+  const companies = ["all", ...new Set(inTime.map(i => i.company))].sort((a, b) =>
     a === "all" ? -1 : b === "all" ? 1 : a === "Decagon" ? -1 : b === "Decagon" ? 1 : a.localeCompare(b));
   document.getElementById("competitor-filters").innerHTML =
+    `<span class="toolbar-label">Who</span>` +
     companies.map(c =>
-      `<button class="chip ${companyFilter === c ? "on" : ""}" onclick="setCompany('${esc(c)}')">${c === "all" ? "All companies" : esc(c)}</button>`).join("");
+      `<button class="chip ${companyFilter === c ? "on" : ""}" onclick="setCompany('${esc(c)}')">${c === "all" ? "All" : esc(c)}</button>`).join("");
 
   const typeCounts = {};
-  items.forEach(i => typeCounts[i.type] = (typeCounts[i.type] || 0) + 1);
+  inTime.forEach(i => typeCounts[i.type] = (typeCounts[i.type] || 0) + 1);
   document.getElementById("type-filters").innerHTML =
-    ["all", ...Object.keys(TYPE_LABELS).filter(t => typeCounts[t])].map(t =>
-      `<button class="chip ${typeFilter === t ? "on" : ""}" onclick="setType('${t}')">${t === "all" ? "All types" : TYPE_LABELS[t] + " (" + typeCounts[t] + ")"}</button>`).join("");
+    `<span class="toolbar-label">Type</span>` +
+    ["all", ...TYPE_ORDER.filter(t => typeCounts[t])].map(t =>
+      `<button class="chip ${typeFilter === t ? "on" : ""}" onclick="setType('${t}')">${t === "all" ? "All" : TYPE_META[t].label + " (" + typeCounts[t] + ")"}</button>`).join("");
 
-  const rows = items.filter(i =>
+  const rows = inTime.filter(i =>
     (companyFilter === "all" || i.company === companyFilter) &&
     (typeFilter === "all" || i.type === typeFilter));
   const body = document.getElementById("competitors-body");
   if (!rows.length) {
-    body.innerHTML = `<div class="empty"><b>Nothing here</b>No items match these filters yet.</div>`;
+    body.innerHTML = `<div class="empty"><b>Nothing here</b>No items match these filters.</div>`;
     return;
   }
-  body.innerHTML = rows.map(i => `
+  body.innerHTML = rows.map(i => {
+    const t = TYPE_META[i.type] || TYPE_META.other;
+    return `
     <article class="card${i.company === "Decagon" ? " own" : ""}">
       <div class="meta">
         <span class="company">${esc(i.company)}</span>
-        <span class="type">${TYPE_LABELS[i.type] || "News"}</span>
+        <span class="type" style="background:${t.color}">${t.label}</span>
         ${i.market ? `<span class="market">${esc(i.market)}</span>` : ""}
         <span class="when">${fmtDate(i.published || i.found_at)} · ${esc(i.source)}</span>
       </div>
@@ -267,7 +342,102 @@ function renderCompetitors() {
       <p>${esc(i.summary)}</p>
       ${i.positioning ? `<details><summary>How Decagon positions against this</summary>
         <div class="positioning">${esc(i.positioning)}<em>AI-suggested angle — not official messaging.</em></div></details>` : ""}
-    </article>`).join("");
+    </article>`;
+  }).join("");
+}
+
+/* ---------- Trends ---------- */
+function weeklyVolumeChart() {
+  const WEEKS = 12, W = 720, H = 180, PAD_L = 30, PAD_B = 22, gap = 2;
+  const now = new Date(); now.setHours(0, 0, 0, 0);
+  const buckets = [];
+  for (let w = WEEKS - 1; w >= 0; w--) {
+    const end = new Date(now.getTime() - w * 7 * 86400000);
+    const start = new Date(end.getTime() - 7 * 86400000);
+    buckets.push({ start, end, counts: Object.fromEntries(TYPE_ORDER.map(t => [t, 0])) });
+  }
+  items.forEach(i => {
+    const d = itemDate(i);
+    for (const b of buckets) if (d > b.start && d <= b.end) { b.counts[i.type] = (b.counts[i.type] || 0) + 1; break; }
+  });
+  const max = Math.max(1, ...buckets.map(b => Object.values(b.counts).reduce((a, v) => a + v, 0)));
+  const bw = Math.floor((W - PAD_L - 10) / WEEKS) - 6;
+  let svg = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;min-width:560px" font-family="Manrope,sans-serif">`;
+  [0, Math.ceil(max / 2), max].forEach(v => {
+    const y = H - PAD_B - (v / max) * (H - PAD_B - 14);
+    svg += `<line x1="${PAD_L}" y1="${y}" x2="${W - 6}" y2="${y}" stroke="#e7e9ee"/>` +
+           `<text x="${PAD_L - 6}" y="${y + 4}" text-anchor="end" font-size="10" fill="#8a91a3">${v}</text>`;
+  });
+  buckets.forEach((b, idx) => {
+    const x = PAD_L + 8 + idx * (bw + 6);
+    let y = H - PAD_B;
+    TYPE_ORDER.forEach(t => {
+      const v = b.counts[t];
+      if (!v) return;
+      const h = Math.max(2, (v / max) * (H - PAD_B - 14) - gap);
+      y -= h + gap;
+      svg += `<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="2" fill="${CHART_HEX[t]}">` +
+             `<title>${b.end.toLocaleDateString("en-GB", { day: "numeric", month: "short" })} · ${TYPE_META[t].label}: ${v}</title></rect>`;
+    });
+    if (idx % 2 === 0) {
+      svg += `<text x="${x + bw / 2}" y="${H - 6}" text-anchor="middle" font-size="10" fill="#8a91a3">` +
+             `${b.end.toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</text>`;
+    }
+  });
+  svg += "</svg>";
+  const legend = TYPE_ORDER.filter(t => items.some(i => i.type === t)).map(t =>
+    `<span><i class="swatch" style="background:${CHART_HEX[t]}"></i>${TYPE_META[t].label}</span>`).join("");
+  return `<div class="chart-box"><h4>Story volume by week</h4>${svg}<div class="legend">${legend}</div></div>`;
+}
+
+function companyChart() {
+  const counts = {};
+  items.filter(i => withinDays(i, "90")).forEach(i => counts[i.company] = (counts[i.company] || 0) + 1);
+  const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  if (!top.length) return "";
+  const max = top[0][1], W = 720, rowH = 30, PAD_L = 210;
+  let svg = `<svg viewBox="0 0 ${W} ${top.length * rowH + 6}" style="width:100%;min-width:560px" font-family="Manrope,sans-serif">`;
+  top.forEach(([name, v], i) => {
+    const y = i * rowH + 6, w = Math.max(3, (v / max) * (W - PAD_L - 46));
+    svg += `<text x="${PAD_L - 10}" y="${y + 13}" text-anchor="end" font-size="12" font-weight="600" fill="#16181d">${esc(name)}</text>` +
+           `<rect x="${PAD_L}" y="${y}" width="${w}" height="18" rx="3" fill="#1d4fd7"><title>${esc(name)}: ${v} items (90 days)</title></rect>` +
+           `<text x="${PAD_L + w + 8}" y="${y + 13}" font-size="12" font-weight="700" fill="#5b6170">${v}</text>`;
+  });
+  svg += "</svg>";
+  return `<div class="chart-box"><h4>Most active players — last 90 days</h4>${svg}</div>`;
+}
+
+function renderTrends() {
+  const body = document.getElementById("trends-body");
+  const charts = items.length ? weeklyVolumeChart() + companyChart() : "";
+  if (!trends) {
+    body.innerHTML = charts + `<div class="empty"><b>Analysis pending</b>The first market synthesis runs with the next daily scan.</div>`;
+    return;
+  }
+  const themes = trends.themes.map(t => `
+    <div class="theme">
+      <h3>${esc(t.name)} <span class="mom ${esc(t.momentum)}">${MOM_ICON[t.momentum] || t.momentum}</span></h3>
+      <p>${esc(t.description)}</p>
+      <ul class="ev">${t.evidence.map(e => `<li>${esc(e)}</li>`).join("")}</ul>
+    </div>`).join("");
+  const preds = trends.predictions.map(p => `
+    <div class="pred">
+      <span class="conf ${esc(p.confidence)}">${esc(p.confidence)}</span>
+      <div><b>${esc(p.claim)}</b> <span style="color:var(--ink-soft)">(${esc(p.horizon)})</span>
+        <div class="why">${esc(p.rationale)}</div></div>
+    </div>`).join("");
+  body.innerHTML = `
+    <div class="section-title">The state of play</div>
+    <div class="prose">${trends.overview.split(/\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div>
+    <div class="section-title">Activity</div>
+    ${charts}
+    <div class="section-title">Themes</div>
+    <div class="theme-grid">${themes}</div>
+    <div class="section-title">Convergence</div>
+    <div class="prose"><p>${esc(trends.convergence)}</p></div>
+    <div class="section-title">Predictions</div>
+    ${preds}
+    <p class="gen-note">AI-generated analysis from ${trends.signal_count} tracked signals over the last ${trends.window_days} days · refreshed ${fmtDate(trends.generated_at)} · analyst-style views, not official Decagon positions.</p>`;
 }
 
 async function load() {
@@ -275,11 +445,13 @@ async function load() {
   let m = { mentions: [], last_scan: null }, c = { items: [], last_scan: null };
   try { m = await (await fetch("data/mentions.json" + bust)).json(); } catch (e) {}
   try { c = await (await fetch("data/competitor-news.json" + bust)).json(); } catch (e) {}
+  try { trends = await (await fetch("data/trends.json" + bust)).json(); } catch (e) { trends = null; }
   mentions = m.mentions || [];
   items = c.items || [];
   renderStats(m, c);
   renderMentions();
   renderCompetitors();
+  renderTrends();
 }
 load();
 </script>

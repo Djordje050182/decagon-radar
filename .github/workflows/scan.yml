@@ -2,7 +2,7 @@ name: Daily Radar Scan
 
 on:
   schedule:
-    - cron: "0 20 * * *" # 20:00 UTC = early morning AEST
+    - cron: "0 1 * * *" # 01:00 UTC = 6pm San Francisco (full US news day captured), ~11am AEST
   workflow_dispatch:
     inputs:
       backfill:
@@ -46,6 +46,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scanner/competitors.py ${{ inputs.backfill && '--backfill' || '' }}
+
+      - name: Trends synthesis
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scanner/trends.py
 
       - name: Commit updated data
         run: |
