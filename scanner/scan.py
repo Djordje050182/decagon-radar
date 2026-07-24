@@ -43,8 +43,25 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 YT_API = "https://www.googleapis.com/youtube/v3"
 YT_KEY = os.environ.get("YOUTUBE_API_KEY")
-KEYWORD = re.compile(r"decagon", re.IGNORECASE)
 SEARCH_QUERIES = ['"Decagon AI"', "decagon.ai"]
+
+# Brands tracked in podcast captions. BRANDS_VERSION bumps when this list grows;
+# already-scanned videos are only re-checked when RESCAN_BRANDS=1 (archive re-scan).
+BRANDS_VERSION = 2
+BRANDS = [
+    ("Decagon", r"decagon", "Decagon, the AI customer-support agents company (decagon.ai, founded by Jesse Zhang) — NOT the geometric shape or any other Decagon"),
+    ("Sierra", r"\bsierra\b", "Sierra, the AI agents company (sierra.ai, founded by Bret Taylor and Clay Bavor) — NOT the mountain range, Sierra Nevada, Sierra Leone, High Sierra or other Sierras"),
+    ("ElevenLabs", r"eleven\s?labs", "ElevenLabs, the voice AI company"),
+    ("Cresta", r"\bcresta\b", "Cresta, the contact-center AI company"),
+    ("Intercom (Fin)", r"\bintercom\b", "Intercom, the customer-service platform, or its Fin AI agent — NOT a door/building intercom"),
+    ("Salesforce Agentforce", r"agent\s?force", "Salesforce Agentforce, the enterprise AI agent platform"),
+    ("Ada", r"\bada\b", "Ada, the AI customer-service company (ada.cx) — NOT Ada Lovelace, the ADA act/compliance, Cardano's ADA token, or the programming language"),
+    ("PolyAI", r"poly\s?ai", "PolyAI, the voice assistant company"),
+    ("Parloa", r"parloa", "Parloa, the AI contact-center company"),
+    ("Relevance AI", r"relevance\s?ai", "Relevance AI, the AI workforce/agents platform"),
+    ("Forethought", r"\bforethought\b", "Forethought, the customer-support AI company (forethought.ai) — NOT the common English word"),
+]
+BRAND_PATTERNS = [(name, re.compile(pat, re.IGNORECASE), desc) for name, pat, desc in BRANDS]
 CONTEXT_SECONDS = 60          # transcript context around a hit sent to Claude
 MENTION_GAP_SECONDS = 120     # hits closer than this collapse into one mention
 MAX_CAPTION_RETRIES = 3       # daily runs a video gets before we give up
@@ -166,9 +183,9 @@ def fetch_transcript(video_id):
     return [{"text": s.text, "start": s.start} for s in fetched]
 
 
-def find_mentions(snippets):
+def find_mentions(snippets, pattern):
     """Group keyword hits into mentions; return list of (timestamp, context_text)."""
-    hits = [s["start"] for s in snippets if KEYWORD.search(s["text"])]
+    hits = [s["start"] for s in snippets if pattern.search(s["text"])]
     if not hits:
         return []
     groups, current = [], [hits[0]]
@@ -188,13 +205,11 @@ def find_mentions(snippets):
     return mentions
 
 
-def analyse(client, video, timestamp, context):
+def analyse(client, video, timestamp, context, brand, brand_desc):
     prompt = (
-        "A podcast transcript excerpt is below. Somewhere in it the word 'decagon' is spoken. "
-        "Decide whether it refers to Decagon, the AI customer-support agents company (decagon.ai, "
-        "founded by Jesse Zhang and Ashwin Sreenivas), as opposed to the geometric shape, "
-        "Decagon Devices, a fantasy/game reference, or any other Decagon. "
-        "If it is the company, assess the sentiment of the discussion about Decagon "
+        f"A podcast transcript excerpt is below. Somewhere in it '{brand}' (or a close spoken "
+        f"variant) appears. Decide whether it refers to {brand_desc}. "
+        f"If it is the company, assess the sentiment of the discussion about {brand} "
         "(positive / neutral / negative) and summarise in one sentence what the conversation "
         "is about at this point.\n\n"
         f"Podcast: {video['channel']}\nEpisode: {video['title']}\n\n"
@@ -233,7 +248,8 @@ def main():
     cache = load_json(DATA / "channel-cache.json", {})
     scanned = load_json(DATA / "scanned-videos.json", {})
     store = load_json(DATA / "mentions.json", {"mentions": [], "last_scan": None})
-    known = {(m["video_id"], m["timestamp"]) for m in store["mentions"]}
+    known = {(m["video_id"], m.get("brand", "Decagon"), m["timestamp"]) for m in store["mentions"]}
+    rescan_brands = os.environ.get("RESCAN_BRANDS") == "1"
 
     # 1. Discover candidates
     candidates = {}
@@ -264,7 +280,11 @@ def main():
     consecutive_blocks, processed = 0, 0
     for vid, video in candidates.items():
         state = scanned.get(vid, {})
-        if state.get("status") == "done" or state.get("status") == "no_captions":
+        if state.get("status") == "done":
+            # re-scan only when the brand list grew AND an archive re-scan was requested
+            if not (rescan_brands and state.get("bv", 1) < BRANDS_VERSION):
+                continue
+        elif state.get("status") == "no_captions":
             continue
         if state.get("retries", 0) >= MAX_CAPTION_RETRIES:
             continue
@@ -286,33 +306,35 @@ def main():
             time.sleep(2)
             continue
 
-        for timestamp, context in find_mentions(snippets):
-            if (vid, timestamp) in known:
-                continue
-            try:
-                verdict = analyse(client, video, timestamp, context)
-            except Exception as e:
-                print(f"  ! analysis failed for {vid}@{timestamp}: {e}")
-                continue
-            if not verdict["is_company"]:
-                continue
-            mention = {
-                "video_id": vid,
-                "podcast": video["channel"],
-                "episode": video["title"],
-                "published": video["published"],
-                "timestamp": timestamp,
-                "timestamp_label": fmt_ts(timestamp),
-                "url": f"https://www.youtube.com/watch?v={vid}&t={timestamp}s",
-                "sentiment": verdict["sentiment"],
-                "topic": verdict["topic"],
-                "found_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            }
-            store["mentions"].append(mention)
-            known.add((vid, timestamp))
-            new_mentions.append(mention)
-            print(f"  + MENTION {video['channel']} @ {mention['timestamp_label']} ({verdict['sentiment']})")
-        scanned[vid] = {"status": "done"}
+        for brand, pattern, brand_desc in BRAND_PATTERNS:
+            for timestamp, context in find_mentions(snippets, pattern):
+                if (vid, brand, timestamp) in known:
+                    continue
+                try:
+                    verdict = analyse(client, video, timestamp, context, brand, brand_desc)
+                except Exception as e:
+                    print(f"  ! analysis failed for {vid}@{timestamp} [{brand}]: {e}")
+                    continue
+                if not verdict["is_company"]:
+                    continue
+                mention = {
+                    "video_id": vid,
+                    "brand": brand,
+                    "podcast": video["channel"],
+                    "episode": video["title"],
+                    "published": video["published"],
+                    "timestamp": timestamp,
+                    "timestamp_label": fmt_ts(timestamp),
+                    "url": f"https://www.youtube.com/watch?v={vid}&t={timestamp}s",
+                    "sentiment": verdict["sentiment"],
+                    "topic": verdict["topic"],
+                    "found_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                }
+                store["mentions"].append(mention)
+                known.add((vid, brand, timestamp))
+                new_mentions.append(mention)
+                print(f"  + MENTION [{brand}] {video['channel']} @ {mention['timestamp_label']} ({verdict['sentiment']})")
+        scanned[vid] = {"status": "done", "bv": BRANDS_VERSION}
         processed += 1
         if processed % 25 == 0:
             persist()
@@ -330,7 +352,7 @@ def main():
         lines = [f"## 🎙 {len(new_mentions)} new podcast mention(s)\n"]
         for m in new_mentions:
             lines.append(
-                f"- *{m['podcast']}* — {m['episode']}\n"
+                f"- **{m.get('brand', 'Decagon')}** · *{m['podcast']}* — {m['episode']}\n"
                 f"  {m['sentiment'].capitalize()} · at {m['timestamp_label']} · {m['topic']}\n"
                 f"  {m['url']}"
             )

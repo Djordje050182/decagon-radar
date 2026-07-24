@@ -200,8 +200,8 @@
 
 <main class="wrap">
   <section id="panel-mentions">
-    <input class="search" id="mention-search" type="search" placeholder="Search podcasts, episodes, topics…" oninput="mentionQuery=this.value;renderMentions()">
-    <div class="toolbar" id="mention-filters"></div>
+    <input class="search" id="mention-search" type="search" placeholder="Search brands, podcasts, episodes, topics…" oninput="mentionQuery=this.value;renderMentions()">
+    <div id="mention-filters"></div>
     <div id="mentions-body"></div>
   </section>
 
@@ -243,7 +243,8 @@ const MOM_ICON = { rising: "▲ Rising", steady: "→ Steady", cooling: "▼ Coo
 
 let mentions = [], items = [], trends = null;
 let sentimentFilter = "all", companyFilter = "all", typeFilter = "all", timeFilter = "all";
-let searchQuery = "", mentionQuery = "";
+let searchQuery = "", mentionQuery = "", brandFilter = "all";
+function setBrand(b) { brandFilter = b; renderMentions(); }
 function matches(q, ...fields) {
   if (!q.trim()) return true;
   const hay = fields.join(" ").toLowerCase();
@@ -305,27 +306,41 @@ function renderStats() {
 /* ---------- Podcast mentions ---------- */
 function setSentiment(s) { sentimentFilter = s; renderMentions(); }
 function renderMentions() {
-  const counts = { all: mentions.length, positive: 0, neutral: 0, negative: 0 };
-  mentions.forEach(m => counts[m.sentiment] !== undefined && counts[m.sentiment]++);
+  const inBrand = mentions.filter(m => brandFilter === "all" || (m.brand || "Decagon") === brandFilter);
+  const counts = { all: inBrand.length, positive: 0, neutral: 0, negative: 0 };
+  inBrand.forEach(m => counts[m.sentiment] !== undefined && counts[m.sentiment]++);
+
+  const brandCounts = {};
+  mentions.forEach(m => { const b = m.brand || "Decagon"; brandCounts[b] = (brandCounts[b] || 0) + 1; });
+  const brands = ["all", ...Object.keys(brandCounts).sort((a, b) =>
+    a === "Decagon" ? -1 : b === "Decagon" ? 1 : a.localeCompare(b))];
+  const brandChips = brands.length > 2
+    ? `<div class="toolbar">` + `<span class="toolbar-label">Brand</span>` +
+      brands.map(b => `<button class="chip ${brandFilter === b ? "on" : ""}" onclick="setBrand('${esc(b)}')">${b === "all" ? "All" : esc(b) + " (" + brandCounts[b] + ")"}</button>`).join("") + `</div>`
+    : "";
+
   document.getElementById("mention-filters").innerHTML =
+    brandChips + `<div class="toolbar">` +
     ["all", "positive", "neutral", "negative"].map(s =>
       `<button class="chip ${sentimentFilter === s ? "on" : ""}" onclick="setSentiment('${s}')">
         ${s === "all" ? "All" : s[0].toUpperCase() + s.slice(1)} (${counts[s]})</button>`).join("") +
-    `<span class="updated">Timestamps link to the exact moment on YouTube</span>`;
-  const rows = mentions.filter(m =>
+    `<span class="updated">Timestamps link to the exact moment on YouTube</span></div>`;
+
+  const rows = inBrand.filter(m =>
     (sentimentFilter === "all" || m.sentiment === sentimentFilter) &&
-    matches(mentionQuery, m.podcast, m.episode, m.topic));
+    matches(mentionQuery, m.brand || "Decagon", m.podcast, m.episode, m.topic));
   const body = document.getElementById("mentions-body");
   if (!rows.length) {
     body.innerHTML = `<div class="empty"><b>No mentions yet</b>The archive scan is in progress — check back soon.</div>`;
     return;
   }
   body.innerHTML = `<table><thead><tr>
-      <th>Date</th><th>Podcast</th><th>Episode</th><th>Moment</th><th>Sentiment</th><th>What they discussed</th>
+      <th>Date</th><th>Brand</th><th>Podcast</th><th>Episode</th><th>Moment</th><th>Sentiment</th><th>What they discussed</th>
     </tr></thead><tbody>` +
     rows.map(m => `<tr>
       <td class="date">${fmtDate(m.published)}</td>
-      <td class="podcast">${esc(m.podcast)}</td>
+      <td class="podcast">${esc(m.brand || "Decagon")}</td>
+      <td>${esc(m.podcast)}</td>
       <td class="episode">${esc(m.episode)}</td>
       <td><a class="ts" href="${esc(m.url)}" target="_blank" rel="noopener">▶ ${esc(m.timestamp_label)}</a></td>
       <td><span class="badge ${esc(m.sentiment)}">${esc(m.sentiment)}</span></td>
