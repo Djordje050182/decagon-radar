@@ -59,11 +59,11 @@ def main():
             item["published"] = date
             item["date_estimated"] = True
         if (i + 1) % 15 == 0:
-            store["items"].sort(key=lambda x: x["published"] or x["found_at"], reverse=True)
+            store["items"].sort(key=lambda x: x.get("published") or "0000", reverse=True)
             (DATA / "competitor-news.json").write_text(
                 json.dumps(store, indent=2, ensure_ascii=False) + "\n")
             print(f"  … {i + 1}/{len(undated)} processed")
-    store["items"].sort(key=lambda x: x["published"] or x["found_at"], reverse=True)
+    store["items"].sort(key=lambda x: x.get("published") or "0000", reverse=True)
     (DATA / "competitor-news.json").write_text(json.dumps(store, indent=2, ensure_ascii=False) + "\n")
     print(f"done: {fixed_text} from page text, {fixed_wb} from Wayback, "
           f"{len(undated) - fixed_text - fixed_wb} still undated")

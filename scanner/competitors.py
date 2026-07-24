@@ -385,7 +385,7 @@ def main():
         new_items.append(record)
         print(f"  + {item['company']}: [{verdict['type']}] {item['title'][:70]}")
 
-    store["items"].sort(key=lambda x: x["published"] or x["found_at"], reverse=True)
+    store["items"].sort(key=lambda x: x.get("published") or "0000", reverse=True)
     store["seen"] = sorted(seen)
     store["last_scan"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     save_json(DATA / "competitor-news.json", store)
