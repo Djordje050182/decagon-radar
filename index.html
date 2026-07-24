@@ -454,17 +454,24 @@ function renderTrends() {
     body.innerHTML = charts + `<div class="empty"><b>Analysis pending</b>The first market synthesis runs with the next daily scan.</div>`;
     return;
   }
+  const evItem = e => {
+    if (typeof e === "string") return `<li>${esc(e)}</li>`;
+    return `<li>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.label)}</a>` : esc(e.label)}</li>`;
+  };
   const themes = trends.themes.map(t => `
     <div class="theme">
       <h3>${esc(t.name)} <span class="mom ${esc(t.momentum)}">${MOM_ICON[t.momentum] || t.momentum}</span></h3>
       <p>${esc(t.description)}</p>
-      <ul class="ev">${t.evidence.map(e => `<li>${esc(e)}</li>`).join("")}</ul>
+      <ul class="ev">${t.evidence.map(evItem).join("")}</ul>
     </div>`).join("");
   const preds = trends.predictions.map(p => `
     <div class="pred">
       <span class="conf ${esc(p.confidence)}">${esc(p.confidence)}</span>
       <div><b>${esc(p.claim)}</b> <span style="color:var(--ink-soft)">(${esc(p.horizon)})</span>
-        <div class="why">${esc(p.rationale)}</div></div>
+        <div class="why">${esc(p.rationale)}${
+          (p.sources || []).length
+            ? " · " + p.sources.map((s, n) => `<a href="${esc(s)}" target="_blank" rel="noopener">source ${n + 1}</a>`).join(" · ")
+            : ""}</div></div>
     </div>`).join("");
   body.innerHTML = `
     <div class="section-title">The state of play</div>

@@ -37,8 +37,16 @@ SCHEMA = {
                     "momentum": {"type": "string", "enum": ["rising", "steady", "cooling"]},
                     "evidence": {
                         "type": "array",
-                        "items": {"type": "string"},
-                        "description": "2-4 headline titles from the input that support this theme",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "label": {"type": "string", "description": "Short headline or fact"},
+                                "url": {"type": "string", "description": "Source URL — from the signals list or a web search result. Empty string if none."},
+                            },
+                            "required": ["label", "url"],
+                            "additionalProperties": False,
+                        },
+                        "description": "2-4 supporting facts, each with its source URL",
                     },
                 },
                 "required": ["name", "description", "momentum", "evidence"],
@@ -58,8 +66,13 @@ SCHEMA = {
                     "horizon": {"type": "string", "description": "e.g. 'next quarter', 'by end of 2026'"},
                     "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
                     "rationale": {"type": "string", "description": "One sentence grounded in the evidence"},
+                    "sources": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "URLs supporting this prediction (from signals or web search)",
+                    },
                 },
-                "required": ["claim", "horizon", "confidence", "rationale"],
+                "required": ["claim", "horizon", "confidence", "rationale", "sources"],
                 "additionalProperties": False,
             },
         },
@@ -80,9 +93,9 @@ def main():
     for i in news["items"]:
         d = (i.get("published") or i.get("found_at") or "")[:10]
         if d and d >= cutoff.strftime("%Y-%m-%d"):
-            lines.append(f"{d} | {i['company']} | {i['type']} | {i.get('market','')} | {i['title']} :: {i['summary']}")
+            lines.append(f"{d} | {i['company']} | {i['type']} | {i.get('market','')} | {i['title']} :: {i['summary']} [{i['url']}]")
     for m in mentions["mentions"]:
-        lines.append(f"{m['published'][:10]} | PODCAST {m['podcast']} | sentiment={m['sentiment']} | {m['topic']}")
+        lines.append(f"{m['published'][:10]} | PODCAST {m['podcast']} | sentiment={m['sentiment']} | {m['topic']} [{m['url']}]")
 
     if len(lines) < 5:
         print("not enough data for trends synthesis yet")
@@ -98,16 +111,29 @@ def main():
         "moving into whose territory), and 3-5 concrete predictions with horizon and confidence. "
         "Be specific and evidence-grounded — no filler, no hedging boilerplate. It is fine to be "
         "opinionated; these are analyst views, not official positions.\n\n"
+        "Use web search (a few queries at most) to verify or broaden the picture where the "
+        "signals are thin — e.g. recent funding numbers, analyst commentary, or a development "
+        "the signals hint at but don't cover. Every evidence item and prediction must cite "
+        "source URLs — taken from the signal list (each signal ends with its URL in brackets) "
+        "or from your search results. Never cite a URL you haven't seen.\n\n"
         "SIGNALS:\n" + "\n".join(lines[:400])
     )
 
-    response = client.messages.create(
-        model=MODEL,
-        max_tokens=16000,  # adaptive thinking shares this budget; 4k truncated mid-JSON
-        output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
-        messages=[{"role": "user", "content": prompt}],
-    )
-    text = next(b.text for b in response.content if b.type == "text")
+    messages = [{"role": "user", "content": prompt}]
+    while True:
+        response = client.messages.create(
+            model=MODEL,
+            max_tokens=16000,  # adaptive thinking shares this budget; 4k truncated mid-JSON
+            tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}],
+            output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
+            messages=messages,
+        )
+        if response.stop_reason == "pause_turn":
+            messages = [{"role": "user", "content": prompt},
+                        {"role": "assistant", "content": response.content}]
+            continue
+        break
+    text = "".join(b.text for b in response.content if b.type == "text")
     result = json.loads(text)
     result["generated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     result["window_days"] = WINDOW_DAYS
