@@ -2052,6 +2052,45 @@
       "sentiment": "neutral",
       "topic": "Discussion of whether to build custom AI solutions versus buying existing platforms like Intercom for customer support automation.",
       "found_at": "2026-07-25T10:02:50+00:00"
+    },
+    {
+      "video_id": "5WN8bfG06Hk",
+      "brand": "Intercom (Fin)",
+      "podcast": "Y Combinator",
+      "episode": "From Pivot Hell To $1.4 Billion Unicorn",
+      "published": "2025-12-10T15:00:19Z",
+      "timestamp": 1332,
+      "timestamp_label": "22:12",
+      "url": "https://www.youtube.com/watch?v=5WN8bfG06Hk&t=1332s",
+      "sentiment": "positive",
+      "topic": "The speaker discusses how Intercom's AI product Fin serves as an inspiring example of successfully integrating AI across multiple products, which informs PostHog's ambitious approach to building AI-driven features.",
+      "found_at": "2026-07-25T10:15:13+00:00"
+    },
+    {
+      "video_id": "t8co94HS6tY",
+      "brand": "Intercom (Fin)",
+      "podcast": "Y Combinator",
+      "episode": "How Amplitude Went From Skeptics to “All In” on AI",
+      "published": "2025-12-03T15:01:50Z",
+      "timestamp": 313,
+      "timestamp_label": "5:13",
+      "url": "https://www.youtube.com/watch?v=t8co94HS6tY&t=313s",
+      "sentiment": "positive",
+      "topic": "Amplitude's acquisition of Command AI and their development of an AI chatbot similar to Intercom Fin to help guide and support end users.",
+      "found_at": "2026-07-25T10:15:16+00:00"
+    },
+    {
+      "video_id": "bxBzsSsqQAM",
+      "brand": "Intercom (Fin)",
+      "podcast": "Y Combinator",
+      "episode": "The 7 Most Powerful Moats For AI Startups",
+      "published": "2025-10-03T14:01:00Z",
+      "timestamp": 1531,
+      "timestamp_label": "25:31",
+      "url": "https://www.youtube.com/watch?v=bxBzsSsqQAM&t=1531s",
+      "sentiment": "neutral",
+      "topic": "Discussion of how incumbent SaaS companies like Intercom face strategic challenges from AI-native competitors due to their per-seat pricing model conflicting with AI automation that reduces headcount needs.",
+      "found_at": "2026-07-25T10:15:46+00:00"
     }
   ],
   "last_scan": "2026-07-24T12:56:40+00:00"
