@@ -277,11 +277,14 @@ def main():
     # 1. Discover candidates
     candidates = {}
     for ch in channels:
-        info = resolve_channel(ch["handle"], cache)
-        if not info:
-            continue
-        for v in recent_uploads(info["uploads_playlist"], cutoff, max_pages):
-            candidates[v["video_id"]] = v
+        try:
+            info = resolve_channel(ch["handle"], cache)
+            if not info:
+                continue
+            for v in recent_uploads(info["uploads_playlist"], cutoff, max_pages):
+                candidates[v["video_id"]] = v
+        except Exception as e:
+            print(f"  ! channel {ch['handle']} failed ({type(e).__name__}) — skipping", flush=True)
         time.sleep(0.1)
     print(f"watchlist candidates: {len(candidates)}")
 
