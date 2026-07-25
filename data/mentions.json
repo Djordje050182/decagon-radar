@@ -1519,6 +1519,19 @@
       "sentiment": "neutral",
       "topic": "Discussion of Sierra, an AI agent company founded by Bret Taylor that builds Salesforce-native sales, marketing, and customer service agents, with consideration of both risks and potential acquisition upside.",
       "found_at": "2026-07-25T09:19:04+00:00"
+    },
+    {
+      "video_id": "6uYEPfiBMAE",
+      "brand": "Decagon",
+      "podcast": "All-In Podcast",
+      "episode": "Does OpenAI Need a Bailout? Mamdani Wins, Socialism Rising, Filibuster Nuclear Option",
+      "published": "2025-11-07T21:18:30Z",
+      "timestamp": 5086,
+      "timestamp_label": "1:24:46",
+      "url": "https://www.youtube.com/watch?v=6uYEPfiBMAE&t=5086s",
+      "sentiment": "positive",
+      "topic": "The speaker highlights Decagon as one of three successful angel investments that has scaled to a $4 billion valuation.",
+      "found_at": "2026-07-25T09:27:51+00:00"
     }
   ],
   "last_scan": "2026-07-24T12:56:40+00:00"
