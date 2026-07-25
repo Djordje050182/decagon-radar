@@ -1350,6 +1350,71 @@
       "sentiment": "neutral",
       "topic": "SAP's licensing model is evolving toward consumption-based and outcome-based pricing similar to Sierra's approach, while balancing customer demand for predictability.",
       "found_at": "2026-07-25T08:56:40+00:00"
+    },
+    {
+      "video_id": "efUt__S_AjY",
+      "brand": "Decagon",
+      "podcast": "No Priors: AI, Machine Learning, Tech, & Startups",
+      "episode": "The AI Code Slop: Risk or Opportunity?",
+      "published": "2026-02-19T11:01:09Z",
+      "timestamp": 146,
+      "timestamp_label": "2:26",
+      "url": "https://www.youtube.com/watch?v=efUt__S_AjY&t=146s",
+      "sentiment": "neutral",
+      "topic": "Discussion of Decagon as an example of companies transitioning from per-seat software to utilization-based AI customer support agents.",
+      "found_at": "2026-07-25T09:07:15+00:00"
+    },
+    {
+      "video_id": "efUt__S_AjY",
+      "brand": "Sierra",
+      "podcast": "No Priors: AI, Machine Learning, Tech, & Startups",
+      "episode": "The AI Code Slop: Risk or Opportunity?",
+      "published": "2026-02-19T11:01:09Z",
+      "timestamp": 148,
+      "timestamp_label": "2:28",
+      "url": "https://www.youtube.com/watch?v=efUt__S_AjY&t=148s",
+      "sentiment": "positive",
+      "topic": "Sierra is discussed as an example of a company successfully shifting from per-seat software to utilization-based AI agents for customer support.",
+      "found_at": "2026-07-25T09:07:17+00:00"
+    },
+    {
+      "video_id": "k-xtmISBCNE",
+      "brand": "Sierra",
+      "podcast": "No Priors: AI, Machine Learning, Tech, & Startups",
+      "episode": "NVIDIA’s Jensen Huang on Reasoning Models, Robotics, and Refuting the “AI Bubble” Narrative",
+      "published": "2026-01-08T11:01:32Z",
+      "timestamp": 4310,
+      "timestamp_label": "1:11:50",
+      "url": "https://www.youtube.com/watch?v=k-xtmISBCNE&t=4310s",
+      "sentiment": "neutral",
+      "topic": "Comparison of AI adoption rates and successful implementations across enterprise and startup companies, with Sierra mentioned as an example of enterprise AI progress.",
+      "found_at": "2026-07-25T09:07:28+00:00"
+    },
+    {
+      "video_id": "WHWAYiY_RnQ",
+      "brand": "Sierra",
+      "podcast": "No Priors: AI, Machine Learning, Tech, & Startups",
+      "episode": "No Priors Ep. 143 | With ElevenLabs Co-Founder Mati Staniszewski",
+      "published": "2025-12-11T11:00:58Z",
+      "timestamp": 1458,
+      "timestamp_label": "24:18",
+      "url": "https://www.youtube.com/watch?v=WHWAYiY_RnQ&t=1458s",
+      "sentiment": "positive",
+      "topic": "Comparing ElevenLabs' platform approach to competitors like Sierra in the conversational AI and voice agent market.",
+      "found_at": "2026-07-25T09:12:55+00:00"
+    },
+    {
+      "video_id": "0YaJQZZACy8",
+      "brand": "Sierra",
+      "podcast": "No Priors: AI, Machine Learning, Tech, & Startups",
+      "episode": "No Priors Ep. 142 | With Harvey Co-Founder and President Gabe Pereyra",
+      "published": "2025-12-05T00:00:01Z",
+      "timestamp": 1224,
+      "timestamp_label": "20:24",
+      "url": "https://www.youtube.com/watch?v=0YaJQZZACy8&t=1224s",
+      "sentiment": "neutral",
+      "topic": "Comparing Harvey's deployed engineering approach to Sierra's agent engineering program for customizing products for large enterprise customers.",
+      "found_at": "2026-07-25T09:12:58+00:00"
     }
   ],
   "last_scan": "2026-07-24T12:56:40+00:00"
