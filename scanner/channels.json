@@ -1,22 +1,106 @@
 [
-  { "name": "20VC with Harry Stebbings", "handle": "@20VC" },
-  { "name": "Lenny's Podcast", "handle": "@LennysPodcast" },
-  { "name": "No Priors", "handle": "@NoPriorsPodcast" },
-  { "name": "BG2 Pod", "handle": "@BG2Pod" },
-  { "name": "All-In Podcast", "handle": "@allin" },
-  { "name": "a16z", "handle": "@a16z" },
-  { "name": "The Logan Bartlett Show", "handle": "@theloganbartlettshow" },
-  { "name": "Colossus (Business Breakdowns)", "handle": "@JoinColossus" },
-  { "name": "TWIML AI Podcast", "handle": "@twimlai" },
-  { "name": "The Cognitive Revolution", "handle": "@CognitiveRevolutionPodcast" },
-  { "name": "Y Combinator", "handle": "@ycombinator" },
-  { "name": "Sequoia Capital", "handle": "@sequoiacapital" },
-  { "name": "Acquired", "handle": "@AcquiredFM" },
-  { "name": "Redpoint AI (Unsupervised Learning)", "handle": "@RedpointAI" },
-  { "name": "Big Technology Podcast", "handle": "@BigTechnologyPodcast" },
-  { "name": "SaaStr", "handle": "@SaaStr" },
-  { "name": "Dwarkesh Patel", "handle": "@DwarkeshPatel" },
-  { "name": "Machine Learning Street Talk", "handle": "@MachineLearningStreetTalk" },
-  { "name": "TBPN", "handle": "@TBPNLive" },
-  { "name": "Latent Space", "handle": "@LatentSpacePod" }
+  {
+    "name": "20VC with Harry Stebbings",
+    "handle": "@20VC"
+  },
+  {
+    "name": "Lenny's Podcast",
+    "handle": "@LennysPodcast"
+  },
+  {
+    "name": "No Priors",
+    "handle": "@NoPriorsPodcast"
+  },
+  {
+    "name": "BG2 Pod",
+    "handle": "@BG2Pod"
+  },
+  {
+    "name": "All-In Podcast",
+    "handle": "@allin"
+  },
+  {
+    "name": "a16z",
+    "handle": "@a16z"
+  },
+  {
+    "name": "The Logan Bartlett Show",
+    "handle": "@theloganbartlettshow"
+  },
+  {
+    "name": "Colossus (Business Breakdowns)",
+    "handle": "@JoinColossus"
+  },
+  {
+    "name": "TWIML AI Podcast",
+    "handle": "@twimlai"
+  },
+  {
+    "name": "The Cognitive Revolution",
+    "handle": "@CognitiveRevolutionPodcast"
+  },
+  {
+    "name": "Y Combinator",
+    "handle": "@ycombinator"
+  },
+  {
+    "name": "Sequoia Capital",
+    "handle": "@sequoiacapital"
+  },
+  {
+    "name": "Acquired",
+    "handle": "@AcquiredFM"
+  },
+  {
+    "name": "Redpoint AI (Unsupervised Learning)",
+    "handle": "@RedpointAI"
+  },
+  {
+    "name": "Big Technology Podcast",
+    "handle": "@BigTechnologyPodcast"
+  },
+  {
+    "name": "SaaStr",
+    "handle": "@SaaStr"
+  },
+  {
+    "name": "Dwarkesh Patel",
+    "handle": "@DwarkeshPatel"
+  },
+  {
+    "name": "Machine Learning Street Talk",
+    "handle": "@MachineLearningStreetTalk"
+  },
+  {
+    "name": "TBPN",
+    "handle": "@TBPNLive"
+  },
+  {
+    "name": "Latent Space",
+    "handle": "@LatentSpacePod"
+  },
+  {
+    "name": "The Peel with Turner Novak",
+    "handle": "@ThePeelPod"
+  },
+  {
+    "name": "Uncapped with Jack Altman",
+    "handle": "@uncappedpod"
+  },
+  {
+    "name": "First Round (In Depth)",
+    "handle": "@FirstRoundCapital"
+  },
+  {
+    "name": "Grit Podcast",
+    "handle": "@gritpodcast"
+  },
+  {
+    "name": "The Crew Podcast",
+    "handle": "@thecrewpodcast"
+  },
+  {
+    "name": "The MAD Podcast (Matt Turck)",
+    "handle": "@theMADpodcast"
+  }
 ]

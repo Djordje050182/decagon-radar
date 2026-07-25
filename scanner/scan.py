@@ -235,6 +235,19 @@ def analyse(client, video, timestamp, context, brand, brand_desc):
     return json.loads(text)
 
 
+def push_progress(processed):
+    """In CI: push data/ so the live site updates while the scan runs."""
+    import subprocess
+    try:
+        subprocess.run(["git", "add", "data/"], cwd=ROOT, check=True, capture_output=True)
+        subprocess.run(["git", "commit", "-q", "-m", f"Scan progress: {processed} episodes"],
+                       cwd=ROOT, check=True, capture_output=True)
+        subprocess.run(["git", "push", "-q"], cwd=ROOT, check=True, capture_output=True, timeout=60)
+        print(f"  ↑ pushed progress at {processed} episodes", flush=True)
+    except Exception as e:
+        print(f"  ! progress push failed (continuing): {e}", flush=True)
+
+
 def fmt_ts(seconds):
     h, rem = divmod(seconds, 3600)
     m, s = divmod(rem, 60)
@@ -380,6 +393,8 @@ def main():
                 if processed % 25 == 0:
                     persist()
                     print(f"  … {processed} videos scanned this run", flush=True)
+                    if os.environ.get("PUSH_PROGRESS") and processed % 100 == 0:
+                        push_progress(processed)
         except FuturesTimeoutError:
             wedged = sum(1 for f in futures if not f.done())
             for f, (vid, video) in futures.items():

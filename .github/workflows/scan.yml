@@ -36,9 +36,15 @@ jobs:
 
       - run: pip install -r scanner/requirements.txt
 
+      - name: Git identity for progress pushes
+        run: |
+          git config user.name "decagon-radar-bot"
+          git config user.email "actions@github.com"
+
       - name: Podcast mention scan
         continue-on-error: true
         env:
+          PUSH_PROGRESS: "1"
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           WEBSHARE_USER: ${{ secrets.WEBSHARE_USER }}
