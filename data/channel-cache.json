@@ -98,5 +98,25 @@
     "channel_id": "UCxBcwypKK-W3GHd_RZ9FZrQ",
     "title": "Latent Space",
     "uploads_playlist": "UUxBcwypKK-W3GHd_RZ9FZrQ"
+  },
+  "@ThePeelPod": {
+    "channel_id": "UCtgBGZihRzzJnbRU7FPpJJw",
+    "title": "The Peel with Turner Novak",
+    "uploads_playlist": "UUtgBGZihRzzJnbRU7FPpJJw"
+  },
+  "@uncappedpod": {
+    "channel_id": "UC6wghONDqjhSw5KsXrnSTuA",
+    "title": "Uncapped with Jack Altman",
+    "uploads_playlist": "UU6wghONDqjhSw5KsXrnSTuA"
+  },
+  "@FirstRoundCapital": {
+    "channel_id": "UC_oji6l_-xwhmZqCxRGuAXw",
+    "title": "First Round Capital",
+    "uploads_playlist": "UU_oji6l_-xwhmZqCxRGuAXw"
+  },
+  "@gritpodcast": {
+    "channel_id": "UCExqWeJjcYDGeI3LH4znU6Q",
+    "title": "Grit Podcast",
+    "uploads_playlist": "UUExqWeJjcYDGeI3LH4znU6Q"
   }
 }
