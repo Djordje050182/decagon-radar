@@ -517,6 +517,8 @@ async function load() {
   } catch (e) {}
   mentions = m.mentions || [];
   items = c.items || [];
+  // start on Decagon when multi-brand data exists; other brands one tap away
+  if (new Set(mentions.map(x => x.brand || "Decagon")).size > 1) brandFilter = "Decagon";
   renderStats();
   renderMentions();
   renderCompetitors();
