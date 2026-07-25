@@ -2091,6 +2091,71 @@
       "sentiment": "neutral",
       "topic": "Discussion of how incumbent SaaS companies like Intercom face strategic challenges from AI-native competitors due to their per-seat pricing model conflicting with AI automation that reduces headcount needs.",
       "found_at": "2026-07-25T10:15:46+00:00"
+    },
+    {
+      "video_id": "YTVSwOY19Qs",
+      "brand": "Sierra",
+      "podcast": "Sequoia Capital",
+      "episode": "Jack Dorsey: Every Company Can Now Be a Mini-AGI",
+      "published": "2026-04-02T12:00:52Z",
+      "timestamp": 1011,
+      "timestamp_label": "16:51",
+      "url": "https://www.youtube.com/watch?v=YTVSwOY19Qs&t=1011s",
+      "sentiment": "neutral",
+      "topic": "Discussion of whether Sierra and similar companies can effectively build AI-driven businesses without high-frequency customer signal data.",
+      "found_at": "2026-07-25T10:23:22+00:00"
+    },
+    {
+      "video_id": "Uqr2U24uxOs",
+      "brand": "Sierra",
+      "podcast": "Sequoia Capital",
+      "episode": "What’s the Future of Vertical SaaS in an AGI World? Jamie Cuffe, CEO of Pace",
+      "published": "2026-02-03T13:00:54Z",
+      "timestamp": 1508,
+      "timestamp_label": "25:08",
+      "url": "https://www.youtube.com/watch?v=Uqr2U24uxOs&t=1508s",
+      "sentiment": "positive",
+      "topic": "Sierra is mentioned as a top-down AI solution company for customer communications that builds trust with enterprise customers, similar to Harvey, by working with leading industry players.",
+      "found_at": "2026-07-25T10:23:38+00:00"
+    },
+    {
+      "video_id": "7h-pGSAfOFM",
+      "brand": "Cresta",
+      "podcast": "Sequoia Capital",
+      "episode": "Why AI Will Transform Customer Experience: Cresta CEO Ping Wu and Sequoia’s Doug Leone",
+      "published": "2025-10-14T09:00:11Z",
+      "timestamp": 57,
+      "timestamp_label": "0:57",
+      "url": "https://www.youtube.com/watch?v=7h-pGSAfOFM&t=57s",
+      "sentiment": "positive",
+      "topic": "Cresta CEO discusses how AI and LLMs will transform customer experience in contact centers by creating continuous, personalized interactions throughout the customer journey.",
+      "found_at": "2026-07-25T10:24:05+00:00"
+    },
+    {
+      "video_id": "7h-pGSAfOFM",
+      "brand": "Cresta",
+      "podcast": "Sequoia Capital",
+      "episode": "Why AI Will Transform Customer Experience: Cresta CEO Ping Wu and Sequoia’s Doug Leone",
+      "published": "2025-10-14T09:00:11Z",
+      "timestamp": 251,
+      "timestamp_label": "4:11",
+      "url": "https://www.youtube.com/watch?v=7h-pGSAfOFM&t=251s",
+      "sentiment": "neutral",
+      "topic": "Discussion of the contact center AI market size, adoption timeline, and Cresta's position within the industry.",
+      "found_at": "2026-07-25T10:24:06+00:00"
+    },
+    {
+      "video_id": "7h-pGSAfOFM",
+      "brand": "Cresta",
+      "podcast": "Sequoia Capital",
+      "episode": "Why AI Will Transform Customer Experience: Cresta CEO Ping Wu and Sequoia’s Doug Leone",
+      "published": "2025-10-14T09:00:11Z",
+      "timestamp": 1600,
+      "timestamp_label": "26:40",
+      "url": "https://www.youtube.com/watch?v=7h-pGSAfOFM&t=1600s",
+      "sentiment": "positive",
+      "topic": "Cresta's growth strategy and plans to improve product development, hiring, and marketing to become a legendary company.",
+      "found_at": "2026-07-25T10:24:08+00:00"
     }
   ],
   "last_scan": "2026-07-24T12:56:40+00:00"
