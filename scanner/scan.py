@@ -21,7 +21,10 @@ import os
 import random
 import re
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import TimeoutError as FuturesTimeoutError
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -66,6 +69,7 @@ CONTEXT_SECONDS = 60          # transcript context around a hit sent to Claude
 MENTION_GAP_SECONDS = 120     # hits closer than this collapse into one mention
 MAX_CAPTION_RETRIES = 3       # daily runs a video gets before we give up
 MAX_RUNTIME_MIN = int(os.environ.get("MAX_RUNTIME_MIN", 300))  # stop before CI's 6h kill so data commits
+FETCH_WORKERS = int(os.environ.get("FETCH_WORKERS", 6))        # parallel caption fetches (rotating proxy)
 RUN_START = time.monotonic()
 
 HAIKU = "claude-haiku-4-5"
@@ -161,22 +165,26 @@ def search_videos(query, cutoff):
     } for item in resp.get("items", [])]
 
 
-_YTT_API = None
+_TLS = threading.local()
+_PROXY_ANNOUNCED = threading.Event()
 
 
 def ytt_api():
-    """Caption client, with Webshare rotating-proxy support if configured."""
-    global _YTT_API
-    if _YTT_API is None:
+    """Per-thread caption client (sessions aren't thread-safe), proxied if configured."""
+    api = getattr(_TLS, "api", None)
+    if api is None:
         user, pw = os.environ.get("WEBSHARE_USER"), os.environ.get("WEBSHARE_PASS")
         if user and pw and WebshareProxyConfig:
-            _YTT_API = YouTubeTranscriptApi(
+            api = YouTubeTranscriptApi(
                 proxy_config=WebshareProxyConfig(proxy_username=user, proxy_password=pw)
             )
-            print("caption fetches routed via Webshare proxy")
+            if not _PROXY_ANNOUNCED.is_set():
+                _PROXY_ANNOUNCED.set()
+                print("caption fetches routed via Webshare proxy", flush=True)
         else:
-            _YTT_API = YouTubeTranscriptApi()
-    return _YTT_API
+            api = YouTubeTranscriptApi()
+        _TLS.api = api
+    return api
 
 
 def fetch_transcript(video_id):
@@ -278,8 +286,7 @@ def main():
         save_json(DATA / "channel-cache.json", cache)
         save_json(DATA / "scanned-videos.json", scanned)
 
-    new_mentions, caption_failures = [], 0
-    consecutive_blocks, processed = 0, 0
+    pending = []
     for vid, video in candidates.items():
         state = scanned.get(vid, {})
         if state.get("status") == "done":
@@ -290,62 +297,99 @@ def main():
             continue
         if state.get("retries", 0) >= MAX_CAPTION_RETRIES:
             continue
-        if consecutive_blocks >= 15:
-            print("  !! aborting caption scan: YouTube is blocking this IP — remaining videos left for a later run")
-            break
-        if time.monotonic() - RUN_START > MAX_RUNTIME_MIN * 60:
-            print(f"  !! runtime cap ({MAX_RUNTIME_MIN} min) reached — stopping gracefully, remaining videos next run")
-            break
-        try:
-            snippets = fetch_transcript(vid)
-            consecutive_blocks = 0
-        except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable):
-            scanned[vid] = {"status": "no_captions"}
-            continue
-        except Exception as e:  # rate limit / IP block — retry next run
-            if type(e).__name__ in ("IpBlocked", "RequestBlocked"):
-                consecutive_blocks += 1
-            scanned[vid] = {"status": "retry", "retries": state.get("retries", 0) + 1}
-            caption_failures += 1
-            print(f"  ! captions failed for {vid} ({video['title'][:60]}): {type(e).__name__}")
-            time.sleep(2)
-            continue
+        pending.append((vid, video))
+    print(f"to scan this run: {len(pending)}", flush=True)
 
-        for brand, pattern, brand_desc in BRAND_PATTERNS:
-            for timestamp, context in find_mentions(snippets, pattern):
-                if (vid, brand, timestamp) in known:
+    def fetch_one(item):
+        vid, video = item
+        try:
+            return vid, video, fetch_transcript(vid), None
+        except Exception as e:
+            return vid, video, None, e
+
+    new_mentions, caption_failures = [], 0
+    consecutive_blocks, processed = 0, 0
+    stop = False
+    BATCH = FETCH_WORKERS * 4
+    for batch_start in range(0, len(pending), BATCH):
+        if stop:
+            break
+        batch = pending[batch_start:batch_start + BATCH]
+        # fresh executor per batch: a wedged fetch can't poison later batches
+        pool = ThreadPoolExecutor(max_workers=FETCH_WORKERS)
+        futures = {pool.submit(fetch_one, item): item for item in batch}
+        try:
+            results = (f.result() for f in as_completed(futures, timeout=30 + 20 * len(batch)))
+            for vid, video, snippets, err in results:
+                if consecutive_blocks >= 15:
+                    print("  !! aborting caption scan: YouTube is blocking us — remaining videos left for a later run", flush=True)
+                    stop = True
+                    break
+                if time.monotonic() - RUN_START > MAX_RUNTIME_MIN * 60:
+                    print(f"  !! runtime cap ({MAX_RUNTIME_MIN} min) reached — stopping gracefully, remaining videos next run", flush=True)
+                    stop = True
+                    break
+                state = scanned.get(vid, {})
+                if err is not None:
+                    if isinstance(err, (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable)):
+                        scanned[vid] = {"status": "no_captions"}
+                    elif "ProxyError" in type(err).__name__:
+                        # proxy dead (e.g. bandwidth cap) — not the video's fault, don't burn retries
+                        consecutive_blocks += 5  # trip the abort fast
+                        caption_failures += 1
+                        print(f"  ! proxy failure on {vid}: {type(err).__name__} — check Webshare bandwidth", flush=True)
+                    else:
+                        if type(err).__name__ in ("IpBlocked", "RequestBlocked"):
+                            consecutive_blocks += 1
+                        scanned[vid] = {"status": "retry", "retries": state.get("retries", 0) + 1}
+                        caption_failures += 1
+                        print(f"  ! captions failed for {vid} ({video['title'][:60]}): {type(err).__name__}", flush=True)
                     continue
-                try:
-                    verdict = analyse(client, video, timestamp, context, brand, brand_desc)
-                except Exception as e:
-                    print(f"  ! analysis failed for {vid}@{timestamp} [{brand}]: {e}")
-                    continue
-                if not verdict["is_company"]:
-                    continue
-                mention = {
-                    "video_id": vid,
-                    "brand": brand,
-                    "podcast": video["channel"],
-                    "episode": video["title"],
-                    "published": video["published"],
-                    "timestamp": timestamp,
-                    "timestamp_label": fmt_ts(timestamp),
-                    "url": f"https://www.youtube.com/watch?v={vid}&t={timestamp}s",
-                    "sentiment": verdict["sentiment"],
-                    "topic": verdict["topic"],
-                    "found_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                }
-                store["mentions"].append(mention)
-                known.add((vid, brand, timestamp))
-                new_mentions.append(mention)
-                print(f"  + MENTION [{brand}] {video['channel']} @ {mention['timestamp_label']} ({verdict['sentiment']})")
-        scanned[vid] = {"status": "done", "bv": BRANDS_VERSION}
-        processed += 1
-        if processed % 25 == 0:
-            persist()
-            print(f"  … {processed} videos scanned this run")
-        # rotating proxy needs no pacing; direct fetches stay gentle
-        time.sleep(0.2 if os.environ.get("WEBSHARE_USER") else 1.5 + random.random() * 1.5)
+                consecutive_blocks = 0
+
+                for brand, pattern, brand_desc in BRAND_PATTERNS:
+                    for timestamp, context in find_mentions(snippets, pattern):
+                        if (vid, brand, timestamp) in known:
+                            continue
+                        try:
+                            verdict = analyse(client, video, timestamp, context, brand, brand_desc)
+                        except Exception as e:
+                            print(f"  ! analysis failed for {vid}@{timestamp} [{brand}]: {e}", flush=True)
+                            continue
+                        if not verdict["is_company"]:
+                            continue
+                        mention = {
+                            "video_id": vid,
+                            "brand": brand,
+                            "podcast": video["channel"],
+                            "episode": video["title"],
+                            "published": video["published"],
+                            "timestamp": timestamp,
+                            "timestamp_label": fmt_ts(timestamp),
+                            "url": f"https://www.youtube.com/watch?v={vid}&t={timestamp}s",
+                            "sentiment": verdict["sentiment"],
+                            "topic": verdict["topic"],
+                            "found_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        }
+                        store["mentions"].append(mention)
+                        known.add((vid, brand, timestamp))
+                        new_mentions.append(mention)
+                        print(f"  + MENTION [{brand}] {video['channel']} @ {mention['timestamp_label']} ({verdict['sentiment']})", flush=True)
+                scanned[vid] = {"status": "done", "bv": BRANDS_VERSION}
+                processed += 1
+                if processed % 25 == 0:
+                    persist()
+                    print(f"  … {processed} videos scanned this run", flush=True)
+        except FuturesTimeoutError:
+            wedged = sum(1 for f in futures if not f.done())
+            for f, (vid, video) in futures.items():
+                if not f.done():
+                    st = scanned.get(vid, {})
+                    scanned[vid] = {"status": "retry", "retries": st.get("retries", 0) + 1}
+                    caption_failures += 1
+            print(f"  ! batch timed out with {wedged} wedged fetches — queued for retry", flush=True)
+        finally:
+            pool.shutdown(wait=False)
 
     # 3. Persist
     store["mentions"].sort(key=lambda m: m["published"], reverse=True)
