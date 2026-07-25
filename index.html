@@ -243,8 +243,9 @@ const MOM_ICON = { rising: "▲ Rising", steady: "→ Steady", cooling: "▼ Coo
 
 let mentions = [], items = [], trends = null;
 let sentimentFilter = "all", companyFilter = "all", typeFilter = "all", timeFilter = "all";
-let searchQuery = "", mentionQuery = "", brandFilter = "all";
+let searchQuery = "", mentionQuery = "", brandFilter = "all", podcastFilter = "all";
 function setBrand(b) { brandFilter = b; renderMentions(); }
+function setPodcast(p) { podcastFilter = p; renderMentions(); }
 function matches(q, ...fields) {
   if (!q.trim()) return true;
   const hay = fields.join(" ").toLowerCase();
@@ -306,9 +307,20 @@ function renderStats() {
 /* ---------- Podcast mentions ---------- */
 function setSentiment(s) { sentimentFilter = s; renderMentions(); }
 function renderMentions() {
-  const inBrand = mentions.filter(m => brandFilter === "all" || (m.brand || "Decagon") === brandFilter);
+  const inBrand = mentions.filter(m =>
+    (brandFilter === "all" || (m.brand || "Decagon") === brandFilter) &&
+    (podcastFilter === "all" || m.podcast === podcastFilter));
   const counts = { all: inBrand.length, positive: 0, neutral: 0, negative: 0 };
   inBrand.forEach(m => counts[m.sentiment] !== undefined && counts[m.sentiment]++);
+
+  const showCounts = {};
+  mentions.filter(m => brandFilter === "all" || (m.brand || "Decagon") === brandFilter)
+    .forEach(m => showCounts[m.podcast] = (showCounts[m.podcast] || 0) + 1);
+  const shows = ["all", ...Object.entries(showCounts).sort((a, b) => b[1] - a[1]).map(e => e[0])];
+  const showChips = shows.length > 2
+    ? `<div class="toolbar"><span class="toolbar-label">Show</span>` +
+      shows.map(p => `<button class="chip ${podcastFilter === p ? "on" : ""}" onclick="setPodcast('${esc(p).replace(/'/g, "\\'")}')">${p === "all" ? "All shows" : esc(p) + " (" + showCounts[p] + ")"}</button>`).join("") + `</div>`
+    : "";
 
   const brandCounts = {};
   mentions.forEach(m => { const b = m.brand || "Decagon"; brandCounts[b] = (brandCounts[b] || 0) + 1; });
@@ -320,7 +332,7 @@ function renderMentions() {
     : "";
 
   document.getElementById("mention-filters").innerHTML =
-    brandChips + `<div class="toolbar">` +
+    brandChips + showChips + `<div class="toolbar">` +
     ["all", "positive", "neutral", "negative"].map(s =>
       `<button class="chip ${sentimentFilter === s ? "on" : ""}" onclick="setSentiment('${s}')">
         ${s === "all" ? "All" : s[0].toUpperCase() + s.slice(1)} (${counts[s]})</button>`).join("") +
