@@ -1506,6 +1506,19 @@
       "sentiment": "neutral",
       "topic": "Decagon's customer support AI operations use open source models that have been fine-tuned and customized for their specific use case rather than relying solely on frontier models.",
       "found_at": "2026-07-25T09:18:29+00:00"
+    },
+    {
+      "video_id": "V0lFjTWx36I",
+      "brand": "Sierra",
+      "podcast": "All-In Podcast",
+      "episode": "Why Secondary Markets Are Eating the IPO | All-In Liquidity Secondary Markets Panel",
+      "published": "2026-06-07T18:26:25Z",
+      "timestamp": 1992,
+      "timestamp_label": "33:12",
+      "url": "https://www.youtube.com/watch?v=V0lFjTWx36I&t=1992s",
+      "sentiment": "neutral",
+      "topic": "Discussion of Sierra, an AI agent company founded by Bret Taylor that builds Salesforce-native sales, marketing, and customer service agents, with consideration of both risks and potential acquisition upside.",
+      "found_at": "2026-07-25T09:19:04+00:00"
     }
   ],
   "last_scan": "2026-07-24T12:56:40+00:00"
