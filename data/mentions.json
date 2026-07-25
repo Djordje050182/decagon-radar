@@ -3833,6 +3833,45 @@
       "sentiment": "neutral",
       "topic": "Intercom is mentioned as one of several B2B companies with speakers attending SaaStr AI London conference in December.",
       "found_at": "2026-07-25T11:19:04+00:00"
+    },
+    {
+      "video_id": "hf-9gRbsRBY",
+      "brand": "Intercom (Fin)",
+      "podcast": "SaaStr AI",
+      "episode": "Is The Classic GTM Playbook Really Dead? with SaaStr CEO and Founder Jason Lemkin",
+      "published": "2025-10-05T13:00:06Z",
+      "timestamp": 120,
+      "timestamp_label": "2:00",
+      "url": "https://www.youtube.com/watch?v=hf-9gRbsRBY&t=120s",
+      "sentiment": "neutral",
+      "topic": "Intercom is mentioned as one of the companies participating in the SaaStr AI London conference.",
+      "found_at": "2026-07-25T11:23:54+00:00"
+    },
+    {
+      "video_id": "hf-9gRbsRBY",
+      "brand": "Intercom (Fin)",
+      "podcast": "SaaStr AI",
+      "episode": "Is The Classic GTM Playbook Really Dead? with SaaStr CEO and Founder Jason Lemkin",
+      "published": "2025-10-05T13:00:06Z",
+      "timestamp": 1602,
+      "timestamp_label": "26:42",
+      "url": "https://www.youtube.com/watch?v=hf-9gRbsRBY&t=1602s",
+      "sentiment": "positive",
+      "topic": "Intercom's Fin AI product has achieved significant revenue growth of $50 million by capitalizing on AI budget opportunities.",
+      "found_at": "2026-07-25T11:23:56+00:00"
+    },
+    {
+      "video_id": "C2vd91RjZyk",
+      "brand": "Salesforce Agentforce",
+      "podcast": "SaaStr AI",
+      "episode": "SaaStr AI Live: Redpoint's AI Guide to Investing",
+      "published": "2025-07-31T05:49:58Z",
+      "timestamp": 2021,
+      "timestamp_label": "33:41",
+      "url": "https://www.youtube.com/watch?v=C2vd91RjZyk&t=2021s",
+      "sentiment": "neutral",
+      "topic": "Discussion of Salesforce Agentforce's competitive advantage due to existing customer and sales data access compared to new AI agent competitors.",
+      "found_at": "2026-07-25T11:29:27+00:00"
     }
   ],
   "last_scan": "2026-07-24T12:56:40+00:00"
