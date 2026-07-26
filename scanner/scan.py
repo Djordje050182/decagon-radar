@@ -111,7 +111,10 @@ def yt_get(endpoint, **params):
 def resolve_channel(handle, cache):
     if handle in cache:
         return cache[handle]
-    resp = yt_get("channels", part="contentDetails,snippet", forHandle=handle)
+    if handle.startswith("UC"):  # raw channel ID (channels with no working handle)
+        resp = yt_get("channels", part="contentDetails,snippet", id=handle)
+    else:
+        resp = yt_get("channels", part="contentDetails,snippet", forHandle=handle)
     items = resp.get("items", [])
     if not items:
         print(f"  ! could not resolve channel handle {handle}")
