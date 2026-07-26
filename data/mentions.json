@@ -5081,6 +5081,32 @@
       "sentiment": "positive",
       "topic": "Intercom's use of Stripe's outcome-based billing to charge customers for resolved support cases rather than fixed fees or usage metrics.",
       "found_at": "2026-07-26T10:34:12+00:00"
+    },
+    {
+      "video_id": "IYrO9h4KYZc",
+      "brand": "Decagon",
+      "podcast": "Latent Space",
+      "episode": "⚡️No, Don't Do Palantir for AI - Brendan Falk, Hercules (AUDIO FIXED)",
+      "published": "2025-09-18T14:36:08Z",
+      "timestamp": 1292,
+      "timestamp_label": "21:32",
+      "url": "https://www.youtube.com/watch?v=IYrO9h4KYZc&t=1292s",
+      "sentiment": "negative",
+      "topic": "Concerns about Decagon and Sierra being better-positioned competitors in the customer service software space due to their focused expertise and resources.",
+      "found_at": "2026-07-26T10:41:16+00:00"
+    },
+    {
+      "video_id": "IYrO9h4KYZc",
+      "brand": "Sierra",
+      "podcast": "Latent Space",
+      "episode": "⚡️No, Don't Do Palantir for AI - Brendan Falk, Hercules (AUDIO FIXED)",
+      "published": "2025-09-18T14:36:08Z",
+      "timestamp": 1295,
+      "timestamp_label": "21:35",
+      "url": "https://www.youtube.com/watch?v=IYrO9h4KYZc&t=1295s",
+      "sentiment": "negative",
+      "topic": "Sierra and Decagon pose a competitive threat to the speaker's enterprise software business because they specialize exclusively in customer service and can outperform generalist solutions.",
+      "found_at": "2026-07-26T10:41:18+00:00"
     }
   ],
   "last_scan": "2026-07-26T04:28:17+00:00"
