@@ -70,6 +70,7 @@ jobs:
           git config user.email "actions@github.com"
           git add data/
           git diff --cached --quiet || git commit -m "Daily scan $(date -u +%F)"
+          git pull --rebase
           git push
 
       - name: Open digest issue

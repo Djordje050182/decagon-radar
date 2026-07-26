@@ -242,6 +242,8 @@ def push_progress(processed):
         subprocess.run(["git", "add", "data/"], cwd=ROOT, check=True, capture_output=True)
         subprocess.run(["git", "commit", "-q", "-m", f"Scan progress: {processed} episodes"],
                        cwd=ROOT, check=True, capture_output=True)
+        # rebase first: site tweaks pushed mid-run must never reject a data save
+        subprocess.run(["git", "pull", "--rebase", "-q"], cwd=ROOT, check=True, capture_output=True, timeout=60)
         subprocess.run(["git", "push", "-q"], cwd=ROOT, check=True, capture_output=True, timeout=60)
         print(f"  ↑ pushed progress at {processed} episodes", flush=True)
     except Exception as e:
