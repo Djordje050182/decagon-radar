@@ -419,12 +419,14 @@ def main():
     # 4. Digest fragment for the daily issue
     if new_mentions:
         lines = [f"## 🎙 {len(new_mentions)} new podcast mention(s)\n"]
-        for m in new_mentions:
+        for m in new_mentions[:15]:
             lines.append(
                 f"- **{m.get('brand', 'Decagon')}** · *{m['podcast']}* — {m['episode']}\n"
                 f"  {m['sentiment'].capitalize()} · at {m['timestamp_label']} · {m['topic']}\n"
                 f"  {m['url']}"
             )
+        if len(new_mentions) > 15:
+            lines.append(f"\n…and {len(new_mentions) - 15} more — full list on the dashboard.")
         (ROOT / "digest_mentions.md").write_text("\n".join(lines) + "\n")
 
     print(f"done: {len(new_mentions)} new mentions, {caption_failures} caption fetches queued for retry")

@@ -392,12 +392,14 @@ def main():
 
     if new_items:
         lines = [f"## 📡 {len(new_items)} competitor update(s)\n"]
-        for it in new_items:
+        for it in new_items[:15]:
             lines.append(
                 f"- **{it['company']}** · {TYPE_LABELS.get(it['type'], 'News')} — {it['title']}\n"
                 f"  {it['summary']}\n"
                 f"  {it['url']}"
             )
+        if len(new_items) > 15:
+            lines.append(f"\n…and {len(new_items) - 15} more — full list on the dashboard.")
         (ROOT / "digest_competitors.md").write_text("\n".join(lines) + "\n")
 
     print(f"done: {len(new_items)} relevant items kept")
