@@ -5003,6 +5003,58 @@
       "sentiment": "positive",
       "topic": "Salesforce Agentforce is presented as a rapidly growing AI business generating $800 million in revenue with 170% year-over-year growth, representing a major strategic shift for Salesforce toward agent-based enterprise software.",
       "found_at": "2026-07-26T10:21:18+00:00"
+    },
+    {
+      "video_id": "AGTMhLo1pAM",
+      "brand": "Intercom (Fin)",
+      "podcast": "TBPN",
+      "episode": "Collison Brothers Join, Bill Gurley Joins (Gurlin' Down A Dream)",
+      "published": "2026-02-25T00:02:24Z",
+      "timestamp": 9748,
+      "timestamp_label": "2:42:28",
+      "url": "https://www.youtube.com/watch?v=AGTMhLo1pAM&t=9748s",
+      "sentiment": "positive",
+      "topic": "Leading AI companies like Intercom are volunteering for independent audits to demonstrate they are security pioneers under a new universal standard.",
+      "found_at": "2026-07-26T10:21:21+00:00"
+    },
+    {
+      "video_id": "bIOCKXcxloQ",
+      "brand": "Decagon",
+      "podcast": "Latent Space",
+      "episode": "Podcast Crossover: AIE, AGI, frontier lab strategy with ​ ⁨@matthew_berman⁩  and @swyxtv",
+      "published": "2026-07-10T20:24:16Z",
+      "timestamp": 1437,
+      "timestamp_label": "23:57",
+      "url": "https://www.youtube.com/watch?v=bIOCKXcxloQ&t=1437s",
+      "sentiment": "neutral",
+      "topic": "Decagon is mentioned as an example of an agent lab company that applies latest AI capabilities to their specific field.",
+      "found_at": "2026-07-26T10:26:22+00:00"
+    },
+    {
+      "video_id": "zP8P7hJXwE0",
+      "brand": "Decagon",
+      "podcast": "Latent Space",
+      "episode": "⚡️Context Graphs: according to the authors — Jaya Gupta, Ashu Garg, Foundation Capital",
+      "published": "2026-02-04T02:59:23Z",
+      "timestamp": 190,
+      "timestamp_label": "3:10",
+      "url": "https://www.youtube.com/watch?v=zP8P7hJXwE0&t=190s",
+      "sentiment": "neutral",
+      "topic": "Discussion of AI agents in production, including Decagon as one of several customer support agent companies, and the limitations they face in enterprise work.",
+      "found_at": "2026-07-26T10:27:54+00:00"
+    },
+    {
+      "video_id": "BKLvySNVBtM",
+      "brand": "Sierra",
+      "podcast": "Latent Space",
+      "episode": "Brex’s AI Hail Mary — With CTO James Reggio (acquired for $5B by Capital One!)",
+      "published": "2026-01-17T01:38:03Z",
+      "timestamp": 3050,
+      "timestamp_label": "50:50",
+      "url": "https://www.youtube.com/watch?v=BKLvySNVBtM&t=3050s",
+      "sentiment": "positive",
+      "topic": "Brex is using Sierra's low-code platform to build and manage customer support agents while avoiding the need to build custom UI/UX infrastructure.",
+      "found_at": "2026-07-26T10:28:03+00:00"
     }
   ],
   "last_scan": "2026-07-26T04:28:17+00:00"
