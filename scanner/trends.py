@@ -94,8 +94,18 @@ def main():
         d = (i.get("published") or i.get("found_at") or "")[:10]
         if d and d >= cutoff.strftime("%Y-%m-%d"):
             lines.append(f"{d} | {i['company']} | {i['type']} | {i.get('market','')} | {i['title']} :: {i['summary']} [{i['url']}]")
+
+    # podcasts: every Decagon mention in the window individually; other brands as aggregates
+    from collections import Counter
+    agg = Counter()
     for m in mentions["mentions"]:
-        lines.append(f"{m['published'][:10]} | PODCAST {m['podcast']} | sentiment={m['sentiment']} | {m['topic']} [{m['url']}]")
+        brand = m.get("brand", "Decagon")
+        if brand == "Decagon" and m["published"][:10] >= cutoff.strftime("%Y-%m-%d"):
+            lines.append(f"{m['published'][:10]} | PODCAST {m['podcast']} | Decagon | sentiment={m['sentiment']} | {m['topic']} [{m['url']}]")
+        else:
+            agg[(brand, m["sentiment"])] += 1
+    for (brand, sentiment), n in agg.most_common():
+        lines.append(f"PODCAST AGGREGATE (12 months) | {brand} | {n} mentions | sentiment={sentiment}")
 
     if len(lines) < 5:
         print("not enough data for trends synthesis yet")
@@ -116,7 +126,17 @@ def main():
         "the signals hint at but don't cover. Every evidence item and prediction must cite "
         "source URLs — taken from the signal list (each signal ends with its URL in brackets) "
         "or from your search results. Never cite a URL you haven't seen.\n\n"
-        "SIGNALS:\n" + "\n".join(lines[:400])
+        "ACCURACY RULES (hard requirements):\n"
+        "- Get M&A direction right. Verify who acquired whom with a web search before asserting "
+        "any acquisition. Known correction: Intercom renamed itself 'Fin' in 2026 and was "
+        "acquired by SALESFORCE for ~$3.6B — Intercom did not acquire anything.\n"
+        "- Never merge separate stories into one claim; if a signal summary conflicts with what "
+        "your search finds, trust the search and say so.\n"
+        "- The PODCAST signals are share-of-voice data from a 12-month scan of 24 tech/AI shows "
+        "— use them (volumes, sentiment mix, what hosts/guests actually discussed) as first-class "
+        "evidence about mindshare and narrative, and weave at least one podcast-grounded insight "
+        "into the overview and themes.\n\n"
+        "SIGNALS:\n" + "\n".join(lines[:550])
     )
 
     def synthesise(use_search):

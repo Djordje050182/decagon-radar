@@ -1048,9 +1048,9 @@
       "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUXVpTmE4NTNJZkVtUHpuUjJwTnJjRS1ORXZxUGRBbFVTMFFHUF94QXB5ZGZlV3lEZW5Ca1hPSE5ScmZ2b2tjQ05ZQjBkdURPNzJpQi0zMXNDN0xEaFZzeHdGOWpfV2dGdXVIdXd6VlJNTnBqaUMzVTREU0E3Rkw1cWNFSklCYXJyR0tLeUM3czNHNTlqRVVjdHRrazAwZEE0eWFFRGdzXzhHTEhDbDh4dVA0OTAzYmhJbVdZbllBcmZsTTY5S25scV9UMlZqc2FYRnFVSA?oc=5",
       "source": "saastr.com",
       "published": "2026-07-16T15:44:45+00:00",
-      "type": "customer_win",
-      "summary": "Intercom acquired Fin, an AI customer-support agent platform, for $3B—a major consolidation move signaling enterprise demand for AI-native support automation. This validates Decagon's core market but demonstrates a well-funded competitor's ability to integrate vertical AI agents into a large customer-communication platform.",
-      "positioning": "Decagon can emphasize its focused, modular agent architecture and platform-agnostic deployment model versus a tightly integrated stack. Position around flexibility, faster time-to-value for enterprises already invested in non-Intercom tooling, and superior voice-agent capabilities if that's a Decagon strength.",
+      "type": "other",
+      "summary": "Salesforce agreed to acquire Fin (the company formerly known as Intercom, renamed after its AI support agent) for approximately $3.6B — one of three $3B+ B2B acquisitions in 30 days, signalling that incumbents are buying AI-native support rather than building it.",
+      "positioning": "With Fin folding into Salesforce, Decagon becomes one of the few remaining independent, AI-native support platforms — an angle for buyers wary of ecosystem lock-in.",
       "found_at": "2026-07-19T08:07:49+00:00"
     },
     {
