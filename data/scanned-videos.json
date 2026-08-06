@@ -17045,8 +17045,8 @@
     "bv": 2
   },
   "wv53mDmY-k0": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "KjMKzIOhw4Q": {
     "status": "done",
@@ -17058,11 +17058,11 @@
   },
   "Gkzhh__WowM": {
     "status": "retry",
-    "retries": 1
+    "retries": 2
   },
   "oBRlOdhY3wg": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "_hMRv35F-0w": {
     "status": "done",
@@ -17074,7 +17074,7 @@
   },
   "N2KOrdkK5nU": {
     "status": "retry",
-    "retries": 1
+    "retries": 2
   },
   "DCI_2h8r65U": {
     "status": "done",
@@ -17085,19 +17085,85 @@
     "bv": 2
   },
   "hhhv8HiErm4": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "rwtzWSWIFRA": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "9S9UOjpGFUs": {
+    "status": "done",
+    "bv": 2
+  },
+  "Hv1fNH6e-IQ": {
+    "status": "no_captions"
+  },
+  "oxpp2wB-QgM": {
+    "status": "done",
+    "bv": 2
+  },
+  "l32qe0MJGak": {
+    "status": "done",
+    "bv": 2
+  },
+  "mI3LaT0Qlkg": {
+    "status": "done",
+    "bv": 2
+  },
+  "2aw5xDw-jtY": {
+    "status": "done",
+    "bv": 2
+  },
+  "jfxHHglA5Eo": {
+    "status": "done",
+    "bv": 2
+  },
+  "KS6iEdPpc9E": {
     "status": "retry",
     "retries": 1
   },
-  "Hv1fNH6e-IQ": {
+  "z6VLyUMBYo0": {
+    "status": "done",
+    "bv": 2
+  },
+  "Iy1W8vOxv5o": {
+    "status": "done",
+    "bv": 2
+  },
+  "uFt-tkagUUI": {
+    "status": "done",
+    "bv": 2
+  },
+  "-9Vh7tsgM7Y": {
+    "status": "done",
+    "bv": 2
+  },
+  "wAzq8gA5jyc": {
+    "status": "done",
+    "bv": 2
+  },
+  "A9JDkiYEhfY": {
+    "status": "done",
+    "bv": 2
+  },
+  "1u5uYLXth9A": {
     "status": "retry",
     "retries": 1
+  },
+  "u-LAHVbpIas": {
+    "status": "done",
+    "bv": 2
+  },
+  "AE82Wa0DBbc": {
+    "status": "done",
+    "bv": 2
+  },
+  "08wofeZFXJM": {
+    "status": "done",
+    "bv": 2
+  },
+  "ThyFGreUcvY": {
+    "status": "no_captions"
   }
 }
