@@ -17057,8 +17057,8 @@
     "bv": 2
   },
   "Gkzhh__WowM": {
-    "status": "retry",
-    "retries": 2
+    "status": "done",
+    "bv": 2
   },
   "oBRlOdhY3wg": {
     "status": "done",
@@ -17074,7 +17074,7 @@
   },
   "N2KOrdkK5nU": {
     "status": "retry",
-    "retries": 2
+    "retries": 3
   },
   "DCI_2h8r65U": {
     "status": "done",
@@ -17120,8 +17120,8 @@
     "bv": 2
   },
   "KS6iEdPpc9E": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "z6VLyUMBYo0": {
     "status": "done",
@@ -17148,8 +17148,8 @@
     "bv": 2
   },
   "1u5uYLXth9A": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "u-LAHVbpIas": {
     "status": "done",
@@ -17165,5 +17165,113 @@
   },
   "ThyFGreUcvY": {
     "status": "no_captions"
+  },
+  "Wj3-X-WSA7s": {
+    "status": "done",
+    "bv": 2
+  },
+  "Q6kDZJ0xdSw": {
+    "status": "done",
+    "bv": 2
+  },
+  "Meq04ZvZKdc": {
+    "status": "done",
+    "bv": 2
+  },
+  "4B4xVnuOi9U": {
+    "status": "done",
+    "bv": 2
+  },
+  "78-6dUROziQ": {
+    "status": "done",
+    "bv": 2
+  },
+  "1vAGYbbtahU": {
+    "status": "done",
+    "bv": 2
+  },
+  "eRrc1pUY5oU": {
+    "status": "done",
+    "bv": 2
+  },
+  "6l8oAO_LBx4": {
+    "status": "done",
+    "bv": 2
+  },
+  "oEY52Wkcz08": {
+    "status": "retry",
+    "retries": 1
+  },
+  "864LTA1azPE": {
+    "status": "done",
+    "bv": 2
+  },
+  "kFf3OZtF8n8": {
+    "status": "retry",
+    "retries": 1
+  },
+  "mGon2F3LoQI": {
+    "status": "done",
+    "bv": 2
+  },
+  "Fw8rq8k_Y4I": {
+    "status": "done",
+    "bv": 2
+  },
+  "4pb9jNlQ6Vc": {
+    "status": "done",
+    "bv": 2
+  },
+  "8siND31hOJI": {
+    "status": "done",
+    "bv": 2
+  },
+  "83vFCwBSL_c": {
+    "status": "done",
+    "bv": 2
+  },
+  "LfGCEAB9F2E": {
+    "status": "done",
+    "bv": 2
+  },
+  "hneEH9rVEI0": {
+    "status": "done",
+    "bv": 2
+  },
+  "lV4vJr41Ou0": {
+    "status": "done",
+    "bv": 2
+  },
+  "QCkl8sNx7z0": {
+    "status": "retry",
+    "retries": 1
+  },
+  "x5NqXH21cKg": {
+    "status": "done",
+    "bv": 2
+  },
+  "eRgPEbPUGTg": {
+    "status": "done",
+    "bv": 2
+  },
+  "0cwYNS4L010": {
+    "status": "done",
+    "bv": 2
+  },
+  "S2393SgFUc4": {
+    "status": "done",
+    "bv": 2
+  },
+  "FO_z0bdnjCc": {
+    "status": "done",
+    "bv": 2
+  },
+  "SHO1qRTuK4U": {
+    "status": "done",
+    "bv": 2
+  },
+  "QnBOjn-wAdM": {
+    "status": "retry",
+    "retries": 1
   }
 }
