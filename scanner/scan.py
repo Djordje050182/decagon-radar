@@ -253,6 +253,23 @@ def push_progress(processed):
         print(f"  ! progress push failed (continuing): {e}", flush=True)
 
 
+def preflight_credits(client):
+    """Abort before burning proxy bandwidth if the Anthropic account can't pay for analysis.
+
+    Without this, a credit-exhausted account produces green-looking runs that fetch
+    every caption, fail every classification, and mark episodes done — losing hits.
+    """
+    try:
+        client.messages.create(model=HAIKU, max_tokens=1,
+                               messages=[{"role": "user", "content": "ping"}])
+    except anthropic.BadRequestError as e:
+        if "credit balance" in str(e).lower():
+            sys.exit("ABORT: Anthropic credit balance exhausted — top up at console.anthropic.com "
+                     "(Plans & Billing) and enable auto-reload. Skipping scan so no episodes are "
+                     "marked done without analysis and no proxy bandwidth is wasted.")
+        raise
+
+
 def fmt_ts(seconds):
     h, rem = divmod(seconds, 3600)
     m, s = divmod(rem, 60)
@@ -267,6 +284,7 @@ def main():
     if not YT_KEY:
         sys.exit("YOUTUBE_API_KEY is not set")
     client = anthropic.Anthropic(timeout=90.0)  # fail fast on wedged connections; SDK retries
+    preflight_credits(client)
 
     days = 365 if args.backfill else 3
     max_pages = 8 if args.backfill else 1
@@ -368,6 +386,7 @@ def main():
                     continue
                 consecutive_blocks = 0
 
+                analysis_failed = False
                 for brand, pattern, brand_desc in BRAND_PATTERNS:
                     for timestamp, context in find_mentions(snippets, pattern):
                         if (vid, brand, timestamp) in known:
@@ -376,6 +395,7 @@ def main():
                             verdict = analyse(client, video, timestamp, context, brand, brand_desc)
                         except Exception as e:
                             print(f"  ! analysis failed for {vid}@{timestamp} [{brand}]: {e}", flush=True)
+                            analysis_failed = True
                             continue
                         if not verdict["is_company"]:
                             continue
@@ -396,7 +416,11 @@ def main():
                         known.add((vid, brand, timestamp))
                         new_mentions.append(mention)
                         print(f"  + MENTION [{brand}] {video['channel']} @ {mention['timestamp_label']} ({verdict['sentiment']})", flush=True)
-                scanned[vid] = {"status": "done", "bv": BRANDS_VERSION}
+                if analysis_failed:
+                    # hits we couldn't classify — keep the episode in the queue, don't lose them
+                    scanned[vid] = {"status": "retry", "retries": state.get("retries", 0)}
+                else:
+                    scanned[vid] = {"status": "done", "bv": BRANDS_VERSION}
                 processed += 1
                 if processed % 25 == 0:
                     persist()

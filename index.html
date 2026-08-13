@@ -160,6 +160,8 @@
   .pred b { font-weight: 700; }
   .pred .why { font-size: 13px; color: var(--ink-soft); margin-top: 3px; }
   .gen-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 18px; }
+  .updated { font-size: 12.5px; color: var(--ink-soft); margin: 2px 0 12px; }
+  .updated b { color: var(--ink); font-weight: 600; }
 
   .empty { text-align: center; color: var(--ink-soft); padding: 70px 20px; }
   .empty b { display: block; font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
@@ -200,12 +202,14 @@
 
 <main class="wrap">
   <section id="panel-mentions">
+    <div class="updated" id="updated-mentions"></div>
     <input class="search" id="mention-search" type="search" placeholder="Search brands, podcasts, episodes, topics…" oninput="mentionQuery=this.value;renderMentions()">
     <div id="mention-filters"></div>
     <div id="mentions-body"></div>
   </section>
 
   <section id="panel-competitors" hidden>
+    <div class="updated" id="updated-competitors"></div>
     <input class="search" id="competitor-search" type="search" placeholder="Search stories, companies, summaries…" oninput="searchQuery=this.value;renderCompetitors()">
     <div class="toolbar" id="time-filters"></div>
     <div class="toolbar" id="competitor-filters"></div>
@@ -214,6 +218,7 @@
   </section>
 
   <section id="panel-trends" hidden>
+    <div class="updated" id="updated-trends"></div>
     <div id="trends-body"></div>
   </section>
 </main>
@@ -264,6 +269,11 @@ function showTab(name) {
 function fmtDate(iso) {
   if (!iso) return "";
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+function stamp(id, iso, label) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.innerHTML = iso ? `${label}: <b>${fmtDate(iso)}</b>` : "";
 }
 function esc(s) {
   return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -529,6 +539,9 @@ async function load() {
   } catch (e) {}
   mentions = m.mentions || [];
   items = c.items || [];
+  stamp("updated-mentions", m.last_scan, "Last updated");
+  stamp("updated-competitors", c.last_scan, "Last updated");
+  stamp("updated-trends", trends && trends.generated_at, "Analysis last refreshed");
   // start on Decagon when multi-brand data exists; other brands one tap away
   if (new Set(mentions.map(x => x.brand || "Decagon")).size > 1) brandFilter = "Decagon";
   renderStats();

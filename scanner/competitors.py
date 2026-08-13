@@ -336,6 +336,15 @@ def main():
     args = parser.parse_args()
 
     client = anthropic.Anthropic(timeout=90.0)  # fail fast on wedged connections; SDK retries
+    try:
+        client.messages.create(model=HAIKU, max_tokens=1,
+                               messages=[{"role": "user", "content": "ping"}])
+    except anthropic.BadRequestError as e:
+        if "credit balance" in str(e).lower():
+            sys.exit("ABORT: Anthropic credit balance exhausted — top up at console.anthropic.com "
+                     "(Plans & Billing) and enable auto-reload. Skipping collection so items are "
+                     "not consumed without analysis.")
+        raise
     days = 30 if args.backfill else 3
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
 

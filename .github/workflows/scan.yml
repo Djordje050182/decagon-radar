@@ -42,6 +42,7 @@ jobs:
           git config user.email "actions@github.com"
 
       - name: Podcast mention scan
+        id: scan
         continue-on-error: true
         env:
           PUSH_PROGRESS: "1"
@@ -53,12 +54,14 @@ jobs:
         run: python scanner/scan.py ${{ inputs.backfill && '--backfill' || '' }}
 
       - name: Competitor watch
+        id: competitors
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scanner/competitors.py ${{ inputs.backfill && '--backfill' || '' }}
 
       - name: Trends synthesis
+        id: trends
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -92,3 +95,13 @@ jobs:
           else
             echo "No new items today — no digest issue."
           fi
+
+      # Data commits and the digest run above even when a pipeline step fails, but the
+      # run itself must go red so GitHub emails the watcher — silent green runs once hid
+      # 2.5 weeks of credit-exhaustion failures.
+      - name: Surface pipeline failures
+        if: steps.scan.outcome == 'failure' || steps.competitors.outcome == 'failure' || steps.trends.outcome == 'failure'
+        run: |
+          echo "A pipeline step failed (scan: ${{ steps.scan.outcome }}, competitors: ${{ steps.competitors.outcome }}, trends: ${{ steps.trends.outcome }})."
+          echo "Most common cause: Anthropic credit balance exhausted — check the step logs above."
+          exit 1
