@@ -382,12 +382,14 @@ function renderCompetitors() {
       `<button class="chip ${timeFilter === v ? "on" : ""}" onclick="setTime('${v}')">${label}</button>`).join("");
 
   const inTime = items.filter(i => withinDays(i, timeFilter));
+  const companyCounts = {};
+  inTime.forEach(i => companyCounts[i.company] = (companyCounts[i.company] || 0) + 1);
   const companies = ["all", ...new Set(inTime.map(i => i.company))].sort((a, b) =>
     a === "all" ? -1 : b === "all" ? 1 : a === "Decagon" ? -1 : b === "Decagon" ? 1 : a.localeCompare(b));
   document.getElementById("competitor-filters").innerHTML =
     `<span class="toolbar-label">Who</span>` +
     companies.map(c =>
-      `<button class="chip ${companyFilter === c ? "on" : ""}" onclick="setCompany('${esc(c)}')">${c === "all" ? "All" : esc(c)}</button>`).join("");
+      `<button class="chip ${companyFilter === c ? "on" : ""}" onclick="setCompany('${esc(c)}')">${c === "all" ? "All" : esc(c) + " (" + companyCounts[c] + ")"}</button>`).join("");
 
   const typeCounts = {};
   inTime.forEach(i => typeCounts[i.type] = (typeCounts[i.type] || 0) + 1);
