@@ -136,14 +136,14 @@ def main():
         "— use them (volumes, sentiment mix, what hosts/guests actually discussed) as first-class "
         "evidence about mindshare and narrative, and weave at least one podcast-grounded insight "
         "into the overview and themes.\n\n"
-        "SIGNALS:\n" + "\n".join(lines[:550])
+        "SIGNALS:\n" + "\n".join(lines[:400])
     )
 
     def synthesise(use_search):
         messages = [{"role": "user", "content": prompt}]
         kwargs = {}
         if use_search:
-            kwargs["tools"] = [{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}]
+            kwargs["tools"] = [{"type": "web_search_20260209", "name": "web_search", "max_uses": 4}]
         while True:
             response = client.messages.create(
                 model=MODEL,

@@ -307,7 +307,7 @@ def analyse(client, item):
         "against it (AI-suggested angle, not official messaging; grounded, no spin). For "
         "Decagon's own coverage, leave positioning empty.\n\n"
         f"Company: {item['company']}\nHeadline: {item['title']}\nSource: {item['source']}\n"
-        f"Snippet: {item['snippet']}"
+        f"Snippet: {item['snippet'][:900]}"
     )
     response = client.messages.create(
         model=HAIKU,

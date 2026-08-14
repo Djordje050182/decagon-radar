@@ -226,7 +226,7 @@ def analyse(client, video, timestamp, context, brand, brand_desc):
         "(positive / neutral / negative) and summarise in one sentence what the conversation "
         "is about at this point.\n\n"
         f"Podcast: {video['channel']}\nEpisode: {video['title']}\n\n"
-        f"Transcript excerpt:\n{context[:6000]}"
+        f"Transcript excerpt:\n{context[:3500]}"  # ±60s of speech fits comfortably; halves input tokens
     )
     response = client.messages.create(
         model=HAIKU,
