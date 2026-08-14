@@ -17,7 +17,9 @@ import anthropic
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-MODEL = "claude-sonnet-5"  # one call/day; synthesis quality matters more than pennies
+MODEL = "claude-haiku-4-5"  # cheapest current tier (~5x cheaper than Sonnet) — the daily
+# synthesis was the single biggest cost in the system; Haiku + the structured schema and
+# accuracy rules keeps quality acceptable for a daily refresh
 WINDOW_DAYS = 90
 
 SCHEMA = {
