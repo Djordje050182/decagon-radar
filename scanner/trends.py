@@ -163,8 +163,10 @@ def main():
 
     # occasionally the search+schema combination yields an empty shell or a transient
     # API error — retry, then drop search; only give up if every attempt fails
+    # two attempts max: each search-enabled attempt is the most expensive call in the
+    # whole system (~10 min of Sonnet + web search) — a retry storm once drained the account
     result = None
-    for attempt, use_search in enumerate([True, True, False]):
+    for attempt, use_search in enumerate([True, False]):
         try:
             result = synthesise(use_search)
         except Exception as e:
