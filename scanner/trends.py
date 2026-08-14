@@ -145,13 +145,15 @@ def main():
         if use_search:
             kwargs["tools"] = [{"type": "web_search_20260209", "name": "web_search", "max_uses": 4}]
         while True:
-            response = client.messages.create(
+            # stream: a single long non-streaming request can exceed any read timeout
+            with client.messages.stream(
                 model=MODEL,
                 max_tokens=16000,  # adaptive thinking shares this budget; 4k truncated mid-JSON
                 output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
                 messages=messages,
                 **kwargs,
-            )
+            ) as stream:
+                response = stream.get_final_message()
             if response.stop_reason == "pause_turn":
                 messages = messages[:1] + [{"role": "assistant", "content": response.content}]
                 continue
@@ -159,13 +161,21 @@ def main():
         text = "".join(b.text for b in response.content if b.type == "text")
         return json.loads(text)
 
-    # occasionally the search+schema combination yields an empty shell — retry, then drop search
+    # occasionally the search+schema combination yields an empty shell or a transient
+    # API error — retry, then drop search; only give up if every attempt fails
     result = None
     for attempt, use_search in enumerate([True, True, False]):
-        result = synthesise(use_search)
+        try:
+            result = synthesise(use_search)
+        except Exception as e:
+            print(f"  ! synthesis attempt {attempt + 1} failed (search={use_search}): {type(e).__name__}: {e}")
+            result = None
+            continue
         if result["themes"] and result["overview"].strip():
             break
         print(f"  ! empty synthesis on attempt {attempt + 1} (search={use_search}), retrying")
+    if not result or not result.get("themes"):
+        sys.exit("trends synthesis failed on all attempts — keeping the previous analysis")
     result["generated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     result["window_days"] = WINDOW_DAYS
     result["signal_count"] = len(lines)
