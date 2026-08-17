@@ -1,6 +1,19 @@
 {
   "mentions": [
     {
+      "video_id": "BV0hy6NET-U",
+      "brand": "Sierra",
+      "podcast": "Lenny's Podcast",
+      "episode": "OpenAI’s Head of Design: This is the best time in history to be a designer | Ian Silber",
+      "published": "2026-08-16T12:30:26Z",
+      "timestamp": 480,
+      "timestamp_label": "8:00",
+      "url": "https://www.youtube.com/watch?v=BV0hy6NET-U&t=480s",
+      "sentiment": "neutral",
+      "topic": "A sponsor advertisement mentions Sierra as one of many successful companies powered by WorkOS enterprise software platform.",
+      "found_at": "2026-08-17T02:17:27+00:00"
+    },
+    {
       "video_id": "2njXM5zw7lo",
       "brand": "Decagon",
       "podcast": "Primary Technology",
@@ -8294,5 +8307,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-16T02:23:44+00:00"
+  "last_scan": "2026-08-17T02:17:33+00:00"
 }
