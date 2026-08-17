@@ -2889,18 +2889,6 @@
       "found_at": "2026-07-24T06:20:00+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "How Capital on Tap is keeping every customer experience personal while growing at speed.",
-      "url": "https://sierra.ai/uk/customers/capital-on-tap",
-      "source": "Company site",
-      "published": "2026-06-23T19:32:04",
-      "type": "customer_win",
-      "summary": "Sierra published a case study showing Capital on Tap (UK small-business lender) using Sierra's AI agents to personalize customer experience at scale. This is a direct customer win for a Sierra competitor in the enterprise customer-support space.",
-      "positioning": "Decagon can emphasize its multi-channel (voice + chat) capabilities and native voice-agent strength for inbound support, versus Sierra's chat-first positioning; also highlight faster deployment and lower setup costs for mid-market financial services.",
-      "market": "UK",
-      "found_at": "2026-07-24T06:22:57+00:00"
-    },
-    {
       "company": "ByteDance (frontier overlap)",
       "title": "ByteDance's Doubao 2.1 Pro Crosses Production Threshold, Seedance 2.5 Video Model Coming July - Pandaily",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9kQlNWbXZOaUpoZDd0YXJqY25iS0UxZDQyX0lnNlEyeV9fYndCSUE3dDZXaE1JdDUxQ3lSR2NWanBWd0p6aTdzdnR4ZlpzM1JxV0lmdnFIUTlqaGJiWDA4TXFITkJRcHdrZkVwNUJUYw?oc=5",
@@ -3111,18 +3099,6 @@
       "found_at": "2026-07-24T06:20:33+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "Kraken Launches Autonomous Agents for Utility Customer Service Built on Sierra",
-      "url": "https://sierra.ai/uk/customers/kraken",
-      "source": "Company site",
-      "published": "2026-06-11T16:52:48",
-      "type": "customer_win",
-      "summary": "Kraken, a utility software platform, has launched autonomous agents for customer service built on Sierra's platform. This represents a significant customer win for Sierra in the enterprise customer-support agent space.",
-      "positioning": "Decagon can emphasize native voice-agent capabilities and real-time customer interaction quality in utility operations (where phone support is critical), plus faster deployment and lower integration friction compared to building on broader AI platforms.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:16+00:00"
-    },
-    {
       "company": "Decagon",
       "title": "Introducing Duet Autopilot: The self-improving agent for conversational AI | Decagon",
       "url": "https://decagon.ai/blog/autopilot",
@@ -3241,30 +3217,6 @@
       "positioning": "Decagon can position on deeper voice-agent capabilities, multi-channel orchestration beyond chat, and faster deployment for high-volume support teams. Emphasize real-time voice interaction and native integration with existing ticketing systems versus conversational app builders.",
       "market": "US",
       "found_at": "2026-07-24T06:19:45+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "Comment Airtable a repensé son expérience de support pour répondre aux véritables besoins de ses clients.",
-      "url": "https://sierra.ai/fr/customers/airtable",
-      "source": "Company site",
-      "published": "2026-05-28T21:37:00",
-      "type": "customer_win",
-      "summary": "Airtable has implemented Sierra's AI-powered conversational agents for customer support automation, enabling contextualized assistance at scale and complex workflow automation. This is a case study on Sierra's site showcasing their enterprise customer-support platform in action.",
-      "positioning": "Decagon can emphasize superior voice-agent capabilities, faster integration with existing support stacks, or lower latency/cost for real-time customer interactions compared to Sierra's offering.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:11+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Airtable designed the support experience its customers actually need",
-      "url": "https://sierra.ai/uk/customers/airtable",
-      "source": "Company site",
-      "published": "2026-05-28T21:37:00",
-      "type": "customer_win",
-      "summary": "Airtable has deployed Sierra's AI agent platform to deliver conversational, context-aware customer support at scale. This demonstrates Sierra's capability in embedding AI agents into product workflows for enterprise SaaS customers.",
-      "positioning": "Decagon can emphasize deeper voice-channel integration, real-time conversation analytics for support teams, and faster time-to-first-response compared to conversational app builders. For SaaS platforms like Airtable, Decagon's native voice support (not just chat) and agent fine-tuning on support-specific tasks may offer differentiation.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:45+00:00"
     },
     {
       "company": "Decagon",
@@ -3846,18 +3798,6 @@
       "found_at": "2026-07-24T06:21:30+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "Singtel Group partners with Sierra to transform customer engagement with AI",
-      "url": "https://sierra.ai/uk/customers/singtel",
-      "source": "Company site",
-      "published": "2026-03-04T12:00:32",
-      "type": "customer_win",
-      "summary": "Singtel Group (major Southeast Asian telco) deployed Sierra's agentic AI for customer engagement across chat and voice channels to improve personalization and employee productivity. This represents a significant enterprise customer win in a core Decagon market.",
-      "positioning": "Decagon could position on deeper enterprise integration, lower latency for voice agents in high-volume telco settings, or tighter omnichannel orchestration—areas where specialized voice-first platforms often outperform generalist agent layers.",
-      "market": "APAC",
-      "found_at": "2026-07-24T06:23:50+00:00"
-    },
-    {
       "company": "Decagon",
       "title": "Decagon Tender Offer: A Strategic Masterstroke to Secure AI Talent at $4.5B Valuation - CryptoRank",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBRSjdCbHBMYUFQMVBtNWNtVmtpZUtuOHZKMHhqZmxuRE82SlowWTRQblNSWG5XWEE0OGF5d1JpcEJ1clM0U21qcnlldjJmMHA5bm0xS2RuNzdZZms0VGlNamhnQXQyYWNiODUxZ0EyekpXOHc4S1lV?oc=5",
@@ -3942,30 +3882,6 @@
       "found_at": "2026-07-24T06:20:50+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "Comment Next fait évoluer son service client à l&#x27;échelle mondiale grâce à l&#x27;IA.",
-      "url": "https://sierra.ai/fr/customers/next",
-      "source": "Company site",
-      "published": "2026-02-25T14:38:00",
-      "type": "customer_win",
-      "summary": "Next deployed a Sierra AI agent for customer support across chat, voice, and WhatsApp in six weeks. This is a direct customer win for Sierra, a competitor in enterprise AI agent platforms.",
-      "positioning": "Decagon can highlight faster deployment timelines, superior voice quality, or deeper integrations with specific CRM/helpdesk platforms that reduce implementation friction compared to Sierra's approach.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:19+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How NEXT transforms global customer service with AI.",
-      "url": "https://sierra.ai/uk/customers/next",
-      "source": "Company site",
-      "published": "2026-02-25T14:38:00",
-      "type": "customer_win",
-      "summary": "NEXT (a global customer service company) deployed Sierra's AI agent platform across chat, voice, and WhatsApp channels within 6 weeks. This demonstrates Sierra's speed-to-market and multi-channel capability in enterprise customer support.",
-      "positioning": "Decagon can emphasize faster time-to-first-agent, deeper voice-quality tuning, or enterprise-grade compliance/security for regulated verticals—positioning reliability and specialization against broad platform speed.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:23:30+00:00"
-    },
-    {
       "company": "Decagon",
       "title": "Power customer-centric decisions with intent tags | Decagon",
       "url": "https://decagon.ai/blog/intent-tags",
@@ -4024,18 +3940,6 @@
       "positioning": "Decagon can highlight deeper voice-channel integration, real-time escalation workflows, or industry-specific compliance tooling for financial services that may reduce SoFi's reliance on vendor-lock-in with a single platform.",
       "market": "US",
       "found_at": "2026-07-24T06:21:34+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How SoFi turned customer support from a bottleneck into a competitive advantage.",
-      "url": "https://sierra.ai/uk/customers/sofi",
-      "source": "Company site",
-      "published": "2026-02-04T13:30:00",
-      "type": "customer_win",
-      "summary": "Sierra published a case study on SoFi's use of Sierra's AI agent platform to streamline customer support and turn it into a competitive advantage through instant resolutions. This is a direct competitor customer win in the financial-services vertical.",
-      "positioning": "Decagon could emphasize speed-to-deployment and vertical specialization in fintech; highlight case studies from comparable financial-services customers showing faster agent setup or superior voice-channel performance versus Sierra's offering.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:54+00:00"
     },
     {
       "company": "PolyAI",
@@ -4304,18 +4208,6 @@
       "found_at": "2026-07-24T06:21:19+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "How ScottsMiracle-Gro transforms into a lifestyle brand with the help of AI.",
-      "url": "https://sierra.ai/uk/customers/scottsmiraclegro",
-      "source": "Company site",
-      "published": "2026-01-08T17:09:52",
-      "type": "customer_win",
-      "summary": "ScottsMiracle-Gro, a 157-year-old consumer brand, is using Sierra's AI agent platform to transform customer engagement and brand positioning. This represents a major enterprise customer win for Sierra in the lifestyle/retail vertical.",
-      "positioning": "Decagon could position on deeper voice-agent integration and support-to-sales conversational workflows; alternatively, emphasize faster time-to-production and lower implementation costs for mid-market brands moving into AI-first customer interaction.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:45+00:00"
-    },
-    {
       "company": "Decagon",
       "title": "28-Year-Old Jesse Zhang: Decagon vs AI Services - AI CERTs",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQTnlwYWFMWWNoNFhpR05VZ1U2blY0ZEJtcTNpNUp6VjhRdVhMWXZGWlVLSVB3NlM2Nk03bUt0VUJ4ZkRFU19uc1o3azNVOUt3THBwek9ybWRVeW5WOHhpc19MUFU3N0pjQjluWkp2WE1ycDZlTzZBQVNfVkVkWVdib2VWeG56WFAzN2xtMTNUXzcyOXlHWVQyZlZiSkhxcjBvN0JDUkFabDA0SmdUTnpLWl9HekJ6dw?oc=5",
@@ -4338,18 +4230,6 @@
       "positioning": "Decagon could emphasize that achieving parity on CSAT alone misses the full picture—what matters is cost per resolution, handle time, and whether AI can match human judgment on complex or escalation-heavy queries. Positioning: 'We design for the hardest support cases, not just metrics parity.'",
       "market": "US",
       "found_at": "2026-07-24T06:20:25+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Guild extended nurturing member support without compromising quality using AI",
-      "url": "https://sierra.ai/uk/customers/guild",
-      "source": "Company site",
-      "published": "2025-12-18T20:22:00",
-      "type": "customer_win",
-      "summary": "Guild, an education platform for working adults, deployed Sierra's AI agent for member support and achieved a 4.8 CSAT score matching human specialists. This demonstrates Sierra's capability to handle empathy-sensitive support interactions at scale.",
-      "positioning": "Decagon can emphasize that enterprise support quality isn't just about CSAT parity in isolation—it's about handling complex, multi-turn conversations with context retention and domain expertise. Decagon could highlight superior performance on harder use cases (e.g., complaint resolution, account-level issue diagnosis) or faster resolution times alongside satisfaction metrics, positioning as the agent choice for orgs where support quality and business outcomes are tightly linked.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:14+00:00"
     },
     {
       "company": "Decagon",
@@ -4434,18 +4314,6 @@
       "positioning": "Decagon can emphasize deeper voice-channel integration, real-time callback scheduling with conferencing, and tighter CRM/operational system handoffs—particularly for industries like automotive services where voice + chat hybrid support and transparent insurance claim coordination are critical.",
       "market": "US",
       "found_at": "2026-07-24T06:21:15+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Safelite keeps drivers moving with AI.",
-      "url": "https://sierra.ai/uk/customers/safelite",
-      "source": "Company site",
-      "published": "2025-11-18T22:25:00",
-      "type": "customer_win",
-      "summary": "Sierra powered an AI agent for Safelite that handles customer interactions for auto glass services. This is a case study of Sierra's customer-support agent platform in action with a major national service provider.",
-      "positioning": "Decagon could position on narrower focus and tighter integration into existing support workflows—Safelite's scale makes it a marquee win for Sierra, but Decagon can highlight faster deployment and lower switching costs for mid-market and SMB insurers and service providers.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:41+00:00"
     },
     {
       "company": "Decagon",
@@ -4569,18 +4437,6 @@
       "found_at": "2026-07-24T06:21:59+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "Comment Wilson® met un siècle de savoir-faire au service de l’expérience de ses clients.",
-      "url": "https://sierra.ai/fr/customers/wilson",
-      "source": "Company site",
-      "published": "2025-10-30T23:58:00",
-      "type": "customer_win",
-      "summary": "Wilson, the sporting goods manufacturer, deployed an AI customer-support agent built with Sierra in a matter of weeks, reducing email volume and improving response quality while surfacing insights to better serve athletes and fans.",
-      "positioning": "Decagon can emphasize faster time-to-value and deeper customization for support teams—Wilson's rapid deployment shows the market readiness, but positioning around domain expertise in sports/retail customer support and integration depth with existing ticketing/CRM systems could differentiate.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:33+00:00"
-    },
-    {
       "company": "Decagon",
       "title": "From support to growth: The next evolution of AI agents | Decagon",
       "url": "https://decagon.ai/blog/from-support-to-growth-the-next-evolution-of-ai-agents",
@@ -4615,18 +4471,6 @@
       "positioning": "Decagon could highlight superior voice-agent quality and lower integration friction for regulated financial services, emphasizing real-time accuracy and compliance over marketing-focused deployments.",
       "market": "US",
       "found_at": "2026-07-24T06:20:08+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Chime made banking support faster and more personal with AI.",
-      "url": "https://sierra.ai/uk/customers/chime",
-      "source": "Company site",
-      "published": "2025-10-23T21:45:00",
-      "type": "customer_win",
-      "summary": "Chime, a digital bank, deployed Sierra's AI agent platform to improve customer support speed and personalization, turning support into a brand-differentiation tool. The case study highlights Sierra's ability to handle banking-sector customer service at scale.",
-      "positioning": "Decagon can emphasize faster time-to-value and lighter integration requirements for mid-market and growth-stage banks seeking to avoid lengthy implementations; alternatively, highlight superior voice-agent capabilities or lower cost-per-interaction for high-volume support teams like Chime's.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:03+00:00"
     },
     {
       "company": "Sierra",
@@ -4687,18 +4531,6 @@
       "positioning": "Decagon could position on deeper voice-channel integration, faster time-to-value for support agents, or superior handling of nuanced beauty/cosmetics product questions vs. a generic platform.",
       "market": "US",
       "found_at": "2026-07-24T06:20:35+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "Comment Madison Reed fait monter en gamme son expérience client grâce à l’IA.",
-      "url": "https://sierra.ai/fr/customers/madison-reed",
-      "source": "Company site",
-      "published": "2025-10-08T17:45:00",
-      "type": "customer_win",
-      "summary": "Madison Reed, a beauty/hair-color brand, deployed Sierra's AI agent ('Madi') to enhance customer experience and drive business results. This is a published case study on Sierra's site showcasing a customer win in e-commerce customer support.",
-      "positioning": "Decagon can highlight deeper voice-channel integration, faster time-to-value for omnichannel support (chat + voice), and flexibility in deployment across CRM/support stacks—particularly for brands where voice resolution rates or first-contact resolution matter more than chat alone.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:17+00:00"
     },
     {
       "company": "Relevance AI",
@@ -4941,18 +4773,6 @@
       "positioning": "Decagon can position on superior voice-channel capabilities, deeper enterprise integrations (billing/ERP systems Brex relies on), and lower latency for complex financial-services use cases where voice context matters.",
       "market": "US",
       "found_at": "2026-07-24T06:19:56+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Brex made customer service 90% faster with AI.",
-      "url": "https://sierra.ai/uk/customers/brex",
-      "source": "Company site",
-      "published": "2025-08-19T22:08:00",
-      "type": "customer_win",
-      "summary": "Brex achieved 90% faster customer service using Sierra's AI agent platform, highlighting seamless handoffs and no-code management capabilities.",
-      "positioning": "Decagon can differentiate on: (1) deeper voice-agent capabilities and omnichannel support beyond chat; (2) faster time-to-value with pre-built customer-support templates; (3) transparent cost/latency tradeoffs for financial-services use cases like Brex, where compliance and audit trails matter.",
-      "market": "US",
-      "found_at": "2026-07-24T06:22:54+00:00"
     },
     {
       "company": "Sierra",
@@ -5210,30 +5030,6 @@
     },
     {
       "company": "Sierra",
-      "title": "How Minted blends artistry with AI to transform customer experiences.",
-      "url": "https://sierra.ai/uk/customers/minted",
-      "source": "Company site",
-      "published": "2025-04-24T16:00:00",
-      "type": "customer_win",
-      "summary": "Minted, an art-focused e-commerce platform, deployed an AI agent via Sierra to handle customer interactions while maintaining brand voice and personalization. This demonstrates Sierra's capability to embed customer support agents in creative, high-touch brands.",
-      "positioning": "Decagon can differentiate by emphasizing multi-channel voice and chat support, deeper integration with CRM/support systems, and faster time-to-value for enterprise teams—positioning Decagon's platform as more flexible and operationally complete than agent-as-a-service offerings.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:27+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How CLEAR is elevating member hospitality with AI.",
-      "url": "https://sierra.ai/uk/customers/clear",
-      "source": "Company site",
-      "published": "2025-04-21T18:00:00",
-      "type": "customer_win",
-      "summary": "CLEAR, a TSA PreCheck/airport-security membership service, deployed Sierra's AI agent platform to proactively engage members on hospitality, retention, and education. This demonstrates Sierra's traction in customer-engagement use cases beyond traditional support.",
-      "positioning": "Decagon can highlight deeper integration with omnichannel support workflows (chat, voice, ticketing) and emphasis on handling complex, high-stakes customer interactions where tone and accuracy matter most—versus Sierra's strength in proactive, lower-friction engagement.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:08+00:00"
-    },
-    {
-      "company": "Sierra",
       "title": "How CLEAR is elevating member hospitality with AI.",
       "url": "https://sierra.ai/customers/clear",
       "source": "Company site",
@@ -5445,18 +5241,6 @@
       "found_at": "2026-07-24T06:20:40+00:00"
     },
     {
-      "company": "Sierra",
-      "title": "How melin delivered peak performance support in time for the holiday season with Sierra.",
-      "url": "https://sierra.ai/uk/customers/melin",
-      "source": "Company site",
-      "published": "2025-01-27T20:15:00",
-      "type": "customer_win",
-      "summary": "Melin, a consumer apparel brand, deployed an AI customer-support agent built with Sierra to handle peak holiday-season support volume. The case study highlights Sierra's ability to extend agent capabilities across brands (Archipelago also supports OluKai).",
-      "positioning": "Decagon could emphasize faster time-to-value and simpler fine-tuning for seasonal demand spikes, or highlight native voice capabilities if Sierra is chat-only. Focus on how seamless handoffs to human agents during complex issues preserve brand voice better than multi-brand platforms.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:22+00:00"
-    },
-    {
       "company": "Relevance AI",
       "title": "Customer Success Manager - Relevance Marketplace",
       "url": "https://relevanceai.com/agent-templates-roles/customer-success-manager-ai-agents",
@@ -5493,18 +5277,6 @@
       "positioning": "Decagon can emphasize deeper voice-agent capabilities, lower latency for real-time support, and tighter integration with complex enterprise workflows—areas where purpose-built platforms often outperform generic AI agent layers. Positioning around specificity (vertical support expertise, compliance-heavy verticals) and control may resonate with prospects comparing generalist solutions.",
       "market": "US",
       "found_at": "2026-07-24T06:19:48+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How AOL modernizes a heritage brand using AI-powered customer service with Sierra.",
-      "url": "https://sierra.ai/uk/customers/aol",
-      "source": "Company site",
-      "published": "2025-01-21T17:00:00",
-      "type": "customer_win",
-      "summary": "AOL is using Sierra's AI-powered customer service platform to modernize its support operations. This represents a significant customer win for Sierra in the heritage media/ISP space.",
-      "positioning": "Decagon can highlight its native voice-agent capabilities and real-time conversation intelligence as differentiators for enterprise support teams handling complex, high-value customer segments; emphasize faster deployment and customization for legacy systems.",
-      "market": "US",
-      "found_at": "2026-07-24T06:22:49+00:00"
     },
     {
       "company": "Relevance AI",
@@ -5656,18 +5428,6 @@
     },
     {
       "company": "Sierra",
-      "title": "How ADT deploys a Sierra AI agent to make every second count",
-      "url": "https://sierra.ai/uk/customers/adt",
-      "source": "Company site",
-      "published": "2024-11-12T19:30:00",
-      "type": "customer_win",
-      "summary": "ADT, a major smart-home security provider, has deployed a Sierra AI agent for customer support. This demonstrates Sierra's traction in enterprise customer-care automation at scale.",
-      "positioning": "Decagon can highlight its voice-agent capabilities and real-time conversation quality as differentiators for high-stakes support scenarios (security/safety domains demand accuracy); emphasize faster deployment cycles and cost efficiency for similar-scale enterprises.",
-      "market": "US",
-      "found_at": "2026-07-24T06:22:40+00:00"
-    },
-    {
-      "company": "Sierra",
       "title": "Comment AG1 s’appuie sur l’IA pour aider ses clients à instaurer un rituel quotidien de santé.",
       "url": "https://sierra.ai/fr/customers/ag1",
       "source": "Company site",
@@ -5701,18 +5461,6 @@
       "positioning": "Decagon can emphasize deeper voice-channel integration, faster time-to-value for omnichannel deployments, or superior handling of complex support workflows (returns, warranty) versus chat-first platforms.",
       "market": "US",
       "found_at": "2026-07-24T06:20:03+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Casper turns a big purchase into a lifelong relationship with AI.",
-      "url": "https://sierra.ai/uk/customers/casper",
-      "source": "Company site",
-      "published": "2024-10-01T21:47:00",
-      "type": "customer_win",
-      "summary": "Casper, a major direct-to-consumer mattress and bedding retailer, has deployed Sierra's AI agent for always-on customer support. This demonstrates Sierra's ability to win large e-commerce customers in a high-volume, price-sensitive vertical.",
-      "positioning": "Decagon could position on deeper voice-agent capabilities, multi-channel orchestration (chat + phone + email), and superior handling of complex post-purchase issues (warranty, returns, shipping disputes) where Casper's customers likely need human escalation paths. Emphasis on reducing support costs per transaction in high-volume consumer-adjacent enterprises.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:00+00:00"
     },
     {
       "company": "Relevance AI",
@@ -5764,18 +5512,6 @@
       "positioning": "Decagon can differentiate on depth of voice-agent integration and real-time conversation quality for high-touch support scenarios, versus Sierra's broader platform positioning. Emphasize faster time-to-production for voice and tighter control over agent tone/behavior for brands sensitive to customer experience.",
       "market": "US",
       "found_at": "2026-07-24T06:20:11+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Chubbies Delivers Weekend Vibes with AI",
-      "url": "https://sierra.ai/uk/customers/chubbies",
-      "source": "Company site",
-      "published": "2024-09-04T19:04:00",
-      "type": "customer_win",
-      "summary": "Chubbies, a casual apparel brand, is using Sierra's AI agent platform to deliver personalized customer experiences and drive loyalty. The case study highlights Sierra's ability to maintain brand voice and engagement in customer interactions.",
-      "positioning": "Decagon can emphasize deeper enterprise integration, multi-channel support (voice + chat), and faster time-to-value for support-heavy use cases versus Sierra's loyalty/engagement positioning.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:05+00:00"
     },
     {
       "company": "Decagon",
@@ -5978,18 +5714,6 @@
     },
     {
       "company": "Sierra",
-      "title": "How OluKai scales the Aloha Experience with Sierra",
-      "url": "https://sierra.ai/uk/customers/olukai",
-      "source": "Company site",
-      "published": "2024-02-13T08:19:00",
-      "type": "customer_win",
-      "summary": "Sierra won OluKai as a customer for conversational AI in customer care. OluKai used Sierra's platform to improve business processes and deliver customer interactions aligned with their Aloha brand values.",
-      "positioning": "Decagon could emphasize deeper voice-agent capabilities and seamless handoff workflows for luxury/lifestyle brands that need personalized, human-quality interactions at scale—positioning voice as the natural evolution beyond chat-only platforms like Sierra.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:34+00:00"
-    },
-    {
-      "company": "Sierra",
       "title": "How Sonos elevates the listener experience with Sierra",
       "url": "https://sierra.ai/customers/sonos",
       "source": "Company site",
@@ -6002,30 +5726,6 @@
     },
     {
       "company": "Sierra",
-      "title": "Comment Sonos élève l’expérience d’écoute avec Sierra",
-      "url": "https://sierra.ai/fr/customers/sonos",
-      "source": "Company site",
-      "published": "2024-02-13T08:08:00",
-      "type": "customer_win",
-      "summary": "Sonos has adopted Sierra's conversational AI for customer support, aiming to streamline client interactions and accelerate music access features. This represents a customer win for Sierra in the audio/consumer electronics support space.",
-      "positioning": "Decagon could emphasize deeper enterprise compliance, multi-channel orchestration (voice + chat), and faster onboarding for complex support workflows—areas where purpose-built enterprise platforms outpace general conversational AI.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:27+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How Sonos elevates the listener experience with Sierra",
-      "url": "https://sierra.ai/uk/customers/sonos",
-      "source": "Company site",
-      "published": "2024-02-13T08:08:00",
-      "type": "customer_win",
-      "summary": "Sonos has adopted Sierra's conversational AI platform for customer support, focusing on reducing resolution time and improving customer experience. This represents a significant win for Sierra in the premium consumer-electronics space.",
-      "positioning": "Decagon could emphasize superior voice-agent quality, omnichannel integration (chat + voice + phone), and faster time-to-resolution through multi-turn reasoning—particularly highlighting enterprise-grade reliability and compliance features that matter to mid-market and Fortune 500 support teams where Sonos-scale customer bases demand institutional SLAs.",
-      "market": "US",
-      "found_at": "2026-07-24T06:23:57+00:00"
-    },
-    {
-      "company": "Sierra",
       "title": "How WeightWatchers embraces AI to engage members with empathy, at scale, with Sierra",
       "url": "https://sierra.ai/customers/weightwatchers",
       "source": "Company site",
@@ -6035,30 +5735,6 @@
       "positioning": "Decagon can differentiate by emphasizing deeper voice-agent capabilities, seamless handoff to human agents, and industry-specific customization for health/wellness sectors where emotional intelligence in tone matters as much as containment metrics.",
       "market": "US",
       "found_at": "2026-07-24T06:21:56+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "Comment WeightWatchers utilise l’IA pour engager ses membres avec empathie, à grande échelle, grâce à Sierra",
-      "url": "https://sierra.ai/fr/customers/weightwatchers",
-      "source": "Company site",
-      "published": "2024-02-13T03:58:00",
-      "type": "customer_win",
-      "summary": "Sierra announced WeightWatchers as a customer case study, citing a 70% containment rate and improved satisfaction using Sierra's conversational AI for customer support. This represents a direct competitor win in the enterprise customer-support AI market.",
-      "positioning": "Decagon can emphasize superior voice-agent capabilities, lower integration friction for omnichannel support (chat + voice), or better performance on nuanced empathy-driven interactions—areas where Sierra's strength in text-based conversation may create openings.",
-      "market": "Global",
-      "found_at": "2026-07-24T06:22:30+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "How WeightWatchers embraces AI to engage members with empathy, at scale, with Sierra",
-      "url": "https://sierra.ai/uk/customers/weightwatchers",
-      "source": "Company site",
-      "published": "2024-02-13T03:58:00",
-      "type": "customer_win",
-      "summary": "WeightWatchers deployed Sierra's conversational AI for customer care and achieved a 70% containment rate with improved satisfaction metrics. The case study exemplifies Sierra's positioning in enterprise customer-support automation.",
-      "positioning": "Decagon can counter by emphasizing superior voice-agent capabilities, real-time empathy calibration, or lower latency/cost on high-volume support scenarios compared to chat-only or latency-sensitive alternatives.",
-      "market": "US",
-      "found_at": "2026-07-24T06:24:08+00:00"
     },
     {
       "company": "Relevance AI",
@@ -6203,42 +5879,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Action Directed GPT-2",
-      "url": "https://cresta.com/es/blog/action-directed-gpt-2",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced a new controllable language model (Action Directed GPT-2) designed to improve chat agent effectiveness by steering agents toward best-practice actions. This represents a direct technical advancement in their core customer-support agent platform.",
-      "positioning": "Decagon could position on real-world deployment maturity and multi-channel (voice + chat) capabilities: Cresta's focus on action-directed prompting is a fine-tuning approach, whereas Decagon's agents are built for production reliability across voice and chat at scale, with built-in compliance and handoff logic that doesn't rely on model steering alone.",
-      "market": "US",
-      "found_at": "2026-07-24T08:39:28+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "A Letter From the Founders",
-      "url": "https://cresta.com/es/blog/a-letter-from-our-founders",
-      "source": "Company site",
-      "published": null,
-      "type": "funding",
-      "summary": "Cresta announced a $50M Series B funding round. Cresta builds AI-powered conversation intelligence and agent tools for enterprise customer support and sales teams.",
-      "positioning": "Decagon can differentiate on ease of voice-agent deployment, real-time call handling, and lower implementation friction compared to Cresta's conversation-intelligence-first model. Emphasize native voice capabilities and faster time-to-value for support teams.",
-      "market": "US",
-      "found_at": "2026-07-24T08:39:10+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "4 Ways Porsche is Driving Best-in-Class Customer Experience",
-      "url": "https://cresta.com/es/blog/4-ways-porsche-drives-best-in-class-customer-experience",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Porsche is using Cresta's AI platform to improve customer experience and quality assurance in their support operations. This is a published case study demonstrating Cresta's traction with a major automotive brand.",
-      "positioning": "Decagon could position on superior voice-agent capabilities and real-time coaching depth versus Cresta's primarily post-call analytics focus; or on lower-friction deployment for mid-market brands without Porsche's scale.",
-      "market": "Global",
-      "found_at": "2026-07-24T08:38:49+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "3 Tips for successful AI transformation",
       "url": "https://cresta.com/es/blog/3-tips-for-successful-ai-transformation",
       "source": "Company site",
@@ -6248,186 +5888,6 @@
       "positioning": "Decagon could position on faster time-to-value and lower implementation complexity for mid-market security/services companies, or emphasize native voice-agent capabilities if Brinks' use case was primarily chat-based.",
       "market": "US",
       "found_at": "2026-07-24T08:38:28+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "3 Compounding Benefits of AI-Driven, Real-Time Coaching",
-      "url": "https://cresta.com/es/blog/3-compounding-benefits-of-ai-driven-real-time-coaching",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta is highlighting its real-time, in-the-moment AI coaching capabilities for contact center agents, positioning it as a productivity enhancement that goes beyond traditional 1:1 coaching sessions.",
-      "positioning": "Decagon can differentiate by emphasizing end-to-end agent automation and resolution handling rather than coaching—shifting focus from augmenting human agents to replacing repetitive work entirely, or by showcasing faster agent onboarding and consistency through direct AI-driven customer handling.",
-      "market": "US",
-      "found_at": "2026-07-24T08:38:22+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Xanterra is Transforming Guest Experiences with Cresta AI Agent to Amplify the Voice of America’s National Parks",
-      "url": "https://cresta.com/es/customers/xanterra",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Xanterra, a major hospitality operator in US national parks, deployed Cresta's AI agent for guest support. The case study highlights Cresta's ability to handle customer service at scale for a high-volume, geographically dispersed operation.",
-      "positioning": "Decagon could emphasize faster deployment timelines, lower implementation complexity, or superior handling of nuanced guest-experience conversations—particularly around tone/empathy in National Park contexts where brand voice matters. Differentiate on cost-per-interaction or integration ease if Cresta required heavy customization.",
-      "market": "US",
-      "found_at": "2026-07-24T08:38:15+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Windstar Cruises increased conversion 2% and contained 70% of chats with Cresta",
-      "url": "https://cresta.com/es/customers/windstar-cruises",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study showing Windstar Cruises achieved 2% conversion lift and handled 70% of chats with Cresta's AI agent platform. This demonstrates Cresta's traction in real-world customer-support automation with measurable business outcomes.",
-      "positioning": "Decagon can counter by emphasizing superior voice-agent capabilities, deeper integration with enterprise telephony systems, and faster time-to-value for omnichannel support (not chat-only). Highlight Decagon's focus on reducing handle time and improving first-contact resolution in regulated industries where Cresta may lack depth.",
-      "market": "US",
-      "found_at": "2026-07-24T08:38:12+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Vivint and Cresta optimize the sales process and drive cost savings",
-      "url": "https://cresta.com/es/customers/vivint",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Vivint, a major home-security and automation provider, is using Cresta's platform to optimize sales processes and reduce costs. Cresta positions this as a unified human-AI agent platform for enterprise-scale operations.",
-      "positioning": "Decagon can emphasize deeper voice-agent specialization and native phone-handling capabilities versus Cresta's broader human-AI orchestration model; highlight faster deployment for voice-first support teams and lower infrastructure overhead for voice interactions at scale.",
-      "market": "US",
-      "found_at": "2026-07-24T08:38:06+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How United Airlines Uses Cresta to Deliver Real-Time Insights, Faster Service, and a More Human Customer Experience",
-      "url": "https://cresta.com/es/customers/united-airlines",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "United Airlines is using Cresta's AI platform to provide real-time coaching and insights to customer-service agents, improving service speed and customer experience. This is a major airline customer win for Cresta's agent-assist product in a high-volume support environment.",
-      "positioning": "Decagon could position on deeper voice-agent autonomy and end-to-end handling of customer issues, versus Cresta's agent-coaching model—reducing reliance on human intervention for routine inquiries while preserving the human touch for complex cases.",
-      "market": "US",
-      "found_at": "2026-07-24T08:38:00+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How America’s top telecommunications company used Cresta to close the sales gap between BPO partners",
-      "url": "https://cresta.com/es/customers/top-telecom",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "A top US telecommunications company deployed Cresta's AI coaching platform to improve sales performance and close gaps between in-house and BPO partner teams.",
-      "positioning": "Decagon could position on real-time voice agent autonomy: while Cresta coaches human agents post-call, Decagon handles live customer interactions end-to-end, reducing dependency on BPO labor variance and coaching overhead.",
-      "market": "US",
-      "found_at": "2026-07-24T08:37:55+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Reduce costs without sacrificing quality across customer care",
-      "url": "https://cresta.com/es/customers/snap-finance",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published a product announcement focused on cost reduction in customer care while maintaining quality. The positioning emphasizes efficiency gains across their agent platform.",
-      "positioning": "Decagon could differentiate on native voice-agent quality and real-time conversation understanding vs. cost-first approaches; emphasize superior customer satisfaction metrics and lower abandonment rates rather than cost alone.",
-      "market": "Global",
-      "found_at": "2026-07-24T08:37:50+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Cresta and a leading cloud SaaS provider showed you can move offshore while boosting revenue",
-      "url": "https://cresta.com/es/customers/saas-provider",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study showing a cloud SaaS provider increased revenue while moving customer-support operations offshore using Cresta's AI coaching platform. This demonstrates Cresta's traction in enterprise customer-support transformation.",
-      "positioning": "Decagon could position on real-time agent autonomy and end-to-end call handling rather than coaching—moving beyond agent augmentation to full automation of routine interactions, reducing offshore headcount needs while maintaining quality.",
-      "market": "",
-      "found_at": "2026-07-24T08:37:38+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Scale service without losing the human touch",
-      "url": "https://cresta.com/es/customers/propel-holdings",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study on how a financial-technology company used Cresta's AI agent platform to scale customer service while maintaining quality and agent empowerment. The case demonstrates Cresta's positioning in enterprise support automation with a human-centric angle.",
-      "positioning": "Decagon can emphasize superior voice-agent naturalness and faster deployment-to-production timelines compared to Cresta's broader platform approach, especially for contact centers prioritizing rapid agent handoff and call-quality metrics.",
-      "market": "",
-      "found_at": "2026-07-24T08:37:33+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Oportun moved from sample-based QA to 100% interaction monitoring with Cresta",
-      "url": "https://cresta.com/es/customers/oportun",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Oportun, a financial services company, adopted Cresta's platform to scale from sample-based quality assurance to 100% interaction monitoring across customer support. This represents a significant customer win for Cresta in the enterprise QA/monitoring space.",
-      "positioning": "Decagon can emphasize its end-to-end agent ownership model (not just monitoring) and faster deployment for new use cases—positioning autonomous agents as more cost-effective than monitoring all interactions when you can automate resolution instead.",
-      "market": "US",
-      "found_at": "2026-07-24T08:37:28+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How a Fortune 500 bank improved collections yield with Cresta",
-      "url": "https://cresta.com/es/customers/major-bank",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study of a Fortune 500 bank using its AI coaching platform to improve collections performance and yield. The case study demonstrates real-world ROI in financial-services customer interactions.",
-      "positioning": "Decagon can position voice agents as a complementary or alternative approach: while Cresta coaches humans, Decagon automates the entire interaction, reducing headcount while maintaining compliance—particularly valuable in cost-sensitive collections workflows.",
-      "market": "US",
-      "found_at": "2026-07-24T08:37:20+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How the leading vacations provider and Cresta partner to promote agent success from home",
-      "url": "https://cresta.com/es/customers/leading-vacations-provider",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta secured a partnership with a leading vacations provider to deploy Cresta's AI agent platform for remote agent support and productivity. The case study highlights agent empowerment and work-from-home enablement as key value drivers.",
-      "positioning": "Decagon could position its voice-agent capabilities as complementary to agent-assist workflows, emphasizing end-to-end customer resolution (voice + chat) rather than internal agent productivity tools, or highlight superior cost-per-resolution in high-volume support scenarios.",
-      "market": "US",
-      "found_at": "2026-07-24T08:37:15+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Holiday Inn and Cresta partnered to boost revenue and improve agent experience",
-      "url": "https://cresta.com/es/customers/holiday-inn",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Holiday Inn partnered with Cresta to deploy AI-powered conversation guidance for customer-support agents, improving both agent experience and revenue outcomes. The case study highlights Cresta's success in the hospitality sector with real-time coaching for frontline support staff.",
-      "positioning": "Decagon can differentiate by emphasizing end-to-end automation (deflecting contacts entirely) versus Cresta's agent-assist model, positioning as more cost-efficient for high-volume support ops; also highlight voice-agent capabilities as a complementary or standalone channel where Holiday Inn's agents aren't needed at all.",
-      "market": "US",
-      "found_at": "2026-07-24T08:37:12+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Cresta partnered with a Fortune 500 insurance company to drive 7% increase in revenue",
-      "url": "https://cresta.com/es/customers/fortune-500-insurance-company",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta partnered with a Fortune 500 insurance company to achieve a 7% revenue increase using AI-driven contact center optimization. The case study demonstrates Cresta's ability to drive measurable business impact in high-value enterprise customer-support environments.",
-      "positioning": "Decagon could differentiate on end-to-end agent autonomy (handling full customer interactions, not just agent-assist optimization) and faster deployment for voice and chat without deep contact-center legacy system integration.",
-      "market": "US",
-      "found_at": "2026-07-24T08:37:05+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Aqua Finance increased dollars collected per hour by 61% and cut after-call work in half with Cresta",
-      "url": "https://cresta.com/es/customers/aqua-finance",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Aqua Finance achieved a 61% increase in dollars collected per hour and 50% reduction in after-call work using Cresta's AI coaching platform. This represents a quantified win in the collections/customer-support vertical where Cresta competes directly with agent-assistance tools.",
-      "positioning": "Decagon could emphasize native voice-agent capabilities (full automation of calls, not just coaching) and faster deployment for collections workflows, positioning as a complement or alternative for teams wanting agent-led rather than human-coaching-assisted operations.",
-      "market": "US",
-      "found_at": "2026-07-24T08:36:52+00:00"
     },
     {
       "company": "Cresta",
@@ -6443,30 +5903,6 @@
     },
     {
       "company": "Cresta",
-      "title": "How Aptive Drove Over $2 Million in Customer Retention with Cresta’s Real-Time AI",
-      "url": "https://cresta.com/es/customers/aptive",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study showing Aptive, a pest-control company, retained over $2 million in customer value using Cresta's real-time AI coaching for support agents. This demonstrates Cresta's traction in the enterprise customer-support space.",
-      "positioning": "Decagon can differentiate by emphasizing end-to-end agent automation (reducing handle time and training overhead) versus Cresta's agent-augmentation model, particularly for high-volume support scenarios where full automation ROI exceeds coaching-only approaches.",
-      "market": "US",
-      "found_at": "2026-07-24T08:36:45+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Alaska Airlines delivers fast, caring service at scale with Cresta",
-      "url": "https://cresta.com/es/customers/alaska-airlines",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Alaska Airlines is using Cresta's AI platform to improve customer service quality and speed at scale. The case study showcases Cresta's ability to handle high-volume customer interactions across enterprise operations.",
-      "positioning": "Decagon can emphasize its native voice-agent capabilities and real-time conversation coaching as complementary strengths for omnichannel support—particularly for airlines managing both chat and voice interactions where voice quality and agent guidance are critical differentiators.",
-      "market": "US",
-      "found_at": "2026-07-24T08:36:37+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "How Alaska Airlines delivers fast, caring service at scale with Cresta",
       "url": "https://cresta.com/customers/alaska-airlines",
       "source": "Company site",
@@ -6476,18 +5912,6 @@
       "positioning": "Decagon can differentiate on multi-modal voice and chat capabilities with tighter integration of natural conversation flow, or on faster time-to-value for regulated industries like airlines where compliance and quality matter.",
       "market": "US",
       "found_at": "2026-07-24T08:36:34+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Achieve generated 3x ROI and cut after-call work by 75% with Cresta",
-      "url": "https://cresta.com/es/customers/achieve",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Achieve, a customer support organization, reported 3x ROI and 75% reduction in after-call work using Cresta's AI platform. The case study demonstrates Cresta's traction in enterprise customer-support automation.",
-      "positioning": "Decagon can differentiate on voice-agent quality and naturalness in live calls, lower latency for real-time coaching, or deeper integration with existing support workflows. Emphasize whether Decagon's approach (if agent-native vs. coaching-overlay) delivers faster time-to-handle or better customer satisfaction in similar verticals.",
-      "market": "US",
-      "found_at": "2026-07-24T08:36:32+00:00"
     },
     {
       "company": "Cresta",
@@ -6515,18 +5939,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Real-Time AI Customer Care Solutions | Cresta",
-      "url": "https://cresta.com/es/customer-care",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta offers real-time AI guidance and data-driven insights for call center agents. The product targets agent and customer satisfaction improvement through live support during customer interactions.",
-      "positioning": "Decagon can differentiate on end-to-end autonomy: while Cresta augments human agents with real-time guidance, Decagon builds fully autonomous voice and chat agents that handle customer issues directly, reducing call volume and operational cost rather than optimizing per-agent performance.",
-      "market": "Global",
-      "found_at": "2026-07-24T08:36:21+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Press Releases | Cresta",
       "url": "https://cresta.com/es/press",
       "source": "Company site",
@@ -6536,18 +5948,6 @@
       "positioning": "Decagon can differentiate on ease of deployment and configuration for pure customer-support workflows (vs. revenue-focused contact centers), lower TCO for SMB/mid-market, and faster time-to-first-agent for chat/voice without heavy customization.",
       "market": "Global",
       "found_at": "2026-07-24T08:14:29+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Customer Stories | Cresta AI for Customer Experience",
-      "url": "https://cresta.com/es/customer-stories",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta is promoting customer case studies showing revenue growth, reduced handle time, and NPS improvement through its AI agents and agent-assist products. This directly competes in Decagon's core market of AI-powered customer support and voice agents.",
-      "positioning": "Decagon can differentiate on ease of voice-agent deployment, superior handoff to human agents, or faster time-to-value for enterprises avoiding long Cresta implementations. Focus on customers prioritizing speed and reliability over broad feature sprawl.",
-      "market": "Global",
-      "found_at": "2026-07-24T08:14:16+00:00"
     },
     {
       "company": "Relevance AI",
@@ -6972,18 +6372,6 @@
     {
       "company": "Sierra",
       "title": "Our customers: Sierra is trusted by industry leaders with millions of customers.",
-      "url": "https://sierra.ai/uk/customers",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Sierra published case studies highlighting enterprise customer wins in customer service, specifically naming WeightWatchers, Sonos, and Sirius XM as users of its conversational AI platform. The case studies emphasize AI-driven growth and improved customer satisfaction outcomes.",
-      "positioning": "Decagon can differentiate on ease of deployment, cost-per-interaction, voice-channel depth (if Sierra is chat-heavy), or speed to production—highlight any customer wins with faster time-to-value or stronger voice capabilities than Sierra's platform.",
-      "market": "US",
-      "found_at": "2026-07-24T06:22:37+00:00"
-    },
-    {
-      "company": "Sierra",
-      "title": "Our customers: Sierra is trusted by industry leaders with millions of customers.",
       "url": "https://sierra.ai/customers",
       "source": "Company site",
       "published": null,
@@ -7043,18 +6431,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Announcing Cresta for Customer Service",
-      "url": "https://cresta.com/es/blog/announcing-cresta-for-customer-service",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced a customer-service product offering real-time assistance and conversational insights for support teams. This represents a direct competitive move in the AI-assisted customer-support space.",
-      "positioning": "Decagon could emphasize end-to-end agent autonomy and resolution rates versus Cresta's real-time-assistance model; positioning as a replacement for human reps rather than augmentation, with transparent pricing and faster deployment for enterprises seeking cost reduction.",
-      "market": "US",
-      "found_at": "2026-07-25T07:22:37+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Announcing Cresta for Voice",
       "url": "https://cresta.com/blog/announcing-cresta-for-voice",
       "source": "Company site",
@@ -7064,18 +6440,6 @@
       "positioning": "Decagon can differentiate by emphasizing true agent autonomy and end-to-end automation: Cresta positions as real-time coaching for human agents, whereas Decagon builds fully autonomous voice agents that handle calls independently, reducing reliance on human intervention and scaling support without agent headcount.",
       "market": "US",
       "found_at": "2026-07-25T07:22:41+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Announcing Cresta for Voice",
-      "url": "https://cresta.com/es/blog/announcing-cresta-for-voice",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta has launched a voice product extending its real-time AI coaching to phone-based sales and service interactions. This directly competes with Decagon's voice-agent and enterprise customer-support platform capabilities.",
-      "positioning": "Decagon can differentiate on end-to-end agent autonomy (handling entire customer interactions, not just coaching) and lower latency for real-time voice scenarios. Emphasize whether Decagon's architecture handles higher-complexity resolution tasks or multi-turn reasoning better than a real-time coaching layer.",
-      "market": "US",
-      "found_at": "2026-07-25T07:22:45+00:00"
     },
     {
       "company": "Cresta",
@@ -7091,18 +6455,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Announcing Cresta Voice Virtual Agent: What Sets It Apart &amp; What the Market Is Getting Wrong",
-      "url": "https://cresta.com/es/blog/announcing-cresta-voice-virtual-agent-what-sets-it-apart-what-the-market-is-getting-wrong",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced its Voice Virtual Agent product, positioning it as a generative-AI solution that combines AI with human-centric design for complex customer workflows and revenue generation. This is a direct competitor product launch in Decagon's core market of AI voice agents for enterprise customer support.",
-      "positioning": "Decagon could emphasize its focus on reliability and integration depth for mission-critical support workflows, and highlight specific advantages in handling edge cases, agent hand-off quality, or customer-specific training vs. Cresta's claimed 'human-centric design.' Decagon's positioning should centre on proven production performance and measurable customer outcomes rather than marketing claims.",
-      "market": "Global",
-      "found_at": "2026-07-25T07:22:49+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Aragon Research Names Cresta as an Innovator for Conversational AI",
       "url": "https://cresta.com/blog/aragon-research-names-cresta-as-innovator-in-report-on-conversational-ai-in-the-intelligent-contact-center",
       "source": "Company site",
@@ -7112,18 +6464,6 @@
       "positioning": "Decagon could differentiate on deployment speed, ease of voice integration, or lower total cost of ownership compared to Cresta's platform. Emphasize Decagon's focus on both chat and voice agents with lighter infrastructure requirements.",
       "market": "Global",
       "found_at": "2026-07-25T07:22:51+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Aragon Research Names Cresta as an Innovator for Conversational AI",
-      "url": "https://cresta.com/es/blog/aragon-research-names-cresta-as-innovator-in-report-on-conversational-ai-in-the-intelligent-contact-center",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta was named an Innovator in Aragon Research's new Globe report for Conversational AI in Intelligent Contact Centers, marking the first analyst report to focus specifically on conversational AI for contact centers. This positions Cresta as a recognized player in the enterprise contact-center AI space.",
-      "positioning": "Decagon can differentiate on depth of voice-agent capability, integration speed, and lower cost-to-deploy versus Cresta's broader conversational-AI positioning. The Aragon recognition suggests analyst credibility matters in this market—Decagon should pursue similar analyst coverage while emphasizing its focus on production voice agents and post-call work automation.",
-      "market": "Global",
-      "found_at": "2026-07-25T07:22:54+00:00"
     },
     {
       "company": "Cresta",
@@ -7139,18 +6479,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Introducing Automatic Summarization",
-      "url": "https://cresta.com/es/blog/automatic-summarization",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched Automatic Summarization to reduce post-call work (ACW) time, which Cresta claims accounts for one-third of agent call time in contact centers. The feature generates call summaries automatically to streamline administrative overhead.",
-      "positioning": "Decagon can emphasize that end-to-end AI voice agents eliminate ACW entirely by handling the full customer interaction without human handoff—compared to tools that merely accelerate human post-call tasks. This shifts from incremental efficiency to structural replacement of the labor bottleneck.",
-      "market": "US",
-      "found_at": "2026-07-25T07:23:04+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Automation Discovery: Designing Systems to Extract Blueprints from Conversation Data",
       "url": "https://cresta.com/blog/automation-discovery-designing-systems-to-extract-blueprints-from-conversation-data",
       "source": "Company site",
@@ -7160,18 +6488,6 @@
       "positioning": "Decagon can position its voice and chat agents as the execution layer that brings these discovered blueprints to life—emphasizing ease of deployment once patterns are identified, native support for complex edge cases, and faster time-to-automation compared to manual workflow design.",
       "market": "US",
       "found_at": "2026-07-25T07:23:07+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Automation Discovery: Designing Systems to Extract Blueprints from Conversation Data",
-      "url": "https://cresta.com/es/blog/automation-discovery-designing-systems-to-extract-blueprints-from-conversation-data",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched Automation Discovery, a feature that analyzes conversation data to identify automation-ready workflows and repeatable patterns. This positions Cresta as a workflow-optimization layer for customer-support operations.",
-      "positioning": "Decagon could emphasize that while discovery is valuable, Decagon builds end-to-end agent execution across chat and voice—not just pattern identification. Decagon's agents actively handle discovered workflows in production, reducing the discovery-to-deployment friction that Cresta's tool alone doesn't eliminate.",
-      "market": "US",
-      "found_at": "2026-07-25T07:23:09+00:00"
     },
     {
       "company": "Cresta",
@@ -7196,18 +6512,6 @@
       "positioning": "Decagon can highlight superior voice-agent naturalness and lower latency in real-time support scenarios where Cresta's automation may still feel constrained; emphasize Decagon's focus on genuine conversation over templated control—especially if Cresta's announcements lean heavily into guardrails or compliance-first design at the expense of agent autonomy or customer experience.",
       "market": "Global",
       "found_at": "2026-07-25T07:23:25+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Beyond Automation: How Cresta’s New Innovations Give Businesses Control and Confidence",
-      "url": "https://cresta.com/es/blog/beyond-automation-how-crestas-new-innovations-give-businesses-control-and-confidence",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta held its WAVE 2025 conference announcing new product innovations focused on giving businesses control and confidence in AI-driven customer experience. The event gathered AI and CX leaders to showcase breakthrough capabilities.",
-      "positioning": "Decagon can differentiate by emphasizing real-time voice-agent quality, transparency in agent decisions, and native enterprise integration—positioning against Cresta's broader CX platform approach with more specialized voice and chat agent reliability.",
-      "market": "US",
-      "found_at": "2026-07-25T07:23:27+00:00"
     },
     {
       "company": "Cresta",
@@ -7247,18 +6551,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta CTO &amp; Co-Founder on Driving Contact Center Revenue with AI",
-      "url": "https://cresta.com/es/blog/brand-building-experiences-cresta-cto-co-founder-on-driving-contact-center-revenue-with-ai",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta's CTO discussed AI's revenue impact in contact centers with an industry analyst, highlighting Cresta's positioning in the customer-support AI space. This is a thought-leadership / analyst engagement piece from a direct competitor.",
-      "positioning": "Decagon can differentiate by emphasizing ease of deployment and integration for mid-market enterprises, faster time-to-value vs. Cresta's heavier analytics footprint, and superior voice-agent capabilities if that is a Decagon strength.",
-      "market": "US",
-      "found_at": "2026-07-25T07:23:38+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Building AI Agents Customers Actually Love",
       "url": "https://cresta.com/blog/building-ai-agents-customers-actually-love",
       "source": "Company site",
@@ -7271,18 +6563,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Building AI Agents Customers Actually Love",
-      "url": "https://cresta.com/es/blog/building-ai-agents-customers-actually-love",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published content on designing AI agents for customer satisfaction, featuring Google's former Chief Decision Scientist. The piece emphasizes human-centered design as key to successful enterprise AI deployment.",
-      "positioning": "Decagon could differentiate by highlighting that human-centered design requires both UX expertise *and* robust voice/conversation infrastructure—positioning Decagon's native voice-agent capabilities and conversation quality as the operational backbone that makes customer delight measurable and scalable.",
-      "market": "Global",
-      "found_at": "2026-07-26T04:30:47+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Building and Deploying Production‑Grade AI Agents: Cresta’s End‑to‑End Approach",
       "url": "https://cresta.com/blog/building-and-deploying-production-grade-ai-agents-crestas-end-to-end-approach",
       "source": "Company site",
@@ -7292,18 +6572,6 @@
       "positioning": "Decagon can differentiate by emphasizing speed-to-production and ease of customization for customer-support workflows specifically, versus a generalized agent-building framework. Focus on pre-built integrations with common support systems (ticketing, knowledge bases, CRM) that reduce time-to-value for support teams.",
       "market": "Global",
       "found_at": "2026-07-26T04:30:49+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Building and Deploying Production‑Grade AI Agents: Cresta’s End‑to‑End Approach",
-      "url": "https://cresta.com/es/blog/building-and-deploying-production-grade-ai-agents-crestas-end-to-end-approach",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published a detailed post on its end-to-end approach to building and deploying production-grade AI agents, covering the full lifecycle from development to deployment.",
-      "positioning": "Decagon could emphasize its focus on voice-channel agents and real-time customer-support accuracy, vs. Cresta's broader agent platform approach—particularly highlighting Decagon's specialized routing, knowledge grounding, and compliance features for regulated customer-support use cases.",
-      "market": "Global",
-      "found_at": "2026-07-26T04:30:51+00:00"
     },
     {
       "company": "Cresta",
@@ -7331,18 +6599,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Building Voice AI That Actually Works: Balancing Realistic Voices vs. Production-Ready Performance",
-      "url": "https://cresta.com/es/blog/building-voice-ai-that-actually-works-balancing-realistic-voices-vs-production-ready-performance",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published analysis on voice AI vendors' trade-offs between voice realism and production readiness for enterprise deployment. The piece evaluates the landscape to help enterprises choose voice models that scale in real-world customer-support scenarios.",
-      "positioning": "Decagon can emphasize that its voice agents prioritize production reliability and latency for live customer interactions over synthetic-voice novelty—and highlight any edge in quality-of-service metrics, integration speed, or cost-per-handled-interaction that matter to ops teams.",
-      "market": "US",
-      "found_at": "2026-07-26T04:31:00+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Case Study: Fortune 500 Company Drove 7% Increase in Revenue",
       "url": "https://cresta.com/blog/case-study-fortune-500-insurance-company-drives-7-increase-in-revenue",
       "source": "Company site",
@@ -7352,18 +6608,6 @@
       "positioning": "Decagon could position on deeper agent autonomy: whereas Cresta appears to focus on agent assistance and coaching, Decagon builds fully autonomous voice agents that handle calls end-to-end, reducing reliance on human escalation and freeing agents for higher-value work—especially valuable at scale during peak enrollment periods.",
       "market": "US",
       "found_at": "2026-07-26T04:31:10+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Case Study: Fortune 500 Company Drove 7% Increase in Revenue",
-      "url": "https://cresta.com/es/blog/case-study-fortune-500-insurance-company-drives-7-increase-in-revenue",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study claiming a Fortune 500 customer achieved a 7% revenue increase through their AI agent platform during open enrollment season. The customer used Cresta to handle peak call volume and streamline operations.",
-      "positioning": "Decagon can contrast on ease of deployment and time-to-value: while Cresta emphasizes revenue-impact storytelling, Decagon should highlight faster onboarding, lower integration friction for existing support stacks, and transparent ROI measurement—especially for teams that need to prove impact within 30–60 days rather than waiting for enrollment cycles.",
-      "market": "US",
-      "found_at": "2026-07-26T04:31:13+00:00"
     },
     {
       "company": "Cresta",
@@ -7379,18 +6623,6 @@
     },
     {
       "company": "Cresta",
-      "title": "CCW 2024: Come see Cresta at Booth 609 and enter our sweepstakes",
-      "url": "https://cresta.com/es/blog/ccw-2024-come-see-cresta-at-booth-609-and-enter-our-sweepstakes",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta is showcasing at CCW 2024 with customer testimonials from Mutual of Omaha and United Airlines on generative AI for contact centers. This represents public validation of Cresta's enterprise customer base in the customer-support space.",
-      "positioning": "Decagon can position on deeper voice-agent capabilities, real-time conversation guidance, or faster implementation/time-to-value compared to Cresta's platform-heavy approach—particularly if targeting mid-market or vertical-specific use cases where Cresta's large-enterprise focus creates gaps.",
-      "market": "US",
-      "found_at": "2026-07-26T04:31:24+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Close the Retention Performance Gap with Real-Time Coaching",
       "url": "https://cresta.com/blog/close-retention-performance-gaps-with-real-time-coaching",
       "source": "Company site",
@@ -7400,18 +6632,6 @@
       "positioning": "Decagon can differentiate by emphasizing that AI voice agents handle routine customer interactions end-to-end (reducing variability between performers), while Cresta's coaching approach still relies on human agent quality variance. For high-volume, standardized support interactions, automation eliminates the performance gap entirely rather than narrowing it.",
       "market": "US",
       "found_at": "2026-07-26T04:31:30+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Close the Retention Performance Gap with Real-Time Coaching",
-      "url": "https://cresta.com/es/blog/close-retention-performance-gaps-with-real-time-coaching",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta released performance gap analysis showing retention coaching opportunities, citing data from a Fortune 50 software company and telecom firm. The analysis highlights 65% retention variance between top and bottom performers and quantifies revenue loss in lower-quartile agents.",
-      "positioning": "Decagon can position its voice and chat agents as automating the high-performing agent behaviors that Cresta's coaching layer targets—eliminating the performance gap entirely by removing inconsistent human variation from customer interactions.",
-      "market": "US",
-      "found_at": "2026-07-26T04:31:33+00:00"
     },
     {
       "company": "Cresta",
@@ -7427,18 +6647,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Crafting a Natural-Sounding AI Voice",
-      "url": "https://cresta.com/es/blog/creating-a-natural-sounding-text-to-speech-voice",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta has launched Signal, an AI concierge product with a focus on natural-sounding voice and conversational experience. The article details the technical foundations behind Signal's voice capabilities.",
-      "positioning": "Decagon can emphasize its multi-channel agent platform (chat and voice) with purpose-built customer-support routing and escalation versus a single-threaded concierge experience; highlight domain-specific training for support workflows (refunds, troubleshooting, billing) where Cresta's general conversational model may lack guardrails.",
-      "market": "Global",
-      "found_at": "2026-07-26T11:25:13+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Achieves TISAX Compliance",
       "url": "https://cresta.com/blog/cresta-achieves-tisax-compliance",
       "source": "Company site",
@@ -7448,30 +6656,6 @@
       "positioning": "Decagon can highlight its own SOC 2 Type II, ISO 27001, and GDPR compliance as table stakes for EU enterprise adoption, while emphasizing faster deployment and lower cost-per-agent in regulated industries where compliance certification alone does not guarantee customer satisfaction or ROI.",
       "market": "EMEA",
       "found_at": "2026-07-26T11:25:19+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta Achieves TISAX Compliance",
-      "url": "https://cresta.com/es/blog/cresta-achieves-tisax-compliance",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced TISAX compliance certification, expanding its security credentials for enterprise deployments in automotive and manufacturing sectors. TISAX is a German automotive-industry security standard required for suppliers to major OEMs.",
-      "positioning": "Decagon can emphasize its own SOC 2, ISO 27001, and relevant compliance certifications as table-stakes for enterprise customer-support deployments, highlighting that compliance alone doesn't differentiate—customer outcomes and agent quality do.",
-      "market": "EMEA",
-      "found_at": "2026-07-26T11:25:21+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta and Five9: Teaming up to create the Intelligent Contact Center",
-      "url": "https://cresta.com/es/blog/cresta-and-five9-teaming-up",
-      "source": "Company site",
-      "published": null,
-      "type": "partnership",
-      "summary": "Cresta (real-time AI agent guidance) and Five9 (cloud contact-center platform) are partnering to integrate Cresta's AI capabilities into Five9's contact-center software. This combines Five9's scale with Cresta's real-time agent-assist technology.",
-      "positioning": "Decagon differentiates on voice-agent autonomy and end-to-end deflection rather than agent-assist overlays; position as a full-stack alternative where AI handles calls directly rather than coaching humans in parallel.",
-      "market": "US",
-      "found_at": "2026-07-26T11:25:23+00:00"
     },
     {
       "company": "Cresta",
@@ -7499,18 +6683,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta Conductor: The Agent for AI Agent Development",
-      "url": "https://cresta.com/es/blog/cresta-conductor-the-agent-for-ai-agent-development",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched Conductor, a developer-focused platform for building and testing AI agents using real customer conversation data and Cresta's enterprise deployment patterns. This positions Cresta as an agent-development platform, extending beyond its original voice-coaching product.",
-      "positioning": "Decagon can emphasize its end-to-end customer-support agent capability (voice + chat) and direct deployment to live support queues, versus a developer-first build environment. Highlight faster time-to-production for support teams versus requiring engineering resources.",
-      "market": "Global",
-      "found_at": "2026-07-26T11:25:32+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Continues International Expansion with Spain Launch",
       "url": "https://cresta.com/blog/cresta-continues-international-expansion-with-spain-launch",
       "source": "Company site",
@@ -7520,18 +6692,6 @@
       "positioning": "Decagon can emphasize its multi-language voice capabilities and deeper integration with enterprise telephony infrastructure in EMEA, positioning as a more natively conversational alternative to coaching-focused competitors.",
       "market": "Spain",
       "found_at": "2026-07-26T11:25:33+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta Continues International Expansion with Spain Launch",
-      "url": "https://cresta.com/es/blog/cresta-continues-international-expansion-with-spain-launch",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched operations in Spain as part of its international expansion strategy. The move extends Cresta's AI customer-support agent platform into new European markets.",
-      "positioning": "Decagon can position as a flexible alternative for European enterprises seeking voice and chat agents with faster implementation and lower switching costs than large platforms expanding through market-by-market launches.",
-      "market": "Spain",
-      "found_at": "2026-07-26T11:25:35+00:00"
     },
     {
       "company": "Cresta",
@@ -7547,18 +6707,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta Expands Generative AI Solutions for the Contact Center",
-      "url": "https://cresta.com/es/blog/cresta-expands-generative-ai-solutions-for-the-contact-center",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced expansions to its generative AI platform for contact centers, enhancing real-time intelligence capabilities. The update targets enterprise customer-support operations with AI-powered agent assistance.",
-      "positioning": "Decagon can differentiate on end-to-end agent automation (not just real-time coaching) and voice-agent quality, especially in handling complex customer journeys without human handoff.",
-      "market": "US",
-      "found_at": "2026-07-26T11:26:01+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Expands Global Reach with Real-Time Voice Translation and Multilingual AI Across the Platform",
       "url": "https://cresta.com/blog/cresta-expands-global-reach-with-real-time-voice-translation-and-multilingual-ai-across-the-platform",
       "source": "Company site",
@@ -7571,18 +6719,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta Expands Global Reach with Real-Time Voice Translation and Multilingual AI Across the Platform",
-      "url": "https://cresta.com/es/blog/cresta-expands-global-reach-with-real-time-voice-translation-and-multilingual-ai-across-the-platform",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched real-time voice translation and multilingual AI capabilities across its platform to expand global customer support coverage. The feature enables agents to handle multilingual interactions with real-time translation and language-aware insights.",
-      "positioning": "Decagon can differentiate by emphasizing native multilingual voice reasoning (not translation-layer dependence) and tighter integration with actual agent workflows; translation-first approaches often introduce latency and context loss that hurt real-time voice quality.",
-      "market": "Global",
-      "found_at": "2026-07-26T11:26:05+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Insights Report: Reducing Ramp Time &amp; Agent Attrition",
       "url": "https://cresta.com/blog/cresta-insights-report-q1-2022",
       "source": "Company site",
@@ -7592,18 +6728,6 @@
       "positioning": "Decagon could position voice and chat agents as complementary or superior to real-time coaching alone: agents handle routine inquiries end-to-end (reducing agent workload and burnout), while coaching focuses on human escalations and complex cases. Alternatively, emphasize that Decagon's agents reduce the need for large agent pools, directly addressing the root cause of attrition—understaffing and repetitive work.",
       "market": "Global",
       "found_at": "2026-07-26T11:26:12+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta Insights Report: Reducing Ramp Time &amp; Agent Attrition",
-      "url": "https://cresta.com/es/blog/cresta-insights-report-q1-2022",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta released an Insights Report on using AI-driven real-time coaching to reduce agent ramp time and attrition while improving productivity and customer experience. This is a competitive positioning report from a direct rival in the enterprise customer-support AI space.",
-      "positioning": "Decagon can differentiate by emphasizing its focus on autonomous agent deflection and resolution—reducing the volume agents must handle—versus Cresta's coaching-augmentation model. Position Decagon as shifting the economics from training existing agents to replacing repetitive work entirely.",
-      "market": "US",
-      "found_at": "2026-07-26T11:26:16+00:00"
     },
     {
       "company": "Cresta",
@@ -7626,18 +6750,6 @@
       "type": "product_launch",
       "summary": "Cresta launches Real-Time Trends, catching CX conversation spikes and unknown-unknowns down to the minute instead of after dashboards land.",
       "positioning": "Cresta is doubling down on agent-assist analytics; Decagon can position autonomous resolution as the endgame with analytics built in.",
-      "market": "US",
-      "found_at": "2026-08-13T00:14:01+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta Is Now on Google Cloud Marketplace",
-      "url": "https://cresta.com/es/blog/cresta-is-now-on-google-cloud-marketplace-making-ai-for-contact-centers-easier-than-ever",
-      "source": "Company site",
-      "published": null,
-      "type": "partnership",
-      "summary": "Cresta is now on Google Cloud Marketplace with GCP deployment, simplifying procurement and billing for enterprises.",
-      "positioning": "Marketplace procurement matters in enterprise cycles; worth matching on the clouds Decagon's prospects buy through.",
       "market": "US",
       "found_at": "2026-08-13T00:14:01+00:00"
     },
@@ -7811,30 +6923,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta: First Contact Center AI to Earn ISO 42001",
-      "url": "https://cresta.com/es/blog/cresta-secures-first-iso-42001-certification-in-contact-center-ai-space",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced it is the first contact-center AI provider to achieve ISO/IEC 42001 certification for responsible AI management systems. This represents a compliance and trust milestone in the enterprise customer-support AI market.",
-      "positioning": "Decagon can differentiate on speed-to-value and ease of deployment for mid-market and mid-enterprise customers where ISO 42001 may not yet be a blocker, while positioning ISO compliance as table-stakes that Decagon can achieve as it scales enterprise coverage.",
-      "market": "Global",
-      "found_at": "2026-08-14T03:04:25+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta&#x27;s Spring Release: The Sound of Expertise",
-      "url": "https://cresta.com/es/blog/cresta-spring-release",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched a voice product in Spring 2021, adding real-time AI assistance, coaching, and QA capabilities to phone-based contact centers. This expands Cresta's footprint from chat into live voice agent support—a core Decagon market.",
-      "positioning": "Decagon can emphasize native voice-agent design (end-to-end voice orchestration vs. bolted-on assistance), lower latency for real-time intervention, and tighter integration with enterprise telephony stacks. Highlight superior voice quality and more granular control over agent handoff vs. coaching-layer-only approaches.",
-      "market": "US",
-      "found_at": "2026-08-14T03:04:28+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta&#x27;s Spring Release: The Sound of Expertise",
       "url": "https://cresta.com/blog/cresta-spring-release",
       "source": "Company site",
@@ -7856,18 +6944,6 @@
       "positioning": "Decagon can differentiate by emphasizing end-to-end agent autonomy (handling full customer interactions) rather than agent-assist; highlight lower latency, multi-turn reasoning, and voice-native design if Cresta's stack is chat-first.",
       "market": "US",
       "found_at": "2026-08-14T03:04:33+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta presenta 3 productos para fortalecer su plataforma de IA",
-      "url": "https://cresta.com/es/blog/cresta-unveils-3-products-to-strengthen-ai-platform",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched three new AI products: Synthetic Customers (for testing), Testing 2.0, and Training Simulator. These expand its customer-support agent platform with capabilities for agent evaluation and training.",
-      "positioning": "Decagon can emphasize its end-to-end agent quality control and real-world deployment focus, while noting that synthetic testing is only one input—live performance metrics and human feedback loops are critical for reliable enterprise agent performance.",
-      "market": "Global",
-      "found_at": "2026-08-14T03:04:36+00:00"
     },
     {
       "company": "Cresta",
@@ -7919,18 +6995,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta&#x27;s Commitment to HIPAA Compliance",
-      "url": "https://cresta.com/es/blog/crestas-commitment-to-hipaa",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta announced HIPAA Business Associate compliance, enabling healthcare organizations to sign BAAs and use its customer-experience products with protected health information.",
-      "positioning": "Decagon can differentiate by highlighting its own healthcare-grade compliance roadmap and ability to serve regulated industries at scale, or by emphasizing superior voice-agent capabilities tailored to healthcare workflows (e.g., clinical intake, patient triage).",
-      "market": "US",
-      "found_at": "2026-08-14T03:04:48+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Summer &#x27;21 Release: Automation and Knowledge AI",
       "url": "https://cresta.com/blog/crestas-summer-21-release",
       "source": "Company site",
@@ -7943,18 +7007,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta Summer &#x27;21 Release: Automation and Knowledge AI",
-      "url": "https://cresta.com/es/blog/crestas-summer-21-release",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta released Summer 2021 features including Auto-send, knowledge search, and retention coaching to accelerate customer care workflows. This represents a direct competitor product update in the enterprise customer-support AI space.",
-      "positioning": "Decagon can differentiate on voice-agent autonomy and end-to-end call handling versus Cresta's chat-focused automation and agent-assist model; emphasize faster resolution and reduced human touchpoints for high-volume support scenarios.",
-      "market": "US",
-      "found_at": "2026-08-14T03:04:56+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Three Pillars of AI Agent Security and Defense | Cresta",
       "url": "https://cresta.com/blog/crestas-three-strategic-pillars-of-ai-agent-defense-for-enterprise-security-and-compliance",
       "source": "Company site",
@@ -7964,18 +7016,6 @@
       "positioning": "Decagon can emphasize its own approach to agent reliability and oversight—whether through similar layered defenses, transparent audit trails, or human-in-the-loop design—as table-stakes for enterprise customer-support deployments where safety and compliance are critical.",
       "market": "Global",
       "found_at": "2026-08-14T03:04:58+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Three Pillars of AI Agent Security and Defense | Cresta",
-      "url": "https://cresta.com/es/blog/crestas-three-strategic-pillars-of-ai-agent-defense-for-enterprise-security-and-compliance",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published a technical guide on AI agent security covering system-level guardrails, real-time supervision, and adversarial testing. This addresses security and safety concerns in production AI agents for customer-support workflows.",
-      "positioning": "Decagon can emphasize its own security architecture and governance model: highlight whether real-time monitoring, guardrail design, or testing methodology differentiate Decagon's agents—or position Decagon's approach as complementary (e.g., stronger domain-specificity in customer-support guardrails, or tighter integration with enterprise compliance frameworks).",
-      "market": "Global",
-      "found_at": "2026-08-14T03:05:01+00:00"
     },
     {
       "company": "Cresta",
@@ -8003,18 +7043,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Designing the AI Agent Supervision Experience",
-      "url": "https://cresta.com/es/blog/designing-the-ai-agent-supervision-experience",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched its Agent Operations Center, a supervisory interface for real-time oversight of both AI and human agents. This is a direct product feature in the enterprise contact-center AI space, competing with Decagon's agent orchestration and monitoring capabilities.",
-      "positioning": "Decagon can emphasize native voice-agent quality (accuracy, safety, real-time intervention) and tighter integration with enterprise CRM/ticketing systems, positioning its supervision model as purpose-built for mixed AI-human teams in high-stakes customer support rather than an overlay tool.",
-      "market": "Global",
-      "found_at": "2026-08-14T04:03:15+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Does One LLM Fit All? Public vs. Domain vs. Fine-Tuned",
       "url": "https://cresta.com/blog/does-one-large-language-model-fit-all",
       "source": "Company site",
@@ -8039,18 +7067,6 @@
     },
     {
       "company": "Cresta",
-      "title": "AI-Driven Contact Center Performance Coaching",
-      "url": "https://cresta.com/es/blog/elevating-contact-center-performance-coaching-the-ai-driven-path-to-excellence",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta is promoting AI-driven real-time coaching for contact-center agents to improve performance and customer satisfaction. This positions coaching and agent quality as a core competitive feature within the customer-support AI space.",
-      "positioning": "Decagon can differentiate by emphasizing that autonomy—letting AI agents handle customer interactions end-to-end—eliminates the need for coaching overhead entirely, while Cresta's approach still relies on human agents requiring external feedback loops. For teams not yet ready for full automation, Decagon could highlight integration with coaching as a transitional value, or position agent-assist as a more efficient alternative to real-time feedback systems.",
-      "market": "US",
-      "found_at": "2026-08-14T04:03:24+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Brings Real-Time AI to Email Support",
       "url": "https://cresta.com/blog/email-is-in-the-loop-cresta-expands-agent-assist-and-conversation-intelligence-across-every-major-channel",
       "source": "Company site",
@@ -8060,18 +7076,6 @@
       "positioning": "Decagon can highlight the depth of its voice-agent capabilities and real-time voice understanding as differentiated from broader multi-channel assist tools, or emphasize autonomous voice agents versus agent-assist overlays if that's a product positioning.",
       "market": "Global",
       "found_at": "2026-08-14T04:03:26+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Cresta lleva la IA en tiempo real al soporte por correo electrónico",
-      "url": "https://cresta.com/es/blog/email-is-in-the-loop-cresta-expands-agent-assist-and-conversation-intelligence-across-every-major-channel",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta extended its Agent Assist and Conversation Intelligence platform to email support, offering AI-drafted responses for agents and quality scoring for managers across all email interactions.",
-      "positioning": "Decagon can emphasize its broader omnichannel voice and chat capability, real-time agent guidance depth, and focus on customer support automation—positioning email as one channel among many rather than a bolted-on feature, and highlighting superior voice-agent performance where Decagon has deeper expertise.",
-      "market": "Global",
-      "found_at": "2026-08-14T04:03:28+00:00"
     },
     {
       "company": "Cresta",
@@ -8087,18 +7091,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta&#x27;s End-to-End Chat Solution",
-      "url": "https://cresta.com/es/blog/end-to-end-chat-solution",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta launched an integrated end-to-end chat solution combining visitor chat, real-time agent assistance, optional bots, and coaching in a single platform rather than pieced-together tools.",
-      "positioning": "Decagon can position on deeper voice-agent capabilities and omnichannel scope (voice + chat), or on agent platform flexibility and integration depth if Cresta's solution is positioned as a closed, pre-built stack.",
-      "market": "",
-      "found_at": "2026-08-14T04:03:33+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Engineering Sub-Second Voice AI Agent Latency | Cresta",
       "url": "https://cresta.com/blog/engineering-for-real-time-voice-agent-latency",
       "source": "Company site",
@@ -8108,18 +7100,6 @@
       "positioning": "Decagon can differentiate by highlighting its own latency architecture and end-to-end optimization story, or by competing on other dimensions (e.g., agent reasoning quality, multi-turn conversation coherence, or industry-specific fine-tuning) if latency parity is already met.",
       "market": "Global",
       "found_at": "2026-08-14T04:03:35+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Engineering Sub-Second Voice AI Agent Latency | Cresta",
-      "url": "https://cresta.com/es/blog/engineering-for-real-time-voice-agent-latency",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published technical documentation on achieving sub-second latency across the full voice AI stack (ASR, LLM, TTS) in production, addressing a key UX challenge for real-time customer-support voice agents.",
-      "positioning": "Decagon can highlight its own latency benchmarks and any architectural advantages in end-to-end voice responsiveness; alternatively, use this as a baseline to validate that sub-second latency is now table-stakes for enterprise voice agents and differentiate on other factors (accuracy, cost, integration breadth, or conversation quality).",
-      "market": "Global",
-      "found_at": "2026-08-14T04:03:37+00:00"
     },
     {
       "company": "Cresta",
@@ -8135,18 +7115,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Experts on Day One: Cresta&#x27;s Mission",
-      "url": "https://cresta.com/es/blog/experts-on-day-one",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta is positioning its AI platform around learning from top-performing agents and sharing their expertise in real time, aiming to make new team members productive immediately. This is a direct competitor in the enterprise customer-support AI space.",
-      "positioning": "Decagon could emphasize its focus on native voice-agent capabilities and end-to-end ownership of customer conversations, versus Cresta's coaching/knowledge-sharing model—positioning voice as a richer, more autonomous channel than chat-based agent guidance.",
-      "market": "Global",
-      "found_at": "2026-08-14T04:03:46+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Fast Cars and AI Stars: Cresta&#x27;s CCW Las Vegas Recap",
       "url": "https://cresta.com/blog/fast-cars-ai-stars-inside-crestas-action-packed-ccw-las-vegas",
       "source": "Company site",
@@ -8156,18 +7124,6 @@
       "positioning": "Decagon can note that while Cresta focuses on large-scale contact-center deployments, Decagon's approach offers faster integration cycles and lower implementation overhead for mid-market and SMB customer-support teams, with comparable or superior voice-agent quality at a different price and complexity point.",
       "market": "US",
       "found_at": "2026-08-14T04:03:51+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Fast Cars and AI Stars: Cresta&#x27;s CCW Las Vegas Recap",
-      "url": "https://cresta.com/es/blog/fast-cars-ai-stars-inside-crestas-action-packed-ccw-las-vegas",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta showcased AI voice-agent capabilities at Contact Center World Las Vegas, including demos and customer sessions with Brinks Home and United, positioning their platform for enterprise contact-center deployments.",
-      "positioning": "Decagon could emphasize superior voice naturalness, latency, or post-call analytics in comparison; highlight use cases Cresta may not yet serve well (e.g., technical support, complex escalations); or stress Decagon's integration depth with existing enterprise stacks versus Cresta's point-solution approach.",
-      "market": "US",
-      "found_at": "2026-08-14T04:03:54+00:00"
     },
     {
       "company": "Cresta",
@@ -8195,18 +7151,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Five9 Names Cresta Innovation Partner of the Year",
-      "url": "https://cresta.com/es/blog/five9-names-cresta-innovation-partner-of-the-year",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Five9 has named Cresta its Innovation Partner of the Year, recognizing their joint work on generative AI and real-time agent guidance for contact centers. This signals strong validation of Cresta's AI-coaching product within a major CCaaS platform ecosystem.",
-      "positioning": "Decagon can emphasize its end-to-end agent autonomy (voice + chat) and native integration into enterprise workflows, versus Cresta's agent-assist-only model; positioning full automation as the evolution beyond real-time guidance.",
-      "market": "US",
-      "found_at": "2026-08-15T02:13:58+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Former AT&amp;T CEO John Donovan Joins Cresta&#x27;s Board",
       "url": "https://cresta.com/blog/former-att-ceo-john-donovan-joins-crestas-board",
       "source": "Company site",
@@ -8216,30 +7160,6 @@
       "positioning": "Decagon could emphasize its differentiation on ease of deployment and voice-agent native design versus Cresta's focus on real-time guidance; Donovan's telecom background signals Cresta's push into large enterprise telco accounts, a segment Decagon should actively target with reference customers and telco-specific case studies.",
       "market": "US",
       "found_at": "2026-08-15T02:14:00+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Former AT&amp;T CEO John Donovan Joins Cresta&#x27;s Board",
-      "url": "https://cresta.com/es/blog/former-att-ceo-john-donovan-joins-crestas-board",
-      "source": "Company site",
-      "published": null,
-      "type": "partnership",
-      "summary": "John Donovan, former AT&T Communications CEO, has joined Cresta's board. Donovan brings 30+ years of telecom and enterprise experience to the AI contact-center platform.",
-      "positioning": "Decagon can emphasize its focus on deep voice-agent quality and low-latency performance for regulated enterprises, positioning superior technical execution over board-level credibility plays in a crowded contact-center AI market.",
-      "market": "US",
-      "found_at": "2026-08-15T02:14:02+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "De la automatización a la abundancia: la visión de Cresta para la CX",
-      "url": "https://cresta.com/es/blog/from-automation-to-abundance-crestas-vision-for-the-future-of-cx",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published a vision piece on its company site positioning CX transformation around moving from automation-driven scarcity to proactive, human-centric abundance. The messaging frames Cresta's customer-experience agents as enabling richer agent-customer interactions rather than pure cost reduction.",
-      "positioning": "Decagon can differentiate by emphasizing that voice and omnichannel agent quality—not just abundance of interactions—drives real CX outcomes. Where Cresta frames 'abundance,' Decagon can own 'precision': agents that handle complex cases with fewer escalations and higher resolution, making each interaction count.",
-      "market": "LATAM",
-      "found_at": "2026-08-15T02:14:06+00:00"
     },
     {
       "company": "Cresta",
@@ -8267,18 +7187,6 @@
     },
     {
       "company": "Cresta",
-      "title": "CX de viajes proactiva con inteligencia de conversaciones | Cresta",
-      "url": "https://cresta.com/es/blog/from-damage-control-to-proactive-solutions-how-travel-hospitality-uses-conversation-intelligence-to-stay-ahead",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study on proactive customer experience in travel and hospitality using conversational intelligence to shift from reactive to proactive service during disruptions and app launches.",
-      "positioning": "Decagon can differentiate on real-time voice-agent deflection and omnichannel support (chat + voice) for travel/hospitality, positioning voice as the fastest channel for urgent service recovery during outages—where conversation intelligence alone falls short without autonomous resolution capability.",
-      "market": "LATAM",
-      "found_at": "2026-08-15T02:14:13+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Cresta Adds Leaders to Scale Its Partner Ecosystem",
       "url": "https://cresta.com/blog/from-strategy-to-scale-introducing-new-leaders-scaling-crestas-partner-ecosystem",
       "source": "Company site",
@@ -8291,30 +7199,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cresta suma líderes para escalar su ecosistema de socios",
-      "url": "https://cresta.com/es/blog/from-strategy-to-scale-introducing-new-leaders-scaling-crestas-partner-ecosystem",
-      "source": "Company site",
-      "published": null,
-      "type": "partnership",
-      "summary": "Cresta announced leadership additions to scale its partner ecosystem, deepening relationships with implementation and technology partners. The move signals expansion of Cresta's go-to-market and integration strategy in the Latin American market.",
-      "positioning": "Decagon can differentiate by emphasizing faster time-to-value and tighter out-of-box integrations with enterprise tools, reducing reliance on large implementation partner networks. Decagon's direct customer relationships and streamlined onboarding can appeal to enterprises wanting to avoid partner overhead.",
-      "market": "LATAM",
-      "found_at": "2026-08-15T02:14:17+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Cresta Integrates With AWS",
-      "url": "https://cresta.com/es/blog/going-deeper-how-cresta-integrates-with-aws",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published technical documentation on its AWS integration, highlighting secure and scalable generative AI deployment for contact centers. The focus is on faster implementation and time-to-value for customer experience teams.",
-      "positioning": "Decagon can differentiate on ease of deployment and integration breadth: emphasize native multi-cloud support, simpler onboarding compared to deep infrastructure partnerships, and faster voice-agent deployment without heavyweight cloud lock-in.",
-      "market": "US",
-      "found_at": "2026-08-15T02:14:21+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "How Cresta Integrates With AWS",
       "url": "https://cresta.com/blog/going-deeper-how-cresta-integrates-with-aws",
       "source": "Company site",
@@ -8324,18 +7208,6 @@
       "positioning": "Decagon can emphasize its modular, cloud-agnostic architecture and faster deployment without heavy AWS dependency, while highlighting cost efficiency for teams that don't need full AWS infrastructure.",
       "market": "US",
       "found_at": "2026-08-15T02:14:24+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Cresta Tackles LLM Hallucinations in Enterprise AI",
-      "url": "https://cresta.com/es/blog/grounding-reality---how-cresta-tackles-llm-hallucinations-in-enterprise-ai",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta published a technical article outlining its approach to reducing LLM hallucinations in enterprise AI through six pillars: grounded RAG, aligned verifiers, abstention, and expert review. This represents Cresta's positioning on a critical reliability concern in deployed customer-support agents.",
-      "positioning": "Decagon can highlight its own hallucination-mitigation strategy—emphasizing which techniques it prioritizes (e.g., retrieval grounding, human-in-the-loop oversight, confidence thresholding)—and how its architecture ensures outputs remain factually grounded for high-stakes support interactions. If Decagon's approach differs materially (e.g., tighter integration with CRM data, stricter fallback policies), that's a clear differentiator.",
-      "market": "Global",
-      "found_at": "2026-08-15T02:14:28+00:00"
     },
     {
       "company": "Cresta",
@@ -8387,18 +7259,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Holiday Inn Club Vacations Lifts ESAT to 70% with Cresta",
-      "url": "https://cresta.com/es/blog/holiday-inn-driving-customer-obsession-with-cresta",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Holiday Inn Club Vacations deployed Cresta's AI coaching platform and achieved a 23-point increase in agent satisfaction (ESAT 47% to 70%), halved agent attrition (120% to 60%), and improved bookings. This is a high-profile customer case demonstrating Cresta's real-time guidance impact on both agent experience and revenue metrics.",
-      "positioning": "Decagon can position its voice-agent approach as complementary: while Cresta coaches existing human agents, Decagon's fully autonomous voice agents eliminate the need for high-attrition coaching environments in first-contact resolution, reducing cost while maintaining or exceeding ESAT through AI deflection rather than human optimization.",
-      "market": "US",
-      "found_at": "2026-08-16T02:26:53+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "AI-Powered Conversation Intelligence for Financial Services | Cresta",
       "url": "https://cresta.com/blog/how-ai-powered-conversation-intelligence-is-reshaping-financial-services-and-collections-strategy",
       "source": "Company site",
@@ -8408,18 +7268,6 @@
       "positioning": "Decagon can differentiate on multi-turn voice and chat resolution (not just monitoring), deeper enterprise integrations, and faster time-to-value for contact centers. Cresta's strength in post-call analytics is complementary; Decagon's strength is autonomous resolution.",
       "market": "US",
       "found_at": "2026-08-16T02:26:58+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Inteligencia de conversaciones impulsada por IA para servicios financieros | Cresta",
-      "url": "https://cresta.com/es/blog/how-ai-powered-conversation-intelligence-is-reshaping-financial-services-and-collections-strategy",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta has launched AI-powered conversation intelligence for financial services, targeting customer support and collections teams with real-time risk detection, competitive monitoring, and action capabilities.",
-      "positioning": "Decagon can position its voice and chat agents as end-to-end automation that handles customer interactions directly, while positioning Cresta's conversation intelligence as a monitoring-only layer that still requires human intervention—emphasizing speed-to-resolution and cost efficiency gains from autonomous handling.",
-      "market": "Global",
-      "found_at": "2026-08-16T02:27:00+00:00"
     },
     {
       "company": "Cresta",
@@ -8435,18 +7283,6 @@
     },
     {
       "company": "Cresta",
-      "title": "How Brinks Home Redefines Automation with Cresta AI Agent",
-      "url": "https://cresta.com/es/blog/how-brinks-home-is-redefining-automation-with-cresta-ai-agent",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Brinks Home deployed Cresta's AI agent across voice and chat channels, leveraging Cresta's historical data to automate customer conversations. The case study highlights automation of support volume while improving both agent and customer experience.",
-      "positioning": "Decagon can position on native voice-agent quality and ease of deployment for enterprises without requiring years of historical training data; emphasize faster time-to-value and lower integration friction for new deployments.",
-      "market": "US",
-      "found_at": "2026-08-16T02:27:04+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "How Brinks Home Saves Time and Cuts Costs with Cresta",
       "url": "https://cresta.com/blog/how-brinks-saves-time-cuts-costs-and-drives-improvement-with-cresta",
       "source": "Company site",
@@ -8456,18 +7292,6 @@
       "positioning": "Decagon can position on real-time agent guidance during calls versus post-call coaching: emphasize how proactive voice-agent assistance during customer interactions delivers faster resolution and better outcomes than retrospective analysis, particularly for high-volume security and support teams.",
       "market": "US",
       "found_at": "2026-08-16T02:27:07+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Brinks Home Saves Time and Cuts Costs with Cresta",
-      "url": "https://cresta.com/es/blog/how-brinks-saves-time-cuts-costs-and-drives-improvement-with-cresta",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Brinks Home reduced coaching-session time by 60% and accelerated agent ramp-up using Cresta's platform, demonstrating cost and efficiency gains in customer-support operations.",
-      "positioning": "Decagon can position its voice-agent automation as complementary to or more efficient than coaching-optimization approaches: where Cresta improves human agent performance, Decagon automates first-contact resolution entirely, reducing the coaching burden and scaling support without proportional headcount.",
-      "market": "US",
-      "found_at": "2026-08-16T02:27:09+00:00"
     },
     {
       "company": "Cresta",
@@ -8492,18 +7316,6 @@
       "positioning": "Decagon can emphasize native cost efficiency in its agent platform's observability and analytics layer—either through architectural choices or partnerships that avoid similar infrastructure overhead for customers.",
       "market": "Global",
       "found_at": "2026-08-16T02:27:19+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Cresta Scales Real-Time Insights with ClickHouse",
-      "url": "https://cresta.com/es/blog/how-cresta-scales-real-time-insights-with-clickhouse",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study on adopting ClickHouse for real-time contact center analytics, achieving 50% storage-cost reduction versus PostgreSQL while handling billions of records. This demonstrates Cresta's technical depth in the customer-support AI space and infrastructure optimization.",
-      "positioning": "Decagon can highlight that real-time insights and cost efficiency are table-stakes for enterprise support agents, and position its own infrastructure decisions (inference latency, data handling, compliance) as purpose-built for support workflows rather than retrofitted analytics stacks.",
-      "market": "Global",
-      "found_at": "2026-08-16T02:27:22+00:00"
     },
     {
       "company": "Forethought",
@@ -8531,18 +7343,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Cómo CVS Health pasó de puntuar el 5% al 100% de las llamadas",
-      "url": "https://cresta.com/es/blog/how-cvs-health-went-from-scoring-5-of-calls-to-100-with-ai-powered-conversation-intelligence",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "CVS Health used Cresta's conversation intelligence platform to move from scoring 5% to 100% of customer-support calls, enabling predictive CSAT and reducing post-call work in their contact centers.",
-      "positioning": "Decagon can position its voice-agent capabilities as a complementary or alternative approach: rather than scoring and analyzing all calls after the fact, Decagon's agents handle portions of the contact-center workload autonomously, reducing call volume and post-call overhead from the start.",
-      "market": "US",
-      "found_at": "2026-08-17T02:19:49+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "How Fine-Tuned LLMs Power Knowledge Assist and Summaries",
       "url": "https://cresta.com/blog/how-fine-tuned-llms-power-knowledge-assist-summarization-and-chat-suggestions",
       "source": "Company site",
@@ -8552,18 +7352,6 @@
       "positioning": "Decagon could emphasize its own multi-modal voice + chat capabilities and real-time inference latency as differentiators; note that fine-tuned small models on proprietary data can be valuable but require ongoing training overhead, whereas Decagon's approach may offer faster time-to-value or lower operational complexity for enterprises without heavy ML teams.",
       "market": "Global",
       "found_at": "2026-08-17T02:19:52+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "How Fine-Tuned LLMs Power Knowledge Assist and Summaries",
-      "url": "https://cresta.com/es/blog/how-fine-tuned-llms-power-knowledge-assist-summarization-and-chat-suggestions",
-      "source": "Company site",
-      "published": null,
-      "type": "product_launch",
-      "summary": "Cresta released a fine-tuned LLM approach leveraging its Ocean model to power knowledge assist, summarization, and chat suggestions, claiming cost parity with GPT-4 performance at lower inference expense.",
-      "positioning": "Decagon could emphasize end-to-end agent autonomy and human handoff optimization as alternatives to knowledge-assist-only architectures, or highlight superior latency/reliability in high-volume enterprise voice channels where Cresta's approach may introduce overhead.",
-      "market": "Global",
-      "found_at": "2026-08-17T02:19:55+00:00"
     },
     {
       "company": "Cresta",
@@ -8591,18 +7379,6 @@
     },
     {
       "company": "Cresta",
-      "title": "Propel Holdings alcanza un 58 % de contención con Cresta AI Agent",
-      "url": "https://cresta.com/es/blog/how-propel-drives-containment-and-scales-exceptional-service-with-cresta-ai-agent",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Propel Holdings achieved 58% chat containment and 50% reduction in post-call work using Cresta AI Agent, scaling service without adding headcount. This is a customer case study from Cresta's own site.",
-      "positioning": "Decagon can note that while Cresta focuses on agent-assist and real-time guidance, enterprise teams seeking end-to-end autonomous AI agents for triage, resolution, and escalation—without agent dependence—should evaluate platform depth, customization control, and omnichannel voice + chat capabilities. Decagon's agent-first approach allows enterprises to handle containment without human agent bandwidth constraints.",
-      "market": "Global",
-      "found_at": "2026-08-17T02:20:08+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "How Retailers Uncover Buying Friction in Real Time | Cresta",
       "url": "https://cresta.com/blog/how-retailers-use-conversation-intelligence-to-uncover-buying-friction-in-real-time",
       "source": "Company site",
@@ -8627,18 +7403,6 @@
     },
     {
       "company": "Cresta",
-      "title": "How Short-Staffed Airlines Can Turn the Tide",
-      "url": "https://cresta.com/es/blog/how-short-staffed-airlines-can-turn-an-impasse-into-an-inflection-point",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Cresta published a case study on how airlines can use AI to address staffing challenges and maintain customer experience. The piece positions AI agent assistance as a solution to operational constraints in the airline customer-support function.",
-      "positioning": "Decagon can emphasize that purpose-built voice agents (not just agent-assist overlays) can handle entire call categories end-to-end, reducing agent load more comprehensively than co-pilot tools—particularly valuable in high-volume, time-sensitive sectors like airlines where call abandonment and wait times directly impact NPS.",
-      "market": "Global",
-      "found_at": "2026-08-17T02:20:17+00:00"
-    },
-    {
-      "company": "Cresta",
       "title": "Snap Finance Cuts AHT 40% and Automates QM 100% with Cresta",
       "url": "https://cresta.com/blog/how-snap-finance-transformed-quality-assurance-with-crestas-ai",
       "source": "Company site",
@@ -8648,18 +7412,6 @@
       "positioning": "Decagon can highlight deeper voice-agent autonomy (end-to-end call handling, not just QM) and lower latency for real-time agent coaching, positioning as a more integrated agentic platform versus QM-focused tooling.",
       "market": "US",
       "found_at": "2026-08-17T02:20:19+00:00"
-    },
-    {
-      "company": "Cresta",
-      "title": "Snap Finance Cuts AHT 40% and Automates QM 100% with Cresta",
-      "url": "https://cresta.com/es/blog/how-snap-finance-transformed-quality-assurance-with-crestas-ai",
-      "source": "Company site",
-      "published": null,
-      "type": "customer_win",
-      "summary": "Snap Finance automated 100% of quality monitoring with Cresta and achieved 40% AHT reduction and 23% CSAT lift. This represents a direct competitive customer win in enterprise contact-center automation.",
-      "positioning": "Decagon could position on: faster time-to-value for AHT and CSAT improvements through simpler agent-in-the-loop design; cost efficiency vs. Cresta's likely premium positioning; or faster onboarding for teams with simpler tech stacks. Emphasize Decagon's focus on voice + chat parity and lower implementation overhead.",
-      "market": "US",
-      "found_at": "2026-08-17T02:20:22+00:00"
     }
   ],
   "seen": [

@@ -6,11 +6,12 @@ Automated daily tracking of [Decagon](https://decagon.ai) mentions across podcas
 
 ## How it works
 
-A GitHub Actions job runs daily (20:00 UTC):
+A GitHub Actions job runs daily (01:00 UTC — 6pm San Francisco, so a full US news day is captured):
 
 1. **Podcast mentions** (`scanner/scan.py`) — scans new uploads from ~20 tech/AI podcast YouTube channels (`scanner/channels.json`) plus a generic YouTube search, pulls captions, finds every spoken "Decagon", and uses Claude to filter false positives (the shape, other Decagons) and score sentiment + topic. Each mention deep-links to the exact second on YouTube.
 2. **Competitor watch** (`scanner/competitors.py`) — sweeps competitor blogs (RSS) and Google News for launches, customer wins, funding and frontier-lab overlap (`scanner/competitors.json`), with Claude filtering relevance and drafting a positioning angle.
-3. Results are committed to `data/`, the dashboard updates via GitHub Pages, and a **digest issue** is opened when there are new items (watch this repo to get it by email — formatted for pasting into WhatsApp).
+3. **Date backfill** (`scanner/enrich_dates.py`) — many company blog pages print no date anywhere, and the dashboard hides undated items from every time-window view, so they would be collected and never seen. This re-checks the page and falls back to the Wayback Machine's first snapshot; recovered dates show as `≈`. Pages that resist three attempts are parked.
+4. Results are committed to `data/`, the dashboard updates via GitHub Pages, and a **digest issue** is opened when there are new items (watch this repo to get it by email — formatted for pasting into WhatsApp).
 
 ## Setup
 

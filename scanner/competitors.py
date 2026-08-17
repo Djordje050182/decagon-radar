@@ -159,6 +159,15 @@ def _page_meta(url):
 
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 
+# Competitor sitemaps list every localised copy of a page. They are duplicates of
+# the English article, and mostly undated — left in, they were 14% of the feed and
+# 40% of the undated backlog.
+LOCALE_PREFIX = re.compile(
+    r"^/(?:es|fr|de|it|pt|ja|ko|zh|nl|pl|tr|ru|sv|da|no|fi|id|th|vi|ar|he|cs|hu|ro|el|uk"
+    r"|zh-cn|zh-tw|pt-br|es-mx|es-419|en-gb|en-au|en-ca|en-in)(?:/|$)",
+    re.I,
+)
+
 
 def visible_text_date(html):
     """Best-effort: find a publication date printed in the page body."""
@@ -189,6 +198,8 @@ def collect_sitemap(competitor, seen):
     fetched = 0
     for loc in _sitemap_locs(cfg["url"]):
         path = re.sub(r"^https?://[^/]+", "", loc)
+        if LOCALE_PREFIX.match(path):
+            continue  # /es/, /fr/, /uk/… translations of a page we already take in English
         if not include.search(path) or loc in seen:
             continue
         if fetched >= MAX_SITEMAP_FETCHES:

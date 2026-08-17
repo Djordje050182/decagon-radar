@@ -60,6 +60,14 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scanner/competitors.py ${{ inputs.backfill && '--backfill' || '' }}
 
+      # Company-site pages often print no date, and the dashboard hides undated
+      # items from every time-window view — so this is what keeps today's finds
+      # visible. Runs before trends so recovered dates count toward the window.
+      - name: Backfill missing publish dates
+        id: dates
+        continue-on-error: true
+        run: python scanner/enrich_dates.py --limit 40
+
       - name: Trends synthesis
         id: trends
         continue-on-error: true

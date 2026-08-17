@@ -4,6 +4,14 @@ For each item with no published date:
   1. Re-fetch the page and look for a visible printed date.
   2. Fall back to the Wayback Machine's first snapshot of the URL.
 Estimated dates are flagged date_estimated=true (shown as ≈ on the dashboard).
+
+This matters more than it looks: the dashboard hides undated items from every
+time-window view, so a company-site page with no date is fetched, stored, and
+then never seen. Runs daily in CI with --limit; give it no limit to grind
+through the whole backlog by hand.
+
+Pages that resist MAX_ATTEMPTS lookups are parked rather than retried forever —
+some company blogs simply never print a date.
 """
 
 import json
@@ -37,12 +45,36 @@ def wayback_first_capture(url):
     return None
 
 
+MAX_ATTEMPTS = 3
+
+
+def save(store):
+    store["items"].sort(key=lambda x: x.get("published") or "0000", reverse=True)
+    (DATA / "competitor-news.json").write_text(
+        json.dumps(store, indent=2, ensure_ascii=False) + "\n")
+
+
 def main():
+    limit = None
+    argv = sys.argv[1:]
+    if "--limit" in argv:
+        limit = int(argv[argv.index("--limit") + 1])
+
     store = json.loads((DATA / "competitor-news.json").read_text())
     undated = [i for i in store["items"] if not i.get("published")]
-    print(f"undated items: {len(undated)}")
+    pending = [i for i in undated if i.get("date_lookup_attempts", 0) < MAX_ATTEMPTS]
+
+    # Newest finds first, then fewest attempts first (stable sort, so the second
+    # key wins) — today's items never queue behind a backlog that has already
+    # resisted a lookup or two.
+    pending.sort(key=lambda x: x.get("found_at") or "", reverse=True)
+    pending.sort(key=lambda x: x.get("date_lookup_attempts", 0))
+    if limit:
+        pending = pending[:limit]
+
+    print(f"undated: {len(undated)} | processing {len(pending)} this run")
     fixed_text, fixed_wb = 0, 0
-    for i, item in enumerate(undated):
+    for n, item in enumerate(pending, 1):
         date = None
         try:
             _, _, date = _page_meta(item["url"])
@@ -58,15 +90,18 @@ def main():
         if date:
             item["published"] = date
             item["date_estimated"] = True
-        if (i + 1) % 15 == 0:
-            store["items"].sort(key=lambda x: x.get("published") or "0000", reverse=True)
-            (DATA / "competitor-news.json").write_text(
-                json.dumps(store, indent=2, ensure_ascii=False) + "\n")
-            print(f"  … {i + 1}/{len(undated)} processed")
-    store["items"].sort(key=lambda x: x.get("published") or "0000", reverse=True)
-    (DATA / "competitor-news.json").write_text(json.dumps(store, indent=2, ensure_ascii=False) + "\n")
-    print(f"done: {fixed_text} from page text, {fixed_wb} from Wayback, "
-          f"{len(undated) - fixed_text - fixed_wb} still undated")
+            item.pop("date_lookup_attempts", None)
+        else:
+            item["date_lookup_attempts"] = item.get("date_lookup_attempts", 0) + 1
+        if n % 15 == 0:
+            save(store)
+            print(f"  … {n}/{len(pending)} processed")
+    save(store)
+    still = sum(1 for i in store["items"] if not i.get("published"))
+    parked = sum(1 for i in store["items"] if not i.get("published")
+                 and i.get("date_lookup_attempts", 0) >= MAX_ATTEMPTS)
+    print(f"done: {fixed_text} from page text, {fixed_wb} from Wayback | "
+          f"{still} still undated ({parked} parked after {MAX_ATTEMPTS} tries)")
 
 
 if __name__ == "__main__":
