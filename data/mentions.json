@@ -1,6 +1,19 @@
 {
   "mentions": [
     {
+      "video_id": "hByGYsmDDC8",
+      "brand": "Decagon",
+      "podcast": "Together AI",
+      "episode": "How Decagon engineered sub-second voice AI",
+      "published": "2026-08-17T23:00:01Z",
+      "timestamp": 16,
+      "timestamp_label": "0:16",
+      "url": "https://www.youtube.com/watch?v=hByGYsmDDC8&t=16s",
+      "sentiment": "positive",
+      "topic": "Decagon describes their mission to provide 24/7 AI concierge customer experiences and explains how they use multiple specialized models and partner with Together AI to achieve low-latency voice AI deployment.",
+      "found_at": "2026-08-18T02:13:32+00:00"
+    },
+    {
       "video_id": "BV0hy6NET-U",
       "brand": "Sierra",
       "podcast": "Lenny's Podcast",
@@ -8307,5 +8320,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-17T02:17:33+00:00"
+  "last_scan": "2026-08-18T02:13:47+00:00"
 }
