@@ -1,6 +1,45 @@
 {
   "mentions": [
     {
+      "video_id": "b6RGtQZcAGk",
+      "brand": "Decagon",
+      "podcast": "The Crew Podcast",
+      "episode": "Inside the GTM Playbooks at Twilio & Vanta w/ Stevie Case, CRO @ Vanta",
+      "published": "2026-08-18T21:49:46Z",
+      "timestamp": 193,
+      "timestamp_label": "3:13",
+      "url": "https://www.youtube.com/watch?v=b6RGtQZcAGk&t=193s",
+      "sentiment": "neutral",
+      "topic": "A software company mentions DecaGon as one of their enterprise clients using Centralize's stakeholder mapping platform.",
+      "found_at": "2026-08-19T02:16:48+00:00"
+    },
+    {
+      "video_id": "RpLpOQ49QXE",
+      "brand": "Decagon",
+      "podcast": "Agentic AI Institute",
+      "episode": "How to Price Your AI Agents: The Framework Companies Use (Sierra, Decagon, Finn)",
+      "published": "2026-08-18T15:28:38Z",
+      "timestamp": 420,
+      "timestamp_label": "7:00",
+      "url": "https://www.youtube.com/watch?v=RpLpOQ49QXE&t=420s",
+      "sentiment": "neutral",
+      "topic": "Decagon's usage-based pricing models for customer support agents targeting enterprise clients.",
+      "found_at": "2026-08-19T02:16:52+00:00"
+    },
+    {
+      "video_id": "RpLpOQ49QXE",
+      "brand": "Sierra",
+      "podcast": "Agentic AI Institute",
+      "episode": "How to Price Your AI Agents: The Framework Companies Use (Sierra, Decagon, Finn)",
+      "published": "2026-08-18T15:28:38Z",
+      "timestamp": 383,
+      "timestamp_label": "6:23",
+      "url": "https://www.youtube.com/watch?v=RpLpOQ49QXE&t=383s",
+      "sentiment": "neutral",
+      "topic": "Sierra's outcome-based pricing model for AI customer support agents charged at $200-350k per deployment.",
+      "found_at": "2026-08-19T02:16:53+00:00"
+    },
+    {
       "video_id": "hByGYsmDDC8",
       "brand": "Decagon",
       "podcast": "Together AI",
@@ -8320,5 +8359,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-18T02:13:47+00:00"
+  "last_scan": "2026-08-19T02:16:59+00:00"
 }
