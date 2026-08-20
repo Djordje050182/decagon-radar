@@ -19383,8 +19383,8 @@
     "bv": 2
   },
   "VJICp5cqDGQ": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "LoNuCJh3OUQ": {
     "status": "no_captions"
@@ -19392,5 +19392,53 @@
   "9ghAvYZ8Ats": {
     "status": "done",
     "bv": 2
+  },
+  "L7odET8VKEA": {
+    "status": "done",
+    "bv": 2
+  },
+  "yK682jTa7Dc": {
+    "status": "done",
+    "bv": 2
+  },
+  "5FMPkR8paP4": {
+    "status": "done",
+    "bv": 2
+  },
+  "XqEr7hk89HY": {
+    "status": "done",
+    "bv": 2
+  },
+  "9vxmGSdcdR4": {
+    "status": "done",
+    "bv": 2
+  },
+  "iDQ-vSamQeU": {
+    "status": "done",
+    "bv": 2
+  },
+  "sJM9BrgpxwI": {
+    "status": "done",
+    "bv": 2
+  },
+  "FipGGo-nVds": {
+    "status": "done",
+    "bv": 2
+  },
+  "09hQFtq09-A": {
+    "status": "done",
+    "bv": 2
+  },
+  "9oqFUheU104": {
+    "status": "done",
+    "bv": 2
+  },
+  "trQ9EvXIBBY": {
+    "status": "retry",
+    "retries": 1
+  },
+  "jg2FmNxbg00": {
+    "status": "retry",
+    "retries": 1
   }
 }
