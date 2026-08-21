@@ -27,6 +27,19 @@
       "found_at": "2026-08-19T02:16:48+00:00"
     },
     {
+      "video_id": "mqzNww7ECFk",
+      "brand": "Decagon",
+      "podcast": "Altimeter Capital",
+      "episode": "What everyone gets wrong about open source models | First Pass Ep. 8 with Jesse Zhang (Decagon)",
+      "published": "2026-08-18T17:05:55Z",
+      "timestamp": 27,
+      "timestamp_label": "0:27",
+      "url": "https://www.youtube.com/watch?v=mqzNww7ECFk&t=27s",
+      "sentiment": "positive",
+      "topic": "Jesse Zhang discusses how Decagon uses smaller open-source models in production for lower latency in AI agent applications rather than for cost reasons.",
+      "found_at": "2026-08-21T02:21:36+00:00"
+    },
+    {
       "video_id": "RpLpOQ49QXE",
       "brand": "Decagon",
       "podcast": "Agentic AI Institute",
@@ -8372,5 +8385,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-20T02:19:41+00:00"
+  "last_scan": "2026-08-21T02:21:36+00:00"
 }
