@@ -1,6 +1,32 @@
 {
   "mentions": [
     {
+      "video_id": "XCuFt7DwXV4",
+      "brand": "Decagon",
+      "podcast": "The DIGIT Show",
+      "episode": "The terrifying speed of AI adoption in business #ai #business #tech",
+      "published": "2026-08-23T21:15:47Z",
+      "timestamp": 9,
+      "timestamp_label": "0:09",
+      "url": "https://www.youtube.com/watch?v=XCuFt7DwXV4&t=9s",
+      "sentiment": "neutral",
+      "topic": "Comparison of AI customer support company valuations and their market impact on real business operations.",
+      "found_at": "2026-08-25T02:16:34+00:00"
+    },
+    {
+      "video_id": "XCuFt7DwXV4",
+      "brand": "Sierra",
+      "podcast": "The DIGIT Show",
+      "episode": "The terrifying speed of AI adoption in business #ai #business #tech",
+      "published": "2026-08-23T21:15:47Z",
+      "timestamp": 4,
+      "timestamp_label": "0:04",
+      "url": "https://www.youtube.com/watch?v=XCuFt7DwXV4&t=4s",
+      "sentiment": "neutral",
+      "topic": "Sierra is a customer support AI company valued at approximately $15 billion and is actively replacing real work in real companies.",
+      "found_at": "2026-08-25T02:16:40+00:00"
+    },
+    {
       "video_id": "YS9In813jJ0",
       "brand": "Sierra",
       "podcast": "Lenny's Podcast",
@@ -8476,5 +8502,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-24T02:25:45+00:00"
+  "last_scan": "2026-08-25T02:16:40+00:00"
 }
