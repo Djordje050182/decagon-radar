@@ -1,6 +1,19 @@
 {
   "mentions": [
     {
+      "video_id": "zEZ0rQ8Ef-Y",
+      "brand": "Decagon",
+      "podcast": "a16z",
+      "episode": "The State of AI: Models, Moats, and the Consumer Renaissance",
+      "published": "2026-08-26T14:30:27Z",
+      "timestamp": 485,
+      "timestamp_label": "8:05",
+      "url": "https://www.youtube.com/watch?v=zEZ0rQ8Ef-Y&t=485s",
+      "sentiment": "positive",
+      "topic": "The discussion explores why open-source models are a viable and sometimes necessary option for companies like Decagon, particularly for specialized use cases like customer support where fine-tuning and localization provide competitive advantages.",
+      "found_at": "2026-08-27T10:51:06+00:00"
+    },
+    {
       "video_id": "MwNvowwcZOo",
       "brand": "Decagon",
       "podcast": "Latent Space",
@@ -8541,5 +8554,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-26T02:27:44+00:00"
+  "last_scan": "2026-08-27T10:51:27+00:00"
 }
