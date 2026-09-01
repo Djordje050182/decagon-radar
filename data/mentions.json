@@ -1,6 +1,32 @@
 {
   "mentions": [
     {
+      "video_id": "Wna2Ds4dt50",
+      "brand": "Decagon",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "ClickHouse CEO: AI Margins Need to Improve | Revenue Concentration Should be a Concern",
+      "published": "2026-08-31T13:59:58Z",
+      "timestamp": 2894,
+      "timestamp_label": "48:14",
+      "url": "https://www.youtube.com/watch?v=Wna2Ds4dt50&t=2894s",
+      "sentiment": "neutral",
+      "topic": "ClickHouse CEO discusses revenue concentration risk and mentions that Decagon is among several AI companies using their database platform, representing less than 12% of revenue.",
+      "found_at": "2026-09-01T05:58:48+00:00"
+    },
+    {
+      "video_id": "Wna2Ds4dt50",
+      "brand": "Sierra",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "ClickHouse CEO: AI Margins Need to Improve | Revenue Concentration Should be a Concern",
+      "published": "2026-08-31T13:59:58Z",
+      "timestamp": 2894,
+      "timestamp_label": "48:14",
+      "url": "https://www.youtube.com/watch?v=Wna2Ds4dt50&t=2894s",
+      "sentiment": "neutral",
+      "topic": "ClickHouse's customer diversification across AI companies including Sierra, with AI customers representing less than 12% of total revenue.",
+      "found_at": "2026-09-01T05:58:50+00:00"
+    },
+    {
       "video_id": "zMvBMfj4cSQ",
       "brand": "Sierra",
       "podcast": "Lenny's Podcast",
@@ -8567,5 +8593,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-08-31T06:34:21+00:00"
+  "last_scan": "2026-09-01T05:59:10+00:00"
 }
