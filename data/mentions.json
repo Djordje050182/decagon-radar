@@ -1,6 +1,71 @@
 {
   "mentions": [
     {
+      "video_id": "RVnlB49gtW4",
+      "brand": "Decagon",
+      "podcast": "speedrun",
+      "episode": "Why Decagon Bet on AI Customer Support",
+      "published": "2026-09-02T18:16:31Z",
+      "timestamp": 2,
+      "timestamp_label": "0:02",
+      "url": "https://www.youtube.com/watch?v=RVnlB49gtW4&t=2s",
+      "sentiment": "positive",
+      "topic": "Jesse Zhang discusses Decagon's AI customer support agents and explains the company's competitive strategy in the market.",
+      "found_at": "2026-09-03T05:25:50+00:00"
+    },
+    {
+      "video_id": "RVnlB49gtW4",
+      "brand": "Decagon",
+      "podcast": "speedrun",
+      "episode": "Why Decagon Bet on AI Customer Support",
+      "published": "2026-09-02T18:16:31Z",
+      "timestamp": 218,
+      "timestamp_label": "3:38",
+      "url": "https://www.youtube.com/watch?v=RVnlB49gtW4&t=218s",
+      "sentiment": "neutral",
+      "topic": "The founder discusses how they validated the customer support business idea for Decagon by talking to potential customers and gathering market signals.",
+      "found_at": "2026-09-03T05:25:51+00:00"
+    },
+    {
+      "video_id": "RVnlB49gtW4",
+      "brand": "Decagon",
+      "podcast": "speedrun",
+      "episode": "Why Decagon Bet on AI Customer Support",
+      "published": "2026-09-02T18:16:31Z",
+      "timestamp": 922,
+      "timestamp_label": "15:22",
+      "url": "https://www.youtube.com/watch?v=RVnlB49gtW4&t=922s",
+      "sentiment": "neutral",
+      "topic": "Discussion of Decagon's business model, positioning as a top-down sales company, and defensibility through application-layer margins in the AI customer support market.",
+      "found_at": "2026-09-03T05:25:52+00:00"
+    },
+    {
+      "video_id": "RVnlB49gtW4",
+      "brand": "Decagon",
+      "podcast": "speedrun",
+      "episode": "Why Decagon Bet on AI Customer Support",
+      "published": "2026-09-02T18:16:31Z",
+      "timestamp": 1413,
+      "timestamp_label": "23:33",
+      "url": "https://www.youtube.com/watch?v=RVnlB49gtW4&t=1413s",
+      "sentiment": "neutral",
+      "topic": "The speaker discusses what they would be building if they weren't at Decagon, exploring exciting areas in AI digital employees and application layer technology.",
+      "found_at": "2026-09-03T05:25:53+00:00"
+    },
+    {
+      "video_id": "9msqEv58wK4",
+      "brand": "Decagon",
+      "podcast": "The Crew Podcast",
+      "episode": "\"Coming from a big company\" isn't the liability everyone told you it is.",
+      "published": "2026-09-02T14:39:37Z",
+      "timestamp": 24,
+      "timestamp_label": "0:24",
+      "url": "https://www.youtube.com/watch?v=9msqEv58wK4&t=24s",
+      "sentiment": "positive",
+      "topic": "Decagon is recommended as a scaling Series C/D startup that values experience from large companies and is a good target for career transition.",
+      "found_at": "2026-09-03T05:26:21+00:00"
+    },
+    {
       "video_id": "Wna2Ds4dt50",
       "brand": "Decagon",
       "podcast": "20VC with Harry Stebbings",
@@ -8593,5 +8658,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-02T05:22:04+00:00"
+  "last_scan": "2026-09-03T05:26:21+00:00"
 }

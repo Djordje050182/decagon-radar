@@ -20188,8 +20188,8 @@
     "bv": 2
   },
   "GkjviiG0Lt0": {
-    "status": "retry",
-    "retries": 2
+    "status": "done",
+    "bv": 2
   },
   "4ssPDfqu7F8": {
     "status": "done",
@@ -20252,8 +20252,8 @@
     "bv": 2
   },
   "yd_11ZVoA_Q": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
   },
   "X50zezLFWWI": {
     "status": "done",
@@ -20285,7 +20285,86 @@
     "status": "no_captions"
   },
   "Kff-QzWprbI": {
-    "status": "retry",
-    "retries": 1
+    "status": "done",
+    "bv": 2
+  },
+  "PyfPIGWbWrg": {
+    "status": "done",
+    "bv": 2
+  },
+  "YASHMZoBlz8": {
+    "status": "done",
+    "bv": 2
+  },
+  "36kxJlY7-m0": {
+    "status": "done",
+    "bv": 2
+  },
+  "cCJLor19Kqo": {
+    "status": "done",
+    "bv": 2
+  },
+  "N_3pPQp7CkQ": {
+    "status": "done",
+    "bv": 2
+  },
+  "NkXJBU2YLUQ": {
+    "status": "done",
+    "bv": 2
+  },
+  "zKSNo-mnZlQ": {
+    "status": "done",
+    "bv": 2
+  },
+  "3ZiEl5YoSno": {
+    "status": "done",
+    "bv": 2
+  },
+  "yTNMEYeCgWw": {
+    "status": "done",
+    "bv": 2
+  },
+  "Loa0UXWnY68": {
+    "status": "done",
+    "bv": 2
+  },
+  "p2HMa-RQr-A": {
+    "status": "done",
+    "bv": 2
+  },
+  "dZwdGUtPGtI": {
+    "status": "done",
+    "bv": 2
+  },
+  "_egu7OFem-k": {
+    "status": "done",
+    "bv": 2
+  },
+  "QKU2GlUoDUc": {
+    "status": "done",
+    "bv": 2
+  },
+  "3uSI8q_RN-o": {
+    "status": "done",
+    "bv": 2
+  },
+  "U4KCycOKedc": {
+    "status": "no_captions"
+  },
+  "cI_HxlYVH48": {
+    "status": "done",
+    "bv": 2
+  },
+  "RVnlB49gtW4": {
+    "status": "done",
+    "bv": 2
+  },
+  "gmqpDhrSXQs": {
+    "status": "done",
+    "bv": 2
+  },
+  "9msqEv58wK4": {
+    "status": "done",
+    "bv": 2
   }
 }
