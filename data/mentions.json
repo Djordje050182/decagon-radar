@@ -1,6 +1,32 @@
 {
   "mentions": [
     {
+      "video_id": "8skbt979n2o",
+      "brand": "Sierra",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "NVIDIA Crushes Quarter | OpenAI Cuts Off Cursor | Instinct Hits $2.5B Valuation",
+      "published": "2026-09-03T13:55:55Z",
+      "timestamp": 3691,
+      "timestamp_label": "1:01:31",
+      "url": "https://www.youtube.com/watch?v=8skbt979n2o&t=3691s",
+      "sentiment": "positive",
+      "topic": "Sierra is performing well as a B2B outcomes-driven company in the market shift away from traditional systems of record.",
+      "found_at": "2026-09-04T05:23:00+00:00"
+    },
+    {
+      "video_id": "8skbt979n2o",
+      "brand": "Intercom (Fin)",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "NVIDIA Crushes Quarter | OpenAI Cuts Off Cursor | Instinct Hits $2.5B Valuation",
+      "published": "2026-09-03T13:55:55Z",
+      "timestamp": 3720,
+      "timestamp_label": "1:02:00",
+      "url": "https://www.youtube.com/watch?v=8skbt979n2o&t=3720s",
+      "sentiment": "positive",
+      "topic": "Salesforce's acquisition of Intercom as a strategic move to compete in outcome-based customer support solutions.",
+      "found_at": "2026-09-04T05:23:01+00:00"
+    },
+    {
       "video_id": "RVnlB49gtW4",
       "brand": "Decagon",
       "podcast": "speedrun",
@@ -8658,5 +8684,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-03T05:26:21+00:00"
+  "last_scan": "2026-09-04T05:27:55+00:00"
 }
