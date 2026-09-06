@@ -1,6 +1,45 @@
 {
   "mentions": [
     {
+      "video_id": "hj5oRzAnp2M",
+      "brand": "Sierra",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "How to Build Your Own Data Center & Why Every Startup Should Do It",
+      "published": "2026-09-05T14:00:20Z",
+      "timestamp": 1490,
+      "timestamp_label": "24:50",
+      "url": "https://www.youtube.com/watch?v=hj5oRzAnp2M&t=1490s",
+      "sentiment": "negative",
+      "topic": "Sierra is positioned as a competitor to 11 Labs in the AI agents market but is running behind despite strong backing from founders and investors.",
+      "found_at": "2026-09-06T05:26:16+00:00"
+    },
+    {
+      "video_id": "hj5oRzAnp2M",
+      "brand": "Sierra",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "How to Build Your Own Data Center & Why Every Startup Should Do It",
+      "published": "2026-09-05T14:00:20Z",
+      "timestamp": 3022,
+      "timestamp_label": "50:22",
+      "url": "https://www.youtube.com/watch?v=hj5oRzAnp2M&t=3022s",
+      "sentiment": "neutral",
+      "topic": "Comparing Sierra's business model and competitive positioning in the customer support market versus other AI companies.",
+      "found_at": "2026-09-06T05:26:18+00:00"
+    },
+    {
+      "video_id": "hj5oRzAnp2M",
+      "brand": "Sierra",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "How to Build Your Own Data Center & Why Every Startup Should Do It",
+      "published": "2026-09-05T14:00:20Z",
+      "timestamp": 3210,
+      "timestamp_label": "53:30",
+      "url": "https://www.youtube.com/watch?v=hj5oRzAnp2M&t=3210s",
+      "sentiment": "positive",
+      "topic": "Sierra is compared favorably to 11 Labs as a massive AI agents company led by Brett Taylor, with a voice-centric wedge and tool-calling capabilities that extend beyond customer support into sales and other business functions.",
+      "found_at": "2026-09-06T05:26:20+00:00"
+    },
+    {
       "video_id": "8skbt979n2o",
       "brand": "Sierra",
       "podcast": "20VC with Harry Stebbings",
@@ -8684,5 +8723,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-05T05:16:47+00:00"
+  "last_scan": "2026-09-06T05:26:20+00:00"
 }
