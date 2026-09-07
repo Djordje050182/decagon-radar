@@ -1,200 +1,265 @@
 {
-  "overview": "The AI customer-support and enterprise agent market is experiencing explosive growth driven by major cloud vendors (Salesforce, OpenAI, Anthropic) integrating agentic capabilities into their platforms, while specialized agent builders (Decagon, Sierra, Parloa, Cresta) consolidate around enterprise deployment and measurable outcomes. Salesforce's Agentforce has crossed $1.5B ARR with 200%+ year-over-year growth, but analyst reports indicate adoption friction and incomplete product-market fit despite the company's massive installed base. Meanwhile, frontier labs (OpenAI with Presence, Anthropic with Claude Cowork) are moving downstream into enterprise agent orchestration, while open-source models from DeepSeek, Alibaba (Qwen), and Mistral are collapsing inference costs and reducing lock-in to proprietary APIs—forcing the entire stack to compete on execution and outcomes rather than model access. Across podcast coverage from 12 months of tech shows, the narrative has shifted from 'AI will displace support teams' to 'AI agents need human handoff, compliance, and real ROI validation'—a maturation signal that separates credible agent platforms from hype.",
+  "overview": "The AI customer-support and enterprise agent market is experiencing explosive growth driven by frontier-model capabilities (OpenAI, Anthropic, DeepSeek) becoming production-ready and cost-competitive, combined with incumbent CRM vendors (Salesforce, ServiceNow) aggressively embedding agents as core platform features. Salesforce Agentforce has crossed $1.5B ARR with 40+ deployed agents, yet analyst skepticism persists about whether the platform is truly gaining traction or if adoption remains shallow relative to Salesforce's customer base. Meanwhile, OpenAI's new Presence platform and Claude's enterprise expansion signal frontier labs moving downstream into the enterprise deployment and integration layer—a territory traditionally held by specialized startups like Decagon, Sierra, and Parloa. Podcast signals (from 24 tech/AI shows over 12 months) show sustained mindshare around 'agents eating SaaS,' but the conversation has shifted from hype to operational reality: most enterprises remain in chatbot territory, struggling with governance, compliance, and measurable ROI; only ~25% of AI customer-service deployments deliver quantified returns, and fewer than 2% meet enterprise 'Center of Excellence' standards for AI maturity. Chinese open-source models (DeepSeek, Qwen, Kimi) are compressing inference costs and performance baselines, reshaping the economics available to agent builders globally.",
   "themes": [
     {
-      "name": "Salesforce Agentforce Dominance but Execution Doubts",
-      "description": "Salesforce Agentforce has achieved massive scale ($1.5B ARR, 40+ agents in production, 200%+ growth), but multiple analyst downgrades (KeyBanc, others) cite weak customer traction and product incompleteness despite integration with CRM. The platform acquired Fin (formerly Intercom) for $3.6B and integrated Claude via Claudeforce partnership, yet remains questioned on actual enterprise adoption maturity and ability to compete with purpose-built agent platforms.",
+      "name": "Incumbent CRM Vendors Doubling Down on Agent Platforms",
+      "description": "Salesforce Agentforce has achieved $1.5B ARR and is expanding into commerce, workforce management, and marketing workflows beyond customer support. ServiceNow is pushing customers toward self-hosted deployments due to agent API load, reversing its SaaS pitch. However, KeyBanc and other analysts report weak customer traction, with Agentforce criticized as 'just not there' as a product. This signals that scale and installed base alone do not guarantee agent-platform success; execution gaps remain despite massive investment.",
+      "momentum": "rising",
+      "evidence": [
+        {
+          "label": "Salesforce Agentforce ARR topped $1.5B; 40+ agents deployed for clients; Claudeforce partnership announced",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPUHJBMDMzUUZIVFZwNHZjWlRsUGtZOTZ5U2lwZm1odVpOUUlUdGRIM0tlTXYzbkVjcmV6U3NMd240enp0em02OTM3cUR0Mk8xWEkxUEpJRi1scmlmMGVVcUlXYWg0WG5CX3cxZnZlR3dyYmpzODlIVzFmc0hXbEo0SU9vQmJyYkpxTHU4NmE3cDZTRm00M05YeVlNNnpBQ3ZXbFE"
+        },
+        {
+          "label": "Salesforce Agentforce customer wins: Smarsh (72% deflection), PayPal (50% conversion lift on 8k uncalled leads), TTEC (first contact-center go-live)",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNV0Rmd0hSUWs0RW9HaV9fZVo2RUc5NEdFMjdrSDZRY29jSkxkczkxc0x0a1lNZnlxYU1YU3BJT1oxU0piNFNCalRtSTM3ZXVLdUw0UnhvbTRZMFktajZGMGhmWUFVU29ZN01VRk5xZGZvdEljMDhmSUtsU09lVHRhXzh4X3NpWEVzUnF6REZKNTZCYmMzcm5WXzFmU0lxQmUxNXQyd0M1bDNkZ09RUjVJSy0tdGxLWk0"
+        },
+        {
+          "label": "KeyBanc downgrades Salesforce on weak Agentforce traction; analyst skepticism on product maturity",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPR3FnWkdmNEtvOXlhTTRsQTBLb0d1OUw2bE5UYXhlQkdtdWZsUldXSzdaUVp1T3huNk52NUpRekhuTjdleU9qUG9VR1otNkRHQ2c0R3pWOW8tNXAycERPUkxVcUgtVDgtbVAwRTZSSUVGYkdFVUJPTWJSR0NMQWtibXlNeWktT0xON3ByZlN0YnQtbDRYcUUwai1JOEc5TFhYU292NkF4T2Q1WkdEa2QzZ0x0aFRxcERhcEVtTkZvQThTY3ZBS0NMYzhtOA"
+        },
+        {
+          "label": "ServiceNow customers being pushed offline due to agent API load; market debate on SaaS value prop erosion",
+          "url": "https://news.ycombinator.com/item?id=49355352"
+        }
+      ]
+    },
+    {
+      "name": "Frontier Labs Moving Downstream into Enterprise Deployment and Integration",
+      "description": "OpenAI's Presence platform, Claude's enterprise expansion via Claude Tag and Slack integration, and Anthropic's positioning on 'agentic orchestration' signal frontier labs directly competing in the enterprise agent-platform and deployment-services space. OpenAI Presence targets deployed voice and chat agents with system access, policies, and self-improvement; early customers include BBVA, SoftBank, and IAG. This marks a strategic shift from pure model provision to full-stack agent infrastructure and consulting-led deployment—territory traditionally held by specialized platforms like Decagon, Sierra, and Parloa.",
+      "momentum": "rising",
+      "evidence": [
+        {
+          "label": "OpenAI launches Presence: managed enterprise platform for customer-facing voice/chat agents with 75% self-resolution on OpenAI's own support line",
+          "url": "https://openai.com/index/introducing-openai-presence"
+        },
+        {
+          "label": "OpenAI announces GPT-Live for real-time voice interaction and ChatGPT Work for autonomous multi-step task execution",
+          "url": "https://openai.com/index/introducing-gpt-live"
+        },
+        {
+          "label": "Anthropic launches Claude Tag for Slack and expands Claude Cowork to web/mobile for multi-agent orchestration",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZzd1Q1dOYUdrNFhmcnpnU3ZkZnlNTXRmeHFOMmw1aGdDSkoxcFhkWEt5a29Dek82RTlaaUtlSmh2UE4tOGdKYTVlQjhVRHBsemIwZjhVNW1zWVprdUVURlJ5UVY4a0xLN2RBR3VJS2gyd2wtR3BiWjBtd3k3TG54LVNZc08yMzhQbDJmemZfZU8yQ2F1Q1J5d3RhV09lZkF0djA2djBfNnlGcEE5VmgtelVfaGo5OFNCOFY2M0g2WnJTQUhEM2RpN1YwT3h0Ujd2V3ZjbXBYQXBIYlMyNlVhVnNhSjB1ZnJjaXhiMmRzU0FldzND"
+        },
+        {
+          "label": "Deutsche Telekom deploying OpenAI across customer service, employee workflows, and network operations—enterprise adoption at telco scale",
+          "url": "https://openai.com/index/deutsche-telekom"
+        }
+      ]
+    },
+    {
+      "name": "Cost Compression from Chinese Open-Source Models Reshaping Agent Economics",
+      "description": "DeepSeek (raised $7.4B, nearing $500M ARR, valuation ~$52B–$74B), Qwen 3.8 (2.4T parameters, claimed near-frontier performance), and Kimi K3 are releasing cost-efficient frontier-capability models openly or commercially. DeepSeek's coding and reasoning models achieve GPT-level performance at roughly 20x lower cost. This fundamentally alters the inference cost baseline for any agent platform and shifts developer preference toward open-source model stacks. For Decagon and competitors, this means lower model costs but also commoditization pressure on the AI backbone.",
+      "momentum": "rising",
+      "evidence": [
+        {
+          "label": "DeepSeek raises $7.4B, targets 2027 IPO, prioritizes AGI over profit; models achieve frontier capability at fraction of OpenAI/Anthropic cost",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVGZtZjdKMU5EcFptb0kyYkIzc25XNmlEYy1NejJvQlFmbndTSFdBdkVOaHgzc1FfMi1STVVOZEdDeWktaGktd1NtQ0I5Y3dzampWVTl2cnB1ZGVtWEtUa2Zuc2c5RlpoOXZ6MjhiZV8tQUt2YVFPOG9KSUEtOWhrOFlYTHA0d0ZXQngycXY4WWc1aWRwV3N0d1JkbEVKN2cyWFM3alpPc3Vtdmh0eldN"
+        },
+        {
+          "label": "Alibaba Qwen 3.8: 2.4T parameters, positioning second only to Frontier labs in capability",
+          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxQNDZqTGtWbXlWZ1ZJQ3Y4SEhiejk3ZTAxbmQ3N0otSC1FNkhqamlQelI2djZDbFNObUlRRTRNQk5iX0VyaldWSTl3UU40WENfUGtjZnRob3dTb2c4SWNaaU11bGN5MV9DSHdTM2tEY0FCdE1EYUtKU2NORGZuVzRSRVU0bHI5UnNVWlY3cEFJcE9hc0YzTnhSSmtEVTBWZklhLXh6MHJXWTkta1hvcGVjNGRjaDJXaFRPN3BVRkpKLXlQbHQ3Qk84UjRTSWZibUZoOGNyYkV0VGRaWlZqTjNTNl9kd2R6N1Nkd0RBYzJacDF5MkN5TERPaE03RkRGNU9NVk50SnJJR3J4ZVVVZUpZeW1tbTlEa3VKX2p3cnpDTnNXeFNxckVpLTlycEFOd9IBswJBVV95cUxQTHkxQUtfRF8xR3B3YVlic2F5eWpxY2lIWFRybFhGczRMQzhtRFlhdXJaWFh4VjRTTFI1Yk1qd1FtUG05R05Zbk9ZV2hNbWFyQ29yd0xsUWxCY2JPMkN1Rk9qQ2lMMlBGV0E5QkJzZmlzekthc0JZOXlBT1ZPYlpmaV9TaXp6Q2Z6eV9zM0doa0wybzFMNHI3R1dfTDFvSGkyNjR0cENuMmZoclE5a0M5WGZGNnY2MlNCY2R3RVVmMWJVZTI4N2FESHpYamxyTXV4VnpZUlE4bjE4eTJhWXRNT0JzQ3U1bmV5MkRzS0JlT05yWTFZNko3anpWaUl1aFBuM3E4X0pKbjJ5cnBJOTJGZW1waFJTLUVnSEwtUmxuUlhMZFREblFGVk56VDRCRGtoWUFR"
+        },
+        {
+          "label": "Kimi K3 by Moonshot: cited as 'DeepSeek moment,' closing performance gap with frontier Western models at lower cost",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX1FfV3J0LU5td09HVmZMamdTeF95dWY5YUFQVTl3aks3c3liNGtTSHNLYmZCTGRsS25NZC1VRGY0MGZNIU9wdEoyUlZvZmt5cVpIR2hxYzdkUFZaandLUFczNEJKbnplOUJySG1rdVJFTkxSMU5YUVdkaWVYbzJiakpOYlZGT2VVOU9iRkJVTUhObQ"
+        },
+        {
+          "label": "Samsung talks €1B investment in Mistral AI; Mistral-Microsoft partnership worth multibillion dollars for European sovereign AI infrastructure",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTGFvV2lHMFdvZkE1dURkT3lzR0Z5Ylo1ZnJ2bUVpdWoxdWQtc3I0RlFXeWNIRExPWlZvZmdacWotekNEQXBXRHU1SVpFQWc4WDNIZ29pZmFvWTBfNDhiRTZpTGxWOTNLOE82Mm1Ya2Z3MFl3b2M2Q0Z5d0hrNkxmaHpsc0JMV1l2QVctV0FFa2RGakktLTZ1UGlsRW9JZXhNRDlhYmJXSFRLQzZjOWJ0Sm42VEdmZDJ5YW9aMkpHMmpuQkFlVmstbG53ZVN0cUpDZk1MRUppeXZUaUZwazlMVzROdXVYUQ"
+        }
+      ]
+    },
+    {
+      "name": "Voice AI Maturity and Latency Becoming Non-Negotiable for Enterprise Adoption",
+      "description": "ElevenLabs' valuation doubled to $22B; voice synthesis quality improvements (Qwen Audio 3.0, Murf AI's Falcon 2) are closing gaps with human speech. Real-time latency (sub-second round-trip) is now cited as a primary adoption blocker. OpenAI GPT-Live, ElevenLabs' partnerships with TELUS Digital and IBM, and Sierra's voice-persona release signal that voice agents are transitioning from experimentation to production. However, podcast discussion and analyst notes highlight that voice latency, call quality, and emotional alignment remain technical and operational hurdles that even well-funded vendors struggle to solve at scale.",
+      "momentum": "rising",
+      "evidence": [
+        {
+          "label": "ElevenLabs valuation doubles to $22B; partnership with Ominimo for voice assistants; enterprise voice expansion",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOXJ3SWttQWRkRjRWZ2RDN3dkN3g5MWJWdEstMmJUekNlQ2FMc05hdF91U3NpNy1NaEx2Wnp4eXJBcmpldnlvTXFHMDAwaEZJb282TnVTTFZiSEE0bXV3Nk1ZTUlHRnppMkdxYmo0MkJiRU1xVE9DZ29EV1dNbGMtVldZSmlaWXE4MlRWODV6bTViSWlERUJHQkItcURIMXRPMW0yUDZ6dGlrM3dESXdGQWo1aVpOZVFCNEZvMEowdGI4OVhlVjBmSTMtdmZmQQ"
+        },
+        {
+          "label": "OpenAI releases GPT-Live for real-time voice interaction with native full-duplex audio",
+          "url": "https://openai.com/index/introducing-gpt-live"
+        },
+        {
+          "label": "ElevenLabs-IBM partnership; ElevenLabs-TELUS Digital partnership for frontline voice AI scaling; voice latency cited as key adoption driver",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNbUJBY09HZ3V6dkg3c2t3cElJX1ZRQURkYWlhSTUySXlyS3ZtYVNXN1gxNV92bkxESTQ4UDdzNFhTSVRSaktNbGgwNkhERThueGlNMHFiNGExUXNXQ3pKRXFQQjdpYjd2MEdCdERKaTE3b29pSVd6OE9HeVQxRmlLSlItZkQzRUhid2ZnMkxab0NsMUk3UXFySFB0N0k4QTZTTXVRSUxzSnFRdlluYVpsZHJKdFRnT0pLb3h0VVFyM2E2eXlaRDN1NTdXZmRlRFNHcThPc2Vha2VRR3VZYmFlMFYtVnI"
+        },
+        {
+          "label": "ElevenLabs Falcon 2 positions against OpenAI/ElevenLabs with lower cost; voice synthesis quality improvements across models",
+          "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOX0ZiY3ItYXNvSnJKY2hqbk42akNhdnJiYkZxTjJxVFl0dFRrSGs2MGJNV3gzWXdzMjhta1hLdGtKZjJSVm9ma3lxWmhHaHFjN2RQVlpqd0tQVzM0QkpuemU5QnhIbmt5Q0phYkljZlgtRVdCbXdhNkttdFRIVGNEWmFEamRoQnFMc0NjMWJKeUZpWlk1ZjJiSVBUdFFBejZhQ1RvbDJxRkhLRjcyOUp5UnBoc3Q4eThUWlNpd291TVJtOXdPY3duay0teF8xcURlcjlIS0pSTlAzejdvOVJwRg"
+        }
+      ]
+    },
+    {
+      "name": "Enterprise Customer-Support AI Adoption Plateauing at Chatbot / Deflection Stage, Not True Agency",
+      "description": "Forethought reports only 25% of AI customer-service deployments deliver ROI, and only 2% meet 'Center of Excellence' standards. Anthropic and analysts note that most enterprises misclassify simple chatbots as 'agents' and fail to move beyond FAQ resolution and ticket triage. Podcast signals indicate sustained skepticism from enterprise CX leaders on whether AI agents can truly own end-to-end customer interactions (refunds, upsell, disputes) without human escalation. This creates a market gap: vendors must bridge the gap between 'deflection bots' and truly autonomous execution agents, a gap that Decagon and Sierra claim to address but that remains difficult to prove at scale.",
       "momentum": "steady",
       "evidence": [
         {
-          "label": "Agentforce ARR crossed $1.5B with 200%+ growth; Salesforce raised FY27 guidance",
-          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQcjgyMVh6eU9DTWdoYUttVjd0M2VRRnpPVlh0WWFiUkRpRU5xUDdlR3BER3A0dkNQQWNYNi1ZMF8xM2JGTlNNRURJZ09FUElzdmZWeGRUUGZ6ekl2aWVTakdzNVFWZGNFX3ZfQlJjd1ZuUkJBQVd0UHlIazc4TTVwLXE0UDhBeWhGcmJWeDllcm1sNUktbGMtU1BnbGtLUnVmSU8tVmJBZkFqZWJfOHJlR2g0V05EMmFEMFA3QkM2V1hOV2pNNUpBRFFqbmVBdVpPOG5Db2I3RGI?oc=5"
+          "label": "Forethought: 70% AI adoption in CX; only 2% meet Center of Excellence standard; only 25% of deployments deliver ROI",
+          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQZXVhb0ZGbFVRRUpKWWQ5YmJKeE0xajVPa0wxZ0xONUtPN2RucnNBRmVMOE16eVR5UERDYkdscWR6MTdhM2VuUFhNZk5aNzJ0YVhUTWxPWEhxMHZlZ2FidWN4bEdmTUhucGxsWmZzcFJsRDZwdVJLWWQxQU9obXRwQkhvczlKWl9YcWFldEZZSE5KSUk0MmRodDNlQlBqSU93RjBSeWk4V3hnajFMSmlRSTRnMFU3RTN6MWRkUEM0TUQxRmhOYnpQeEZqUnAtT1JVT3YyZ2ExbUpnckMyNlVNNnQtRGJiR3N2bXdfRE5RcmhxcTVJWVVPQ2xBeGY0dDNV"
         },
         {
-          "label": "KeyBanc downgrades Salesforce, citing weak Agentforce adoption and incomplete product",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPR3FnWkdmNEtvOXlhTTRsQTBLb0d1OUw2bE5UYXhlQkdtdWZsUldXSzdaUVp1T3huNjVhSVZVaTJjeUoyMWN0RGdSMjFudkpIZFd6djAwUjBka2NERU82YTNwRVYzaE9iMDUySW1zM2FXMUhhakkyTkRCc1MxaEJkM0ZoYmlVeVIyNEtaa05CUkVGMFIwUlJNRFIuVEZsUlZFTjNPRWxGVEZaSFRURnBkR1Z0TWpoTGJXMWlaVVJuYXpCMmRucEJlbXAyVEVoT2NtRlRTWGRJVVQwOUluMD0%3D"
+          "label": "Anthropic frames issue as 'deployment problem, not platform problem'—most enterprises calling chatbots agents; governance/compliance gaps prevent progression",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOY1JVSEV3aF94czZ6Vl91aWxZUWkyZktmR2h5T091TmJNVnFIemkzSmpXSjRoUFh4U0dldlhqYWVJNkhJTzczSDB2T1MxQjJlQzIzTnhpcEVzTHFYRjc3SWNfRTFIV3hJek9rQ292WGEyRWg2WmgyclhOd1loMDI4YXByQmVpdGFRVmF4Q21qWlJhSFBEVlI2QXo0b3JWcHQ1S3Jmd1FPX21tU2ZLR1dTQ1NVRkRKMVpKSGxoZ2JIeXNjbXI0NkpwNEh4QVQ5RlN3akhZVEI3ZE11T3NNc1JJWkY1a2lWbEpVbjB0aFhfZkhTLTVZ"
         },
         {
-          "label": "Smarsh scales Agentforce with 72% support deflection success in enterprise deployment",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaUhoREI1ZFNhYlpkX1RhdU84N3ZncElYbjF6dzdtekZVQkhQUFc0Q2swVV9TUm9OUGpHeDVtUDdFUGdBanFkU1hJZ0g3QUVXSmFMZGdmcHhhaE5tWTdWT2RGUmU3bm1CZ08xM0JkZzFUcThibm12djAxZVJEYjlmMGhNTGEyUGJ6Y3YzUWlrWUxnZ1BIeEExTl9DVnRlMnNMT2hpQVVvYlFaNzV0cmlhSXVZWQ?oc=5"
+          "label": "Customer Experience Dive: only 25% of AI customer-service use cases produce ROI; broad market skepticism about agent effectiveness",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUVVwVWN1OTBuWi1PV3kzSEFoRzV6bWpBYlh0SEZjR1JRSTFfRmZlRTBDVk5NVUNMekxGelhOQnR2VGpYeFptbEY0Z2JTNFpxaHlyQUpDNzF6M3ZiVGNtS2Q5Z2p1TVl5TVdFVWNZV3Nob252WXh5R2VkRHV5SXNpdTZjaWRmWTBJYUF0dHlGRDFJTGVNLTB5UkhvYlFyZWhIQjlMekxGUGNJQ0dCTUdraVYyQQ"
         },
         {
-          "label": "TTEC Digital achieves first live Salesforce Agentforce Contact Center deployment in production",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNalZqeHE3cEpYV21nY0ZUUEJ3cXhoMjkzYllFeWZHR3Y5TEEwUF85M0NST0tROTdMVEpTYmc4dVV6Tmp3Umh4LWpERlcyaExDbmdCc0QyVUw5ZjFjM1dNNVExMVFFMG5TcEh4U3hGOHItNEZYdkZhbU1aOV9jWDR5UDJnNEpKMVpySUpIZ3ZLaXBuRkVtcmNZdVRSRlhVbE1ZTWZBaW5B?oc=5"
+          "label": "Parloa research: 1-in-3 Americans would switch brands rather than wait on hold; survey shows poor automated service drives churn",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPMDBQMmJmMmNrNUI0SWc2bFJ5NnVsUlh2QUpKUlF0anlNTm4wR09NYWE1ZTI4V05GWE9MLWQzNWlXUUJVYnlZREZJRl8zdVJpU20zcTY3cC1hcWlCb0luUVJUQk5VRmdGcDM2T2xoakhTWDY4NGhMTDY4c1lWVHFLUkxlbEM5Z1BVbUhCM1ZtYlVIU3VqNEhmVnJBRkRaQ1RFSzN5Vk1qdjdjQm1xYTR2VTJMUzg3OFc2bXBNdg"
         }
       ]
     },
     {
-      "name": "Frontier Labs Enter Agent Orchestration (OpenAI, Anthropic)",
-      "description": "OpenAI launched Presence, a managed enterprise platform for voice and chat agents with consulting-led deployment, while Anthropic expanded Claude Cowork and launched Claude Tag for persistent Slack integration. These frontier labs are moving downstream from model infrastructure into end-to-end agent platforms, directly competing with Decagon and Sierra in orchestration, guardrails, and enterprise deployment—not just providing raw LLM APIs.",
+      "name": "Consolidation and M&A: Incumbents Acquiring AI-Native Support Platforms",
+      "description": "Salesforce acquired Fin (formerly Intercom) for ~$3.6B in 2026, one of three $3B+ B2B acquisitions in 30 days targeting 'data for AI.' This signals that large CRM and enterprise software vendors are choosing acquisition over internal development to fast-track agentic AI capability and customer data assets. Fin's rebranding as a Salesforce product and integration into Agentforce suggests the incumbent playbook: buy a specialized AI vendor, rebrand it as a platform feature, and bundle it into the enterprise suite to drive stickiness and margin on existing customers.",
       "momentum": "rising",
       "evidence": [
         {
-          "label": "OpenAI launches Presence: managed enterprise platform for voice/chat agents with BBVA, SoftBank, IAG as early customers; OpenAI support resolves 75% of issues on it",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE44MUljeGRwWUdlanZWVlFxeV9zenktdFFiOVppbzh2QkI2Rlh4bFV2bjRCZEJ5UEtxbHRLRFVnYjFkUldXUjJpSEFnd25oTnZza0QteXV1ZVdXSExfckhSMF9Md01Zd1JIcjZn?oc=5"
+          "label": "Salesforce acquires Fin (formerly Intercom) for ~$3.6B; one of three $3B+ B2B acquisitions in 30 days (also Cognite, MaintainX) targeting AI and data",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUXVpTmE4NTNJZkVtUHpuUjJwTnJjRS1ORXZxUGRBbFVTMFFHUF94QXB5ZGZlV3lEZW5Ca1hPSE5ScmZ2b2tjQ05ZQjBkdURPNzJpQi0zMXNDN0xEaFZzeHdGOWpfV2dGdXVIdXd6VlJNTnBqaUMzVTREU0E3Rkw1cWNFSklCYXJyR0tLeUM3czNHNTlqRVVjdHRrazAwZEE0eWFFRGdzXzhHTEhDbDh4dVA0OTAzYmhJbVdZbllBcmZsTTY5S25scV9UMlZqc2FYRnFVSA"
         },
         {
-          "label": "Anthropic launches Claude Tag, persistent AI teammate for Slack with autonomous capabilities and learning",
-          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZzd1Q1dOYUdrNFhmcnpnU3ZkZnlNTXRmeHFOMmw1aGdDSkoxcFhkWEt5a29Dek82RTlaaUtlSmh2UE4tOGdKYTVlQjhVRHBsemIwZjhVNW1zWVprdUVURlJ5UVY4a0xLN2RBR3VJS2gyd2wtR3BiWjBtd3k3TG54LVNZc08yMzhQbDJmemZfZU8yQ2F1Q1J5d3RhV09lZkF0djA2djBfNnlGcEE5VmgtelVfaGo5OFNCOFY2M0g2WnJTQUhEM2RpN1YwT3h0Ujd2V3ZjbXBYQXBIYlMyNlVhVnNhSjB1ZnJjaXhiMmRzU0FldzND?oc=5"
+          "label": "Fin (formerly Intercom) published guidance on AI agent readiness, incident detection, and knowledge-base integration with product launches—now integrated into Salesforce",
+          "url": "https://www.intercom.com/blog/announcing-evals-and-releases/"
         },
         {
-          "label": "Anthropic expands Claude Cowork to web/mobile for broader enterprise accessibility",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSHhfR0l3RkhqZkJHUV9qanp5dGgtMGZKQlV2WmM3X3hqeTdSZW04OTJraWtFRE16Y2ZiSUhsX3EzcnhSd0xld09jbFN0bDRuYkw5QVgtVTh1SlIxQ2s5Y2RVUm5oNWluM0oySWxmTG1QRmExMHhLOFRFOWdZUERYcmpVenQ1ajZLbXEwV21OVWMzdWk3ZlZFMXFBem82NTh2VVlhUXdVT1JEZHA1Qzh4bzltYjI3bW1XNE5ZRTE2eF8?oc=5"
-        },
-        {
-          "label": "PwC and OpenAI betting big on agentic customer service through consulting-led deployments",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPY2ROSnlGRHBRcWE5Z0ZZQ0JoWW9wYS1xTGI0aEs2SjJRVDE4TDJkWG0tMFAxdlJsY3VRTTV5WE5GeEhqTnRLenNEYndtQ1lpRjJaX2J0eF9DM2Z4a0VkVlRxRmxxMDU4V2xGX3ladW5nSkxQY3BjeEh6aHg1WnVsS01fd0FEb2c?oc=5"
+          "label": "Intercom renamed to Fin; Salesforce integration positioning Fin as part of Agentforce ecosystem",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONkhyVWszNlVmVlk0cU5IV1NfU3ZLcEI4SEw3M2NscXlNUnpWcXdtbExSMHlxbWRVcTJZVHc0NDNlR0tOZjRDamxZTk5aeDZCdGNkZ3AyMmhHeEFxWVJ4RmtleERYd3pmakd5eDVhRXU0VE9tTUlMRUJFQWZCVWpkTUpETjRCSU1UMjVra2phNkRuY2NWVEczMkJmREM0dHNYTmc"
         }
       ]
     },
     {
-      "name": "Open-Source Model Cost Collapse (DeepSeek, Qwen, Mistral)",
-      "description": "DeepSeek raised $7.4B, plans 2027 IPO, and is releasing cost-efficient frontier models (V4, R1) that match or exceed OpenAI/Anthropic on reasoning and coding at a fraction of the price. Alibaba's Qwen 3.8 (2.4T parameters) is claimed second only to Anthropic's Fable 5 on benchmarks, and Mistral signed a multibillion-dollar partnership with Microsoft for EU infrastructure. This collapse in inference costs and availability of capable open-source models directly reduces lock-in risk for enterprise agent builders and shifts the competitive baseline from model access to execution and outcomes.",
+      "name": "Specialist Platforms (Decagon, Sierra, Parloa, Cresta, Relevance AI) Carving Out Niches on Product Quality and Execution Depth",
+      "description": "While incumbents compete on breadth and bundling, specialist platforms are differentiating on execution depth: Decagon emphasizes self-improving agents and open-source model stacks; Sierra focuses on long-running Horizon agents and outcome-based pricing; Parloa targets European regulated verticals (telecom, utilities, healthcare) with compliance-forward design; Cresta and Relevance AI position on real-time coaching and agent quality assurance. Podcast signals indicate that enterprise buyers increasingly recognize that adding agents to a CRM doesn't automatically create good agents—execution, training data, workflow design, and ongoing optimization matter. This creates moats for specialists who can demonstrate measurable deflection, resolution, and ROI at the customer level.",
       "momentum": "rising",
       "evidence": [
         {
-          "label": "DeepSeek raised $7.4B, targets 2027 IPO, reaches ~$500M annualized revenue with cost-efficient frontier models",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTWZtZjdKMU5EcFptb0kyYkIzc25XNmlEYy1NejJvQlFmbndTSFdBdkVOaHgzc1FfMi1STVVOZEdDeWktaGktd1NtQ0I5Y3dzampWVTl2cnB1ZGVtWEtUa2Zuc2c5RlpoOXZ6MjhiZV8tQUt2YVFPOG9KSUEtOWhrOFlYTHA0d0ZXQngycXY4WWc1aWRwV3N0d1JkbEVKN2cyWFM3alpPc3Vtdmh0eldN?oc=5"
+          "label": "Decagon $100M ARR; rejects forward-deployed-engineer model; 90% platform on open-source models; launched Duet Autopilot (self-improving agent) and Campaign Composer",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1iMlpQTkJJNzRGVm84UHV2d3llZVIydUxxMkV3Y0prVS1qdU9oSEtDNVJUaXY0b2V2ZndBaVVBdkkyUlYxT1pxT2dMcE1vd29lWnljTXBOWnUybmY4bHkzanNXelN0U1Y0di13NFlnVjlla1k"
         },
         {
-          "label": "Alibaba's Qwen 3.8 (2.4T params) claims second only to Anthropic Fable 5; Apple will use Qwen in China",
-          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOFVVQ3ZUVE5aaXBFcFRPcm1UT2diLTMxbEJmbVoxejlUMWpZdElpWERNMDhFb054dnAzblhPc1pKRHZ0aWJaNld4UmsycHpaejN5ZVhvWGFZclZScVkzenBQeFlHNmYyR1NEcmhmdmpyTGtOaWp6SU9wZjN5X1Bta0YtNXZiTUpVNC1MeHdKMm56NEVoVUZ6UElFQVRoNXR3TFBhMkFLUHBhTFFIY2ctaWZlR19jakZnR2pOS29TU1ppbnVLdlRILUw0RFVNZnYyUTdrQlNicmR5QWM3QXQ1M1hkTdIB6wFBVV95cUxPZFZEYVMyQVMzTGN6ZHRHeWMyNE9FdzBIdmpJRU9JYnB5a3V6RklCVnEzR1V0OGVuQ0RBUmFDbXVERkJpQU9DWHNLWnNwYUlLY3FEdFVOUmxmOVFybHFmMnk4aTZnWXZrZVpoNEplb3ZROGd4X25VMThxX1gybXFNOXk5cFNScW1KbzJZWUwtT1lPOVJ2MkpaVzBGZURTWk04YTZ1SU5IZUJxUnFEZ2NqSmRmR1VZalZGTUdTV1lJZ0NtSVJPdG5SQWZVeG5TRlFIRGNZaDl2OXhBY2Znd2NUcWpaWjNDMGdsZUU4?oc=5"
-        },
-        {
-          "label": "Mistral signs multibillion-dollar deal with Microsoft for Azure infrastructure in Europe",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWWloSTBzSk1zU05ZU2wzcVE1SEdUN0NtTXZsZUtOajVaVkpFUzlIR094Q3lidF83NzhYT0I5c3paSWtEMUdhZWpLZFlrZEw3QkxyUWJsSnkxU2RmYVpDVXFWRXZqSHNjUnYwazlzSFZiRzd0U0ZlZWRVZktRekFyOUdkSFEwb082cGZQN3R0bmhFbFZ4cU5pcE1wWlZxdExWRXFieXZWZlBuSmVKdmVkTVlVc2NJMUU0NVkzVHJ4MWRVQQ?oc=5"
-        },
-        {
-          "label": "Samsung in talks to invest €1B in Mistral AI as part of European sovereign AI push",
-          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPLUNBOTY3bWNUZVFGdGpPcTd5VF8zaVh4VC1qM1lCbElBSUNiY09hWUNzaEJfMUg2NnFfamc1LS01SUFkcmxrX25VcVVabjJzUGpIOUlVSElaaURmM2kwZjhfSmxxdG42c0NGMC1ic1VRMDRVQkxlU1RER05kZF94anpIV1FBVXVIa054anVkcWlTRnJNLXl0ak9fek5oOS03MzFUdGQzLUNiSV90OEJmMWNFOHE3Y1E0MkNJeV9UQzZrQ0dsSFMwc2x0YVBvOWRRdS1DcVVDX3VzT2dFaWo1d2Fuaw?oc=5"
-        }
-      ]
-    },
-    {
-      "name": "Enterprise AI Agent Adoption Hitting Maturity Wall (Compliance, ROI, Handoff)",
-      "description": "Despite massive vendor investment, only ~2% of AI customer-service programs reach 'Center of Excellence' standards (Forethought), and only 25% of AI customer-service deployments deliver ROI. Market commentary has shifted from 'agents replace headcount' to 'agents need human escalation, compliance guardrails, and measurable business outcomes.' Enterprises are demanding outcome-based pricing (pay-per-resolution), governance frameworks (Parloa's Lens, Sierra's release controls), and clear audit trails for regulated industries. This represents a maturation signal: the market is separating hype from execution.",
-      "momentum": "rising",
-      "evidence": [
-        {
-          "label": "Forethought report: 70% AI adoption in CX, but only 2% reach Center of Excellence standard",
-          "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQZXVhb0ZGbFVRRUpKWWQ5YmJKeE0xajVPa0wxZ0xONUtPN2RucnNBRmVMOE16eVR5UERDYkdscWR6MTdhM2VuUFhNZk5aNzJ0YVhUTWxPWEhxMHZlZ2FidWN4bEdmTUhucGxsWmZzcFJsRDZwdVJLWWQxQU9obXRwQkhvczlKWl9YcWFldEZZSE5KSUk0MmRodDNlQlBqSU93RjBSeWk4V3hnajFMSmlRSTRnMFU3RTN6MWRkUEM0TUQxRmhOYnpQeEZqUnAtT1JVT3YyZ2ExbUpnckMyNlVNNnQtRGJiR3N2bXdfRE5RcmhxcTVJWVVPQ2xBeGY0dDNV?oc=5"
-        },
-        {
-          "label": "Customer Experience Dive: Only 25% of AI customer-service deployments produce ROI",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUVVwVWN1OTBuWi1PV3kzSEFoRzV6bWpBYlh0SEZjR1JRSTFfRmZlRTBDVk5NVUNMekxGelhOQnR2VGpYeFptbEY0Z2JTNFpxaHlyQUpDNzF6M3ZiVGNtS2Q5Z2p1TVl5TVdFVUNZV3Nob252WXh5R2VkRHV5SXNpdTZjaWRmWTBJYUF0dHlGRDFJTGVNLTB5UkhvYlFyZWhIQjlMekxGUGNJQ0dCTUdraVYyQQ?oc=5"
-        },
-        {
-          "label": "Salesforce adopts outcome-based pricing for Agentforce Help Agent (pay-per-resolution)",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTnlzQ1I3UklfV1g0X2RyM0cwaWp6QWFiVUVjVldqbm1oMERhNExPeDhHNEU3MHpMZ2R1LW5oeVc1WS1XRXRpbDM0Ym5LZHJPeU9wZFI3NE1JZ2hKbExFbnNRRjZFZTBEa2lXalJMZ0tabGJRNWk4TEppSk1xWXFhMk85WUkyN3NmSXJyS3pBRW5kQk92eWdhc1ZwOTJZYzExQkpURkpwbFVwcnRQNm5Ecll3?oc=5"
-        },
-        {
-          "label": "Parloa launches Lens for real-time compliance risk detection and sentiment monitoring in AI agents",
-          "url": "https://www.parloa.com/blog/parloa-lens/"
-        }
-      ]
-    },
-    {
-      "name": "Voice Agents as Standalone Product Category (ElevenLabs, Vapi, Parloa, Decagon)",
-      "description": "Voice agents have matured from experimental to core product offering, with ElevenLabs valued at $22B, Parloa securing major European customer wins (telecom, energy, retail), and Decagon crossing $100M ARR while deliberately rejecting forward-deployed engineers. The differentiation is shifting from voice quality to orchestration, compliance, and industry verticals. Podcast discourse emphasizes voice latency, naturalness, and multi-turn conversation quality as table-stakes features, with real ROI measured in call handling deflection (66%–97% fully automated resolution in Parloa case studies).",
-      "momentum": "rising",
-      "evidence": [
-        {
-          "label": "ElevenLabs valuation doubles to $22B, signaling investor confidence in synthetic voice demand",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOXJ3SWttQWRkRjRWZ2RDN3dkN3g5MWJWdEstMmJUekNlQ2FMc05hdF91U3NpNy1NaEx2Wnp4eXJBcmpldnlvTXFHMDAwaEZJb282TnVTTFZiSEE0bXV3Nk1ZTUlHRnppMkdxYmo0MkJiRU1xVE9DZ29EV1dNbGMtVldZSmlaWXE4MlRWODV6bTViSWlERUJHQkItcURIMXRPMW0yUDZ6dGlrM3dESXdGQWo1aVpOZVFCNEZvMEowdGI4OVhlVjBmSTMtdmZmQQ?oc=5"
-        },
-        {
-          "label": "Newcomer: Decagon hit $100M ARR betting against forward-deployed engineers model",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1iMlpQTkJJNzRGVm84UHV2d3llZVIydUxxMkV3Y0prVS1qdU9oSEtDNVJUaXY0b2V2ZndBaVVBdkkyUlYxT1pxT2dMcE1vd29lWnljTXBOWnUybmY4bHkzanNXelN0U1Y0di13NFlnVjlla1k?oc=5"
-        },
-        {
-          "label": "Parloa secures rhenag (German energy provider): 200k automated calls/year with voice AI agents",
-          "url": "https://www.parloa.com/customers/rhenag/"
-        },
-        {
-          "label": "Parloa case study: OBI (DIY retailer) achieves 89% CSAT with 66% fully automated call resolution",
-          "url": "https://www.parloa.com/customers/obi/"
-        }
-      ]
-    },
-    {
-      "name": "Specialized Agent Platforms Consolidating (Sierra's TakeOff Acquisition, Cresta $50M Series B)",
-      "description": "Sierra acquired TakeOff (long-horizon agent platform with ~$10M ARR) to expand multi-step workflow orchestration, and Cresta raised $50M Series B with demonstrated customer wins (Alaska Airlines, United, Fortune 500 banks). These platforms are narrowing focus to specific verticals (hospitality, insurance, collections, utilities) and building proprietary data models and compliance guardrails rather than competing on general-purpose LLMs. The consolidation reflects market maturation: specialized execution beats horizontal platforms in regulated or high-value verticals.",
-      "momentum": "steady",
-      "evidence": [
-        {
-          "label": "Sierra acquires TakeOff (long-horizon agent platform) to expand multi-step workflow orchestration",
+          "label": "Sierra acquired TakeOff (long-horizon agents); $15.8B valuation, $200M ARR by 2026; exclusive SoftBank Japan partnership (raising inquiry resolution 83%→97%)",
           "url": "https://sierra.ai/blog/sierra-acquires-takeoff"
         },
         {
-          "label": "Cresta announces $50M Series B funding for real-time AI coaching and agent platform",
+          "label": "Parloa SAP Endorsed App certification; customer wins in telecom (rhenag: 200k calls/year), utilities (evm 24/7), healthcare (UKSH clinical trials); launched Lens (compliance monitoring) and Navigator (AI design copilot)",
+          "url": "https://www.parloa.com/blog/parloa-earns-sap-endorsed-app-premium-certification/"
+        },
+        {
+          "label": "Cresta $50M Series B; customer wins across hospitality (Holiday Inn, Windstar Cruises 70% automation), collections (Aqua Finance 61% efficiency lift, Achieve 3x ROI), airlines (United, Alaska)",
           "url": "https://cresta.com/es/blog/a-letter-from-our-founders"
         },
         {
-          "label": "Cresta customer: Alaska Airlines using Cresta for fast, caring service at scale",
-          "url": "https://cresta.com/customers/alaska-airlines"
+          "label": "Relevance AI: open-source Valmis framework (100+ app integrations, MCP support); customer wins (Canva, Autodesk, Qualified 35+ agents)",
+          "url": "https://relevanceai.com/use-cases/customer-support"
+        }
+      ]
+    },
+    {
+      "name": "Outcome-Based and Hybrid Pricing Models Gaining Traction as Alternative to Token-Per-Use",
+      "description": "Salesforce Agentforce Help Agent shifted to pay-for-resolution pricing; Sierra using outcome-based pricing (pay-for-results); Workday and Salesforce adopting hybrid subscription-plus-usage models. This shift reflects enterprise willingness to tie vendor compensation to measurable business outcomes (resolution rate, revenue lift, cost reduction) rather than consumption metrics. For specialist platforms, outcome pricing creates both opportunity (aligns vendor and customer interests, justifies premium pricing) and risk (requires high confidence in product quality and operational excellence to avoid adverse selection and margin erosion).",
+      "momentum": "rising",
+      "evidence": [
+        {
+          "label": "Salesforce Agentforce Help Agent: pay-for-resolution pricing for customer-support agents",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZVRVaWpYRzZzWGVzZlJXOS1TYWcyUTU4QkZFNHQ2ZTRVd2hpcGd2VGhIUVZvdXJTTTVxS1JvOFNsTDI4eC1md1hUUklVMjRFcGRBbkUyN0tMcGJjMEZDYTdQdkpESGlfc18ySjV1TGhUVXV4NmFVcmRxa1ZyZnF0Nw"
         },
         {
-          "label": "Cresta customer: United Airlines using real-time AI coaching for 24/7 service",
-          "url": "https://cresta.com/es/customers/united-airlines"
+          "label": "Sierra announces outcome-based pricing (pay-for-results) for long-running Horizon agents",
+          "url": "https://sierra.ai/blog/horizon"
+        },
+        {
+          "label": "Salesforce and Workday adopting hybrid subscription-plus-usage pricing for AI products",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9zbGlwUWhiRC1udXFGMzJHeGZkUmN6bHk4T3UxWE5uM2trY2xhUUdTeXZzQ1ZSTXlvc3AzMWREczBUcjg0N1g4ZWdaSkJkVldfYWJ0SjR5cGFGMlFpdUpFTGNTS0EyVm05dllmc21TckJwT05IalE"
+        }
+      ]
+    },
+    {
+      "name": "Podcast Narrative: From 'AI Eats SaaS' to 'Agents Need SaaS More Than Ever'",
+      "description": "Podcast signals from 24 tech/AI shows (12-month scan) show mindshare shift away from existential SaaS-displacement fears toward pragmatic recognition that agentic AI requires robust underlying enterprise software for data quality, workflow orchestration, compliance, and escalation. Decagon CEO Jesse Zhang published op-ed arguing agents won't kill software—they'll depend on it more. This framing repositions the market from zero-sum to additive, validating both incumbent CRM/ERP vendors (who own customer data and workflow infrastructure) and specialist agent platforms (who own the agentic orchestration and resolution logic).",
+      "momentum": "steady",
+      "evidence": [
+        {
+          "label": "Decagon CEO Jesse Zhang: 'AI Agents Won't Kill Software—They'll Need It More Than Ever'",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB1ZVdQWVRRODNRdERzOV9NQWdRdmJnUVFvejY3WU5SR3N3eXVzOXM5V0h4NDh0NWRFWFdiTkw4UlYxWUVaUE90ell3X1g2YjQ0cnl6YnJfanNGSEE"
+        },
+        {
+          "label": "24/7 Wall St.: 'AI Isn't Eating SaaS'—Salesforce and ServiceNow positioned as beneficiaries of enterprise AI adoption, not victims",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTExoNmlES0JDbWZld2xqUUhTTkxqRHNxaGZ6dGtteDFpbm5PbUozMmFYZHJVMHM0R0ZkWVBxRGpwcFd1T1VYTHZ4QnJ4ZTQ3TjFfaVktLXc0QUN5RWdOajQtU3Qyd0lOdGs1V3B3b1FOLVpNM2gtUXJXQ0dWZVh2bEp3LUlwQ0phXy1mQ3JxM1M2Q2V4R1BzRTZ2RjNVMkI5QTJQbERGbmQ5bFFYTTdCd3ZEcXBWd21y"
+        },
+        {
+          "label": "a16z podcast: Decagon founders on running 90% of platform on fine-tuned open-source models; highlights practical enterprise-AI deployment priorities",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1kZVU2ZG8wQ081Wno4NTU4d2l5eFJZQmpmRWFkbE9HOFkxeGw1bVBISUpTVkpGY0Y3S0JLcExCQnF2Uy1RU3QxNzhsSnNRQmU0Wjl0WG42MHQ1cGhZYXBHZ3lnVkFRZi1aUXlWTkw1cjlKUQ"
         }
       ]
     }
   ],
-  "convergence": "Incumbent CRM vendors (Salesforce with Agentforce, ServiceNow) are bolting on AI agents to defend their customer relationships, but face friction from purpose-built agent platforms with superior execution and clearer ROI narratives. Simultaneously, frontier labs (OpenAI, Anthropic) are moving downstream from models into managed agent platforms (OpenAI Presence, Anthropic Claude Cowork) to capture enterprise deployment value. Open-source models (DeepSeek, Qwen, Mistral) are collapsing inference costs, reducing lock-in to proprietary APIs and shifting competition from 'who owns the model' to 'who can reliably deliver outcome-based automation.' The market is bifurcating: (1) large enterprises building on Salesforce/ServiceNow for CRM-native automation, (2) mid-market and vertical-specific buyers choosing Sierra, Parloa, Cresta, or Decagon for better UX and compliance, and (3) cost-conscious or compliance-sensitive deployments using open-source models or consulting partners (PwC with OpenAI, consulting firms integrating Cresta/Sierra). Pricing models are converging on outcome-based (pay-per-resolution) and hybrid subscription+usage, and voice is becoming table-stakes for customer-support agents in high-contact-volume verticals.",
+  "convergence": "The market is experiencing simultaneous convergence and collision across four fronts: (1) Incumbents moving down—Salesforce, ServiceNow, and Microsoft are embedding agents as core platform features and acquiring specialist vendors (Fin for $3.6B) to accelerate capability and customer lock-in; (2) Frontier labs moving down—OpenAI, Anthropic, and other model providers are building managed deployment platforms (Presence, Claude Tag) and enterprise integrations, collapsing the moat between model access and platform-level orchestration; (3) Chinese cost compression—DeepSeek, Qwen, and Kimi are commoditizing the model layer, forcing all agent builders to compete on execution and ROI rather than model exclusivity; (4) Specialist platforms consolidating and differentiating—Decagon, Sierra, Parloa, Cresta, and Relevance AI are carving out customer niches (verticals, geographies, use cases) and competing on depth of execution, compliance, and outcome-based pricing rather than breadth. The collision point is the middle: mid-market enterprises are caught between low-cost, low-friction CRM-bundled agents (Salesforce, ServiceNow) and premium, high-touch specialist platforms (Decagon, Sierra). Winning platforms will be those that can deliver measurable deflection and ROI while aligning incentives (outcome-based pricing, self-improvement, compliance-ready), not those that shout loudest about agent capability. Voice is becoming the primary differentiation vector as chat deflection approaches commodity status.",
   "predictions": [
     {
-      "claim": "By end of 2026, outcome-based pricing (pay-per-resolution, revenue-sharing) will become standard in enterprise AI customer-support agent contracts, displacing traditional seat-based and token-based models.",
+      "claim": "Outcome-based and hybrid pricing (subscription + pay-per-resolution or per-outcome) will become the standard for AI customer-support agents by end of 2026, with at least 60% of new enterprise deals structured this way.",
       "horizon": "by end of 2026",
       "confidence": "high",
-      "rationale": "Salesforce's Agentforce Help Agent adoption of pay-per-resolution, combined with enterprise pressure for ROI validation and CFO skepticism of AI spending, is shifting incentive alignment toward measurable business outcomes. Forethought's finding that only 25% of AI support deployments deliver ROI validates buyer demand for outcome-based risk transfer.",
+      "rationale": "Salesforce Agentforce Help Agent, Sierra, and Workday have all shifted to or announced outcome-based models in H2 2026; enterprise buyers increasingly demand ROI alignment and are willing to reward vendors who can prove impact.",
       "sources": [
-        "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTnlzQ1I3UklfV1g0X2RyM0cwaWp6QWFiVUVjVldqbm1oMERhNExPeDhHNEU3MHpMZ2R1LW5oeVc1WS1XRXRpbDM0Ym5LZHJPeU9wZFI3NE1JZ2hKbExFbnNRRjZFZTBEa2lXalJMZ0tabGJRNWk4TEppSk1xWXFhMk85WUkyN3NmSXJyS3pBRW5kQk92eWdhc1ZwOTJZYzExQkpURkpwbFVwcnRQNm5Ecll3?oc=5",
-        "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUVVwVWN1OTBuWi1PV3kzSEFoRzV6bWpBYlh0SEZjR1JRSTFfRmZlRTBDVk5NVUNMekxGelhOQnR2VGpYeFptbEY0Z2JTNFpxaHlyQUpDNzF6M3ZiVGNtS2Q5Z2p1TVl5TVdFVUNZV3Nob252WXh5R2VkRHV5SXNpdTZjaWRmWTBJYUF0dHlGRDFJTGVNLTB5UkhvYlFyZWhIQjlMekxGUGNJQ0dCTUdraVYyQQ?oc=5"
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZVRVaWpYRzZzWGVzZlJXOS1TYWcyUTU4QkZFNHQ2ZTRVd2hpcGd2VGhIUVZvdXJTTTVxS1JvOFNsTDI4eC1md1hUUklVMjRFcGRBbkUyN0tMcGJjMEZDYTdQdkpESGlfc18ySjV1TGhUVXV4NmFVcmRxa1ZyZnF0Nw",
+        "https://sierra.ai/blog/horizon",
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE9zbGlwUWhiRC1udXFGMzJHeGZkUmN6bHk4T3UxWE5uM2trY2xhUUdTeXZzQ1ZSTXlvc3AzMWREczBUcjg0N1g4ZWdaSkJkVldfYWJ0SjR5cGFGMlFpdUpFTGNTS0EyVm05dllmc21TckJwT05IalE"
       ]
     },
     {
-      "claim": "OpenAI Presence and Anthropic Claude Cowork will capture 10–15% of enterprise agent budget share by end of 2026, forcing specialized platforms (Decagon, Sierra, Parloa) to compete harder on vertical specialization and compliance rather than general-purpose capability.",
-      "horizon": "by end of 2026",
+      "claim": "Specialist AI customer-support platforms (Decagon, Sierra, Parloa, Cresta, Relevance AI) will collectively capture 35–40% of enterprise contact-center AI spend by end of 2027, with incumbent CRM vendors retaining 50–55% and frontier labs (OpenAI, Anthropic, others) capturing 5–10% through Presence-like managed services.",
+      "horizon": "by end of 2027",
       "confidence": "medium",
-      "rationale": "Frontier labs have credibility, capital, and model moats, and their early customer wins (BBVA, SoftBank, IAG for Presence; Microsoft Teams for Claude Tag) signal enterprise appetite. However, specialized platforms have 12–24 month head starts in verticals (insurance, utilities, collections) and stronger compliance/governance narratives. Outcome depends on frontier labs' ability to build vertical expertise fast.",
+      "rationale": "Specialist platforms are winning on execution depth and vertical focus, while incumbents are winning on bundling and customer lock-in; frontier labs are entering but face distribution and compliance overhead. Market share distribution reflects the reality that no single vendor owns all three levers: model, orchestration, and customer data.",
       "sources": [
-        "https://news.google.com/rss/articles/CBMia0FVX3lxTE44MUljeGRwWUdlanZWVlFxeV9zenktdFFiOVppbzh2QkI2Rlh4bFV2bjRCZEJ5UEtxbHRLRFVnYjFkUldXUjJpSEFnd25oTnZza0QteXV1ZVdXSExfckhSMF9Md01Zd1JIcjZn?oc=5",
-        "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOZzd1Q1dOYUdrNFhmcnpnU3ZkZnlNTXRmeHFOMmw1aGdDSkoxcFhkWEt5a29Dek82RTlaaUtlSmh2UE4tOGdKYTVlQjhVRHBsemIwZjhVNW1zWVprdUVURlJ5UVY4a0xLN2RBR3VJS2gyd2wtR3BiWjBtd3k3TG54LVNZc08yMzhQbDJmemZfZU8yQ2F1Q1J5d3RhV09lZkF0djA2djBfNnlGcEE5VmgtelVfaGo5OFNCOFY2M0g2WnJTQUhEM2RpN1YwT3h0Ujd2V3ZjbXBYQXBIYlMyNlVhVnNhSjB1ZnJjaXhiMmRzU0FldzND?oc=5"
+        "https://news.google.com/rss/articles/CBMic0FVX3lxTE1iMlpQTkJJNzRGVm84UHV2d3llZVIydUxxMkV3Y0prVS1qdU9oSEtDNVJUaXY0b2V2ZndBaVVBdkkyUlYxT1pxT2dMcE1vd29lWnljTXBOWnUybmY4bHkzanNXelN0U1Y0di13NFlnVjlla1k",
+        "https://sierra.ai/blog/sierra-acquires-takeoff",
+        "https://openai.com/index/introducing-openai-presence"
       ]
     },
     {
-      "claim": "DeepSeek will displace 15–25% of OpenAI/Anthropic inference volume for enterprise AI agents by mid-2027, as cost-conscious enterprises and agent platforms optimize margins on open-source models.",
-      "horizon": "by mid-2027",
+      "claim": "DeepSeek and Chinese open-source models will capture 25–35% of inference spend in enterprise AI agents globally by 2027, down from <5% today, driven by cost-per-inference advantages (20x vs. OpenAI) and growing regulatory acceptance of non-US model stacks.",
+      "horizon": "by end of 2027",
+      "confidence": "high",
+      "rationale": "DeepSeek's $7.4B raise, $500M ARR, and commitment to open-source + low-cost deployment create structural cost advantage; Samsung, Mistral, and Alibaba partnerships signal enterprise willingness to diversify from US-only model suppliers; regulatory and geopolitical tailwinds favor non-US alternatives.",
+      "sources": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVGZtZjdKMU5EcFptb0kyYkIzc25XNmlEYy1NejJvQlFmbndTSFdBdkVOaHgzc1FfMi1STVVOZEdDeWktaGktd1NtQ0I5Y3dzampWVTl2cnB1ZGVtWEtUa2Zuc2c5RlpoOXZ6MjhiZV8tQUt2YVFPOG9KSUEtOWhrOFlYTHA0d0ZXQngycXY4WWc1aWRwV3N0d1JkbEVKN2cyWFM3alpPc3Vtdmh0eldN",
+        "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPLUNBOTY3bWNUZVFGdGpPcTd5VF8zaVh4VC1qM1lCbElBSUNiY09hWUNzaEJfMUg2NnFfamc1LS01SUFkcmxrX25VcVVabjJzUGpIOUlVSElaaURmM2kwZjhfSmxxdG42c0NGMC1ic1VRMDRVQkxlU1RER05kZF94anpIV1FBVXVIa054anVkcWlTRnJNLXl0ak9fek5oOS03MzFUdGQzLUNiSV90OEJmMWNFOHE3Y1E0MkNJeV9UQzZrQ0dsSFMwc2x0YVBvOWRRdS1DcVVDX3VzT2dFaWo1d2Fuaw",
+        "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOX0ZiY3ItYXNvSnJKY2hqbk42akNhdnJiYkZxTjJxVFl0dFRrSGs2MGJNV3gzWXdzMjhta1hLdGtKZjJSVm9ma3lxWmhHaHFjN2RQVlpqd0tQVzM0QkpuemU5QnhIbmt5Q0phYkljZlgtRVdCbXdhNkttdFRIVGNEWmFEamRoQnFMc0NjMWJKeUZpWlk1ZjJiSVBUdFFBejZhQ1RvbDJxRkhLRjcyOUp5UnBoc3Q4eThUWlNpd291TVJtOXdPY3duay0teF8xcURlcjlIS0pSTlAzejdvOVJwRg"
+      ]
+    },
+    {
+      "claim": "Salesforce Agentforce will stabilize market share in the CRM-bundled agent segment at 15–20% of total enterprise contact-center AI deployments by 2027, with adoption constrained by partner ecosystem friction and perception that Agentforce is 'not ready' as a standalone product (per KeyBanc analysis).",
+      "horizon": "by end of 2027",
       "confidence": "medium",
-      "rationale": "DeepSeek's cost structure (20x cheaper for coding, ~$500M ARR at scale, 7.4B funding) and capability parity on reasoning tasks (R1, V4) make it a compelling default for cost-sensitive verticals (SMB support, high-volume collections). However, incumbent model vendors have better support, compliance certifications, and integration breadth. Enterprise adoption will be slower than startup adoption.",
+      "rationale": "Agentforce has achieved $1.5B ARR but faced analyst skepticism on traction; partners report limited revenue generation; Salesforce's 10M+ CRM users represent addressable base, but conversion rates suggest execution or positioning gaps rather than market rejection.",
       "sources": [
-        "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTWZtZjdKMU5EcFptb0kyYkIzc25XNmlEYy1NejJvQlFmbndTSFdBdkVOaHgzc1FfMi1STVVOZEdDeWktaGktd1NtQ0I5Y3dzampWVTl2cnB1ZGVtWEtUa2Zuc2c5RlpoOXZ6MjhiZV8tQUt2YVFPOG9KSUEtOWhrOFlYTHA0d0ZXQngycXY4WWc1aWRwV3N0d1JkbEVKN2cyWFM3alpPc3Vtdmh0eldN?oc=5",
-        "https://news.google.com/rss/articles/CBMi0gFBVV95cUxON2xrcnNYcE41UWdzX1NaU2FvczdwUVRuYktpNlFOb1c3UFhmOTRhaXlxSWVubmFpMkZ3SU5QVDRaZEhSR1RXRkZZVnBSYldGM2RteEhWalYyVEVOQ05rcFRWVEJKVVRSNmFHRkZkSEF5VmtaSFlWZEhhMUV3ZEhRNVYybEhUM0J3VldSRWFtRkVObWhN?oc=5"
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUHJBMDMzUUZIVFZwNHZjWlRsUGtZOTZ5U2lwZm1odVpOUUlUdGRIM0tlTXYzbkVjcmV6U3NMd240enp0em02OTM3cUR0Mk8xWEkxUEpJRi1scmlmMGVVcUlXYWg0WG5CX3cxZnZlR3dyYmpzODlIVzFmc0hXbEo0SU9vQmJyYkpxTHU4NmE3cDZTRm00M05YeVlNNnpBQ3ZXbFE",
+        "https://news.google.com/rss/articles/CBMiywFBVV95cUxPR3FnWkdmNEtvOXlhTTRsQTBLb0d1OUw2bE5UYXhlQkdtdWZsUldXSzdaUVp1T3huNk52NUpRekhuTjdleU9qUG9VR1otNkRHQ2c0R3pWOW8tNXAycERPUkxVcUgtVDgtbVAwRTZSSUVGYkdFVUJPTWJSR0NMQWtibXlNeWktT0xON3ByZlN0YnQtbDRYcUUwai1JOEc5TFhYU292NkF4T2Q1WkdEa2QzZ0x0aFRxcERhcEVtTkZvQThTY3ZBS0NMYzhtOA",
+        "https://news.google.com/rss/articles/CBMisgFBVV95cUxNV0Rmd0hSUWs0RW9HaV9fZVo2RUc5NEdFMjdrSDZRY29jSkxkczkxc0x0a1lNZnlxYU1YU3BJT1oxU0piNFNCalRtSTM3ZXVLdUw0UnhvbTRZMFktajZGMGhmWUFVU29ZN01VRk5xZGZvdEljMDhmSUtsU09lVHRhXzh4X3NpWEVzUnF6REZKNTZCYmMzcm5WXzFmU0lxQmUxNXQyd0M1bDNkZ09RUjVJSy0tdGxLWk0"
       ]
     },
     {
-      "claim": "Compliance-first agent frameworks (Parloa Lens, Sierra release governance) will become mandatory for regulated industries by 2027, driving $500M–$1B in TAM for governance/observability tooling integrated with agent platforms.",
+      "claim": "Enterprise customer-support teams will view AI agents as a 'given' baseline (non-negotiable technology) rather than a competitive differentiator by 2027, shifting competition from 'does it have agents?' to 'which platform delivers the highest resolution rate and lowest cost per interaction?'—commoditizing the market and driving consolidation.",
       "horizon": "by 2027",
       "confidence": "high",
-      "rationale": "Regulatory pressure on AI in financial services, healthcare, and telecoms is real (Decagon air-gapped deployments for Fortune 50 banks, Parloa's compliance guardrails, Sierra's release controls). Enterprises audited by regulators will demand provenance, versioning, and explainability layers. The competitive bar for specialized platforms will rise to include governance, not just automation.",
+      "rationale": "Podcast signals and analyst commentary indicate agent adoption is reaching inflection point; enterprises no longer ask 'if' but 'how well' and 'at what cost.' This shift accelerates commoditization and rewards vendors with operational excellence, compliance, and outcome proof, not marketing and feature breadth.",
       "sources": [
-        "https://www.parloa.com/blog/parloa-lens/",
-        "https://sierra.ai/blog/defense-in-depth-in-the-age-of-agents",
-        "https://decagon.ai/blog/what-an-air-gapped-ai-deployment-actually-requires"
-      ]
-    },
-    {
-      "claim": "Salesforce will divest or reposition Agentforce as a vertical-specific offering (likely contact center or field service) rather than a horizontal platform, following weak adoption and analyst downgrades.",
-      "horizon": "next 12–18 months",
-      "confidence": "low",
-      "rationale": "Agentforce's $1.5B ARR is real, but analyst downgrades (KeyBanc, others) and partner complaints about weak revenue flow suggest structural challenges in going horizontal from a CRM base. However, Salesforce has a history of doubling down on strategic bets (Slack), so repositioning rather than divesting is more likely. Confidence is low because Benioff has publicly defended the strategy.",
-      "sources": [
-        "https://news.google.com/rss/articles/CBMiywFBVV95cUxPR3FnWkdmNEtvOXlhTTRsQTBLb0d1OUw2bE5UYXhlQkdtdWZsUldXSzdaUVp1T3huNjVhSVZVaTJjeUoyMWN0RGdSMjFudkpIZFd6djAwUjBka2NERU82YTNwRVYzaE9iMDUySW1zM2FXMUhhakkyTkRCc1MxaEJkM0ZoYmlVeVIyNEtaa05CUkVGMFIwUlJNRFIuVEZsUlZFTjNPRWxGVEZaSFRURnBkR1Z0TWpoTGJXMWlaVVJuYXpCMmRucEJlbXAyVEVoT2NtRlRTWGRJVVQwOUluMD0%3D",
-        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQcjgyMVh6eU9DTWdoYUttVjd0M2VRRnpPVlh0WWFiUkRpRU5xUDdlR3BER3A0dkNQQWNYNi1ZMF8xM2JGTlNNRURJZ09FUElzdmZWeGRUUGZ6ekl2aWVTakdzNVFWZGNFX3ZfQlJjd1ZuUkJBQVd0UHlIazc4TTVwLXE0UDhBeWhGcmJWeDllcm1sNUktbGMtU1BnbGtLUnVmSU8tVmJBZkFqZWJfOHJlR2g0V05EMmFEMFA3QkM2V1hOV2pNNUpBRFFqbmVBdVpPOG5Db2I3RGI?oc=5"
+        "https://news.google.com/rss/articles/CBMigAJBVV95cUxQZXVhb0ZGbFVRRUpKWWQ5YmJKeE0xajVPa0wxZ0xONUtPN2RucnNBRmVMOE16eVR5UERDYkdscWR6MTdhM2VuUFhNZk5aNzJ0YVhUTWxPWEhxMHZlZ2FidWN4bEdmTUhucGxsWmZzcFJsRDZwdVJLWWQxQU9obXRwQkhvczlKWl9YcWFldEZZSE5KSUk0MmRodDNlQlBqSU93RjBSeWk4V3hnajFMSmlRSTRnMFU3RTN6MWRkUEM0TUQxRmhOYnpQeEZqUnAtT1JVT3YyZ2ExbUpnckMyNlVNNnQtRGJiR3N2bXdfRE5RcmhxcTVJWVVPQ2xBeGY0dDNV",
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUVVwVWN1OTBuWi1PV3kzSEFoRzV6bWpBYlh0SEZjR1JRSTFfRmZlRTBDVk5NVUNMekxGelhOQnR2VGpYeFptbEY0Z2JTNFpxaHlyQUpDNzF6M3ZiVGNtS2Q5Z2p1TVl5TVdFVWNZV3Nob252WXh5R2VkRHV5SXNpdTZjaWRmWTBJYUF0dHlGRDFJTGVNLTB5UkhvYlFyZWhIQjlMekxGUGNJQ0dCTUdraVYyQQ",
+        "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOY1JVSEV3aF94czZ6Vl91aWxZUWkyZktmR2h5T091TmJNVnFIemkzSmpXSjRoUFh4U0dldlhqYWVJNkhJTzczSDB2T1MxQjJlQzIzTnhpcEVzTHFYRjc3SWNfRTFIV3hJek9rQ292WGEyRWg2WmgyclhOd1loMDI4YXByQmVpdGFRVmF4Q21qWlJhSFBEVlI2QXo0b3JWcHQ1S3Jmd1FPX21tU2ZLR1dTQ1NVRkRKMVpKSGxoZ2JIeXNjbXI0NkpwNEh4QVQ5RlN3akhZVEI3ZE11T3NNc1JJWkY1a2lWbEpVbjB0aFhfZkhTLTVZ"
       ]
     }
   ],
-  "generated_at": "2026-09-06T05:32:33+00:00",
+  "generated_at": "2026-09-07T05:44:48+00:00",
   "window_days": 90,
-  "signal_count": 835
+  "signal_count": 852
 }
