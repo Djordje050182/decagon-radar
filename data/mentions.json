@@ -1,6 +1,19 @@
 {
   "mentions": [
     {
+      "video_id": "hvwtHZ5E27c",
+      "brand": "Intercom (Fin)",
+      "podcast": "Latent Space",
+      "episode": "Inside the Team That Killed Mandatory Code Review — Quinn Slack, AMP",
+      "published": "2026-09-07T14:00:06Z",
+      "timestamp": 1787,
+      "timestamp_label": "29:47",
+      "url": "https://www.youtube.com/watch?v=hvwtHZ5E27c&t=1787s",
+      "sentiment": "positive",
+      "topic": "Intercom's successful spin-off of its AI agent Fin as a separate business entity serving as a model for other companies.",
+      "found_at": "2026-09-08T05:33:03+00:00"
+    },
+    {
       "video_id": "LdIyXiq2DTY",
       "brand": "Decagon",
       "podcast": "Lenny's Podcast",
@@ -8749,5 +8762,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-07T05:36:57+00:00"
+  "last_scan": "2026-09-08T05:33:08+00:00"
 }
