@@ -1,6 +1,45 @@
 {
   "mentions": [
     {
+      "video_id": "ZyYcASqlqZI",
+      "brand": "Decagon",
+      "podcast": "JobMentis",
+      "episode": "Decagon Software Engineer Interview: Real Questions &amp; 2026 Prep Guide",
+      "published": "2026-09-09T04:45:43Z",
+      "timestamp": 2,
+      "timestamp_label": "0:02",
+      "url": "https://www.youtube.com/watch?v=ZyYcASqlqZI&t=2s",
+      "sentiment": "positive",
+      "topic": "Overview of Decagon's software engineer interview process and technical interview questions.",
+      "found_at": "2026-09-09T05:40:18+00:00"
+    },
+    {
+      "video_id": "Nc3-IxL5yUs",
+      "brand": "Decagon",
+      "podcast": "Lenny's Podcast",
+      "episode": "Moats Are Discovered, Not Designed",
+      "published": "2026-09-08T14:29:42Z",
+      "timestamp": 7,
+      "timestamp_label": "0:07",
+      "url": "https://www.youtube.com/watch?v=Nc3-IxL5yUs&t=7s",
+      "sentiment": "positive",
+      "topic": "How Decagon's insight about moats being discovered rather than designed applies to building durable competitive advantages in software companies.",
+      "found_at": "2026-09-09T05:40:02+00:00"
+    },
+    {
+      "video_id": "maSdsTLaMuU",
+      "brand": "Sierra",
+      "podcast": "Lenny's Podcast",
+      "episode": "How we built Grok Bot in a month | Roman Ugarte (SpaceXAI)",
+      "published": "2026-09-08T12:30:23Z",
+      "timestamp": 458,
+      "timestamp_label": "7:38",
+      "url": "https://www.youtube.com/watch?v=maSdsTLaMuU&t=458s",
+      "sentiment": "neutral",
+      "topic": "Sierra is mentioned as one of hundreds of successful companies powered by Work OS, a B2B SaaS platform provider.",
+      "found_at": "2026-09-09T05:40:04+00:00"
+    },
+    {
       "video_id": "hvwtHZ5E27c",
       "brand": "Intercom (Fin)",
       "podcast": "Latent Space",
@@ -8762,5 +8801,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-08T05:33:08+00:00"
+  "last_scan": "2026-09-09T05:45:06+00:00"
 }
