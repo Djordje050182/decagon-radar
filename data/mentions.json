@@ -1,6 +1,19 @@
 {
   "mentions": [
     {
+      "video_id": "QiNtDDFdVXQ",
+      "brand": "Decagon",
+      "podcast": "Decagon AI ",
+      "episode": "Autopilot in Production",
+      "published": "2026-09-09T15:04:51Z",
+      "timestamp": 2,
+      "timestamp_label": "0:02",
+      "url": "https://www.youtube.com/watch?v=QiNtDDFdVXQ&t=2s",
+      "sentiment": "positive",
+      "topic": "Decagon's Duet Autopilot product deployment and its impressive results in improving customer service agent resolution rates through continuous self-improvement.",
+      "found_at": "2026-09-10T05:30:24+00:00"
+    },
+    {
       "video_id": "ZyYcASqlqZI",
       "brand": "Decagon",
       "podcast": "JobMentis",
@@ -8801,5 +8814,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-09T05:45:06+00:00"
+  "last_scan": "2026-09-10T05:35:20+00:00"
 }
