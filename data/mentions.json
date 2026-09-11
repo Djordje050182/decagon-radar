@@ -1,6 +1,58 @@
 {
   "mentions": [
     {
+      "video_id": "mIWqy2ACHuI",
+      "brand": "Decagon",
+      "podcast": "Databricks Events",
+      "episode": "When Anyone Can Build Anything: The New AI-Native Stack",
+      "published": "2026-09-10T17:07:59Z",
+      "timestamp": 61,
+      "timestamp_label": "1:01",
+      "url": "https://www.youtube.com/watch?v=mIWqy2ACHuI&t=61s",
+      "sentiment": "positive",
+      "topic": "Ashwin introduces Decagon, an AI agent company building customer support and enterprise experience solutions with agent operating procedures.",
+      "found_at": "2026-09-11T05:33:42+00:00"
+    },
+    {
+      "video_id": "bsdJd2VeLvg",
+      "brand": "Intercom (Fin)",
+      "podcast": "a16z",
+      "episode": "Why Investors Are Rethinking Everything for the AI Era",
+      "published": "2026-09-10T14:30:05Z",
+      "timestamp": 1981,
+      "timestamp_label": "33:01",
+      "url": "https://www.youtube.com/watch?v=bsdJd2VeLvg&t=1981s",
+      "sentiment": "positive",
+      "topic": "Intercom's successful transformation by bringing back its founder to create an AI-native product and revamp the business.",
+      "found_at": "2026-09-11T05:33:38+00:00"
+    },
+    {
+      "video_id": "bsdJd2VeLvg",
+      "brand": "Intercom (Fin)",
+      "podcast": "a16z",
+      "episode": "Why Investors Are Rethinking Everything for the AI Era",
+      "published": "2026-09-10T14:30:05Z",
+      "timestamp": 2454,
+      "timestamp_label": "40:54",
+      "url": "https://www.youtube.com/watch?v=bsdJd2VeLvg&t=2454s",
+      "sentiment": "positive",
+      "topic": "How Intercom successfully made hard decisions to integrate AI throughout their company as a model example.",
+      "found_at": "2026-09-11T05:33:39+00:00"
+    },
+    {
+      "video_id": "4ioSi39yjJQ",
+      "brand": "Sierra",
+      "podcast": "20VC with Harry Stebbings",
+      "episode": "Jensen Huang Declares AGI Has Arrived | Tesla Launches Cybercabs | Index Pulls Out of Town",
+      "published": "2026-09-10T13:59:28Z",
+      "timestamp": 4462,
+      "timestamp_label": "1:14:22",
+      "url": "https://www.youtube.com/watch?v=4ioSi39yjJQ&t=4462s",
+      "sentiment": "neutral",
+      "topic": "Discussion of Sierra's market positioning and need to expand beyond service cloud replacement to justify a $15-20 billion valuation.",
+      "found_at": "2026-09-11T05:33:36+00:00"
+    },
+    {
       "video_id": "QiNtDDFdVXQ",
       "brand": "Decagon",
       "podcast": "Decagon AI ",
@@ -8814,5 +8866,5 @@
       "found_at": "2026-07-25T08:55:51+00:00"
     }
   ],
-  "last_scan": "2026-09-10T05:35:20+00:00"
+  "last_scan": "2026-09-11T05:33:42+00:00"
 }
